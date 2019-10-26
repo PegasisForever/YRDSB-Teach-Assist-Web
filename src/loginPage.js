@@ -1,11 +1,12 @@
 import React, {Component} from "react"
-import LinearLayout from "./linearLayout"
+import LinearLayout from "./components/linearLayout"
 import {Headline5, Subtitle1} from "@material/react-typography"
-import TextField, {Input, HelperText} from '@material/react-text-field'
+import TextField, {HelperText, Input} from '@material/react-text-field'
 import MaterialIcon from '@material/react-material-icon'
 import Button from '@material/react-button'
-import {SizedBox} from "./sizedBox"
-import CircularProgressBar from "./CircularProgressBar"
+import {SizedBox} from "./components/sizedBox"
+import CircularProgressBar from "./components/CircularProgressBar"
+import net from "./tools"
 
 function TATitle() {
     return (<LinearLayout vertical align={"center"} item={"center"}>
@@ -45,7 +46,7 @@ class LoginForm extends Component {
                 isValid={this.state.numberValid}
                 onChange={(e) => {
                     if (/[0-9]|^$/.test(e.currentTarget.value))
-                        this.setState({number: e.currentTarget.value})
+                        this.setState({number: e.currentTarget.value,numberValid: true})
                 }}/>
         </TextField>)
     }
@@ -61,7 +62,7 @@ class LoginForm extends Component {
                 type="password"
                 value={this.state.password}
                 isValid={this.state.passwordValid}
-                onChange={(e) => this.setState({password: e.currentTarget.value})}/>
+                onChange={(e) => this.setState({password: e.currentTarget.value,passwordValid: true})}/>
         </TextField>)
     }
 
@@ -102,9 +103,30 @@ class LoginForm extends Component {
         }
 
         this.setState({
-            passwordValid: false,
-            passwordIncorrect: true
+            isLoading: true,
         })
+        net.post("https://api.pegasis.site/public/yrdsb_ta/getmark",
+            {
+                number: this.state.number,
+                password: this.state.password
+            },
+            (statusCode, response) => {
+                this.setState({
+                    isLoading: false,
+                })
+                if (statusCode === 200) {
+                    alert("correct")
+                } else if (statusCode === 401) {
+                    this.setState({
+                        passwordValid: false,
+                        passwordIncorrect: true
+                    })
+                } else {
+                    alert(statusCode)
+                }
+            })
+
+
     }
 }
 
