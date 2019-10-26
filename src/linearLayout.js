@@ -23,6 +23,9 @@ export default class LinearLayout extends React.Component {
         if (this.props.item){
             classes+=" item-"+this.props.item
         }
+        if (this.props.className){
+            classes+=" "+this.props.className
+        }
 
         return <div className={classes}>
             {this.props.children}

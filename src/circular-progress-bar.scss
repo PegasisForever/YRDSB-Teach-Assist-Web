@@ -1,0 +1,19 @@
+.circular-progress-bar {
+  width: 36px;
+  height: 36px;
+
+  svg {
+    stroke: $mdc-theme-primary;
+  }
+}
+
+.rotate-animation {
+  animation: r 1.5s linear infinite;
+  position: relative;
+}
+
+@keyframes r {
+  100% {
+    transform: rotate(360deg);
+  }
+}
