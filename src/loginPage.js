@@ -41,6 +41,7 @@ class LoginForm extends Component {
             label="Student Number"
             leadingIcon={<MaterialIcon icon="account_circle"/>}>
             <Input
+                id={"student_number_tf"}
                 pattern="^[0-9]*$"
                 value={this.state.number}
                 isValid={this.state.numberValid}
@@ -60,6 +61,7 @@ class LoginForm extends Component {
             </HelperText>}>
             <Input
                 type="password"
+                id={"password_tf"}
                 value={this.state.password}
                 isValid={this.state.passwordValid}
                 onChange={(e) => this.setState({password: e.currentTarget.value,passwordValid: true})}/>

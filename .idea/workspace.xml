@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="be4c7382-c738-4232-a45b-55ed2fea1497" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/loginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/loginPage.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +65,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.deploy">
+  <component name="RunManager" selected="npm.start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -125,7 +125,7 @@
       <workItem from="1572104657611" duration="793000" />
       <workItem from="1572105468509" duration="12018000" />
       <workItem from="1572215160226" duration="16000" />
-      <workItem from="1572215196297" duration="1658000" />
+      <workItem from="1572215196297" duration="1981000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1572012150825</created>
@@ -162,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572216229398</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="+ redirect to ~.web.app if on ~.firebaseapp.com">
+      <created>1572216992812</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1572216992812</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,6 +194,7 @@
     <MESSAGE value="+ loginPage,not functioning" />
     <MESSAGE value="~ arrange files&#10;+ login page functioning" />
     <MESSAGE value="~ fixed circular progress bar memory leak&#10;~ allow browser to save passwords" />
-    <option name="LAST_COMMIT_MESSAGE" value="~ fixed circular progress bar memory leak&#10;~ allow browser to save passwords" />
+    <MESSAGE value="+ redirect to ~.web.app if on ~.firebaseapp.com" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ redirect to ~.web.app if on ~.firebaseapp.com" />
   </component>
 </project>
