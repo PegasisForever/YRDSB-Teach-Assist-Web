@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="favicon.ico" />
-    <link rel="apple-touch-icon" href="logo192.png" />
-    <link rel="icon" type="image/png" sizes="192x192"  href="launcher192.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#ffffff" />
-    <meta
-      name="description"
-      content="RDSB Teach Assist"
-    />
-    <link rel="manifest" href="manifest.json" />
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="RDSB Teach Assist"/>
+    <link rel="icon" href="favicon.ico"/>
+    <link rel="apple-touch-icon" href="logo192.png"/>
+    <link rel="icon" type="image/png" sizes="192x192" href="launcher192.png">
+    <link rel="manifest" href="manifest.json"/>
+
     <title>YRDSB Teach Assist</title>
-
-
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run YRDSB Teach Assist.</noscript>
-    <div id="root"></div>
-  </body>
+    <script>
+      if (window.location.href.indexOf("firebaseapp")!==-1){
+        window.location.replace("http://ta-yrdsb.web.app");
+      }
+    </script>
+</head>
+<body>
+<noscript>You need to enable JavaScript to run YRDSB Teach Assist.</noscript>
+<div id="root"></div>
+</body>
 </html>
