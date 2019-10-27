@@ -69,21 +69,26 @@ class LoginForm extends Component {
     render() {
         return (<LinearLayout vertical align={"center"} item={"stretch"}>
             <Subtitle1 style={{"textAlign": "center"}}>Login Your Account:</Subtitle1>
-            <SizedBox height={8}/>
-            {this.getStudentNumberTF()}
-            <SizedBox height={8}/>
-            {this.getPasswordTF()}
-            <SizedBox height={4}/>
-            <LinearLayout horizontal align={"end"}>
-                {this.state.isLoading ? <CircularProgressBar/> : null}
-                <SizedBox width={12}/>
-                <Button disabled={this.state.isLoading} raised onClick={this.onLogin}>Login</Button>
-                <SizedBox width={12}/>
-            </LinearLayout>
+            <form onSubmit={this.onLogin}>
+                <SizedBox height={8}/>
+                {this.getStudentNumberTF()}
+                <SizedBox height={8}/>
+                {this.getPasswordTF()}
+                <SizedBox height={4}/>
+                <LinearLayout horizontal align={"end"}>
+                    {this.state.isLoading ? <CircularProgressBar/> : null}
+                    <SizedBox width={12}/>
+                    <Button disabled={this.state.isLoading} raised type="submit" onClick={this.onLogin}>Login</Button>
+                    <SizedBox width={12}/>
+                </LinearLayout>
+            </form>
         </LinearLayout>)
     }
 
-    onLogin() {
+    onLogin(event) {
+        if (event){
+            event.preventDefault()
+        }
         this.setState({
             numberValid: true,
             passwordValid: true,

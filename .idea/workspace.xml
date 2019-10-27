@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be4c7382-c738-4232-a45b-55ed2fea1497" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/tools.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CircularProgressBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CircularProgressBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/circular-progress-bar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circular-progress-bar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/linear-layout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/linear-layout.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/linearLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/linearLayout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CircularProgressBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CircularProgressBar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/loginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/loginPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sizedBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sizedBox.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +66,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.deploy">
+  <component name="RunManager" selected="npm.start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -132,7 +124,9 @@
       <workItem from="1571922526573" duration="964000" />
       <workItem from="1572012104237" duration="5314000" />
       <workItem from="1572104657611" duration="793000" />
-      <workItem from="1572105468509" duration="11751000" />
+      <workItem from="1572105468509" duration="12018000" />
+      <workItem from="1572215160226" duration="16000" />
+      <workItem from="1572215196297" duration="785000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1572012150825</created>
@@ -155,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572116603044</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="~ arrange files&#10;+ login page functioning">
+      <created>1572118587399</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1572118587399</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,6 +179,7 @@
     <MESSAGE value="init commit" />
     <MESSAGE value="+ icons&#10;+ LinearLayout" />
     <MESSAGE value="+ loginPage,not functioning" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ loginPage,not functioning" />
+    <MESSAGE value="~ arrange files&#10;+ login page functioning" />
+    <option name="LAST_COMMIT_MESSAGE" value="~ arrange files&#10;+ login page functioning" />
   </component>
 </project>

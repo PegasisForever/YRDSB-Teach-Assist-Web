@@ -22,6 +22,7 @@ function describeArc(x, y, radius, startAngle, endAngle) {
 
 export default class CircularProgressBar extends Component {
     state = {x1: 0, x2: 30}
+    intervalID=null
     t = 600
 
     render() {
@@ -38,7 +39,7 @@ export default class CircularProgressBar extends Component {
                     {({x1, x2}) => {
                         return (
                             <svg className="rotate-animation" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                                <path fill="none" stroke-width="5"
+                                <path fill="none" strokeWidth="5"
                                       d={describeArc(24, 24, 20, x1, x2)}
                                 />
                             </svg>
@@ -54,11 +55,17 @@ export default class CircularProgressBar extends Component {
         setTimeout(() => {
             this.setState({x1: this.state.x1 + 200})
         }, this.t * 1.2)
-        setInterval(() => {
+        this.intervalID=setInterval(() => {
             this.setState({x2: this.state.x2 + 200})
             setTimeout(() => {
                 this.setState({x1: this.state.x1 + 200})
             }, this.t * 1.2)
         }, this.t * 2.4)
+    }
+
+    componentWillUnmount(){
+        if (this.intervalID){
+            clearInterval(this.intervalID)
+        }
     }
 }
