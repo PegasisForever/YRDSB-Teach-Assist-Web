@@ -18,10 +18,10 @@ export class Padding extends Component {
 
     render() {
         return (<div style={{
-            "padding-top": this.t,
-            "padding-right": this.r,
-            "padding-bottom": this.b,
-            "padding-left": this.l
+            paddingTop: this.t,
+            paddingRight: this.r,
+            paddingBottom: this.b,
+            paddingLeft: this.l
         }}>{this.props.children}</div>)
     }
 }
