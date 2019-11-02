@@ -1,12 +1,12 @@
 import React, {Component} from "react"
-import LinearLayout from "./components/linearLayout"
+import LinearLayout from "../components/linearLayout"
 import {Headline5, Subtitle1} from "@material/react-typography"
 import TextField, {HelperText, Input} from '@material/react-text-field'
 import MaterialIcon from '@material/react-material-icon'
 import Button from '@material/react-button'
-import {SizedBox} from "./components/sizedBox"
-import CircularProgressBar from "./components/CircularProgressBar"
-import net from "./tools"
+import {SizedBox} from "../components/sizedBox"
+import CircularProgressBar from "../components/CircularProgressBar"
+import net from "../tools"
 
 function TATitle() {
     return (<LinearLayout vertical align={"center"} item={"center"}>
@@ -137,7 +137,7 @@ class LoginForm extends Component {
     }
 }
 
-export class LoginPage extends React.Component {
+export default class LoginPage extends React.Component {
     render() {
         return (<LinearLayout className="full-page" vertical align={"center"}>
             <LinearLayout horizontal align={"center"} item={"stretch"}>

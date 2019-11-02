@@ -1,9 +1,10 @@
 import React from 'react'
 import ReactDOM from "react-dom"
 import "./index.scss"
-import {LoginPage} from "./loginPage"
+import LoginPage from "./loginpage/loginPage"
+import SummaryPage from "./summarypage/summaryPage"
 
 ReactDOM.render(
-    (<LoginPage/>),
+    (<SummaryPage/>),
     document.getElementById('root')
 )

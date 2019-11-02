@@ -1,6 +1,6 @@
-import React from "react"
+import React, {Component} from "react"
 
-export class SizedBox extends React.Component {
+export class SizedBox extends Component {
     constructor(props) {
         super(props)
         this.width = props.width ? props.width + "px" : "0"
@@ -8,6 +8,6 @@ export class SizedBox extends React.Component {
     }
 
     render() {
-        return (<div style={{width: this.width, height: this.height}}/>)
+        return (<div style={{width: this.width, height: this.height}}>{this.props.children}</div>)
     }
 }

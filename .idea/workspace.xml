@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be4c7382-c738-4232-a45b-55ed2fea1497" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/padding.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/summarypage/summary-page.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/summarypage/summaryPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/loginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/loginPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sizedBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sizedBox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/login-page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/loginpage/login-page.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/loginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/loginpage/loginPage.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,16 +50,17 @@
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/components" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/loginpage" />
+      <recent name="$PROJECT_DIR$/src/components" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -125,7 +135,10 @@
       <workItem from="1572104657611" duration="793000" />
       <workItem from="1572105468509" duration="12018000" />
       <workItem from="1572215160226" duration="16000" />
-      <workItem from="1572215196297" duration="1981000" />
+      <workItem from="1572215196297" duration="2144000" />
+      <workItem from="1572382271124" duration="29000" />
+      <workItem from="1572725185806" duration="1593000" />
+      <workItem from="1572733607649" duration="724000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1572012150825</created>
@@ -169,7 +182,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572216992812</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="+ id to text fields">
+      <created>1572217280710</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1572217280710</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,6 +215,7 @@
     <MESSAGE value="~ arrange files&#10;+ login page functioning" />
     <MESSAGE value="~ fixed circular progress bar memory leak&#10;~ allow browser to save passwords" />
     <MESSAGE value="+ redirect to ~.web.app if on ~.firebaseapp.com" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ redirect to ~.web.app if on ~.firebaseapp.com" />
+    <MESSAGE value="+ id to text fields" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ id to text fields" />
   </component>
 </project>
