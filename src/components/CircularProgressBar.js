@@ -37,8 +37,7 @@ export default class CircularProgressBar extends Component {
                     update={{
                         x1: [this.state.x1], x2: [this.state.x2],
                         timing: {duration: this.t, ease: easeQuadInOut}
-                    }}
-                >
+                    }}>
                     {({x1, x2}) => {
                         return (
                             <svg className="rotate-animation" viewBox={`0 0 ${size} ${size}`} xmlns="http://www.w3.org/2000/svg">

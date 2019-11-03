@@ -30,7 +30,7 @@ export default class LinearLayout extends React.Component {
             classes+=" "+this.props.className
         }
 
-        return <div className={classes}>
+        return <div style={this.props.style} className={classes}>
             {this.props.children}
         </div>
     }

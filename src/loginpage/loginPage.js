@@ -1,6 +1,6 @@
-import React, {Component, Fragment} from "react"
+import React, {Component} from "react"
 import LinearLayout from "../components/linearLayout"
-import {Headline5, Subtitle1, Body1, Body2} from "@material/react-typography"
+import {Body2, Headline5, Subtitle1} from "@material/react-typography"
 import Checkbox from '@material/react-checkbox'
 import TextField, {HelperText, Input} from '@material/react-text-field'
 import MaterialIcon from '@material/react-material-icon'
@@ -9,8 +9,9 @@ import {SizedBox} from "../components/sizedBox"
 import CircularProgressBar from "../components/CircularProgressBar"
 import net from "../tools"
 import getString from "../strings"
-import setCurrentPage from "../index"
 import SummaryPage from "../summarypage/summaryPage"
+import Animate from "react-move/Animate"
+import {easeQuadInOut} from "d3-ease"
 
 function TATitle() {
     return (<LinearLayout vertical align={"center"} item={"center"}>
@@ -154,7 +155,7 @@ class LoginForm extends Component {
                             password: this.state.password
                         }))
                     }
-                    setCurrentPage(<SummaryPage/>)
+                    this.props.setPage(<SummaryPage setPage={this.props.setPage}/>)
                 } else if (statusCode === 401) {
                     this.setState({
                         passwordValid: false,
@@ -169,14 +170,23 @@ class LoginForm extends Component {
     }
 }
 
-export default class LoginPage extends React.Component {
-    render() {
-        return (<LinearLayout className="full-page" vertical align={"center"}>
-            <LinearLayout horizontal align={"center"} item={"stretch"}>
-                <TATitle/>
-                <Divider/>
-                <LoginForm/>
-            </LinearLayout>
-        </LinearLayout>)
-    }
+export default function LoginPage(props) {
+    return (<Animate
+            show={true}
+            start={{opacity: 0}}
+            enter={{
+                opacity: [1],
+                timing: {duration: 500, ease: easeQuadInOut}
+            }}>
+            {({opacity}) => {
+                return (<LinearLayout style={{opacity: opacity}} className="full-page background" vertical
+                                      align={"center"}>
+                    <LinearLayout horizontal align={"center"} item={"stretch"}>
+                        <TATitle/>
+                        <Divider/>
+                        <LoginForm setPage={props.setPage}/>
+                    </LinearLayout>
+                </LinearLayout>)
+            }}
+        </Animate>)
 }

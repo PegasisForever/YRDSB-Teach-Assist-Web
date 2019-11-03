@@ -28,30 +28,42 @@ $error-color: #dc002b;
   background: $mdc-theme-primary;
 }
 
-body{
+body {
   margin: 0;
   background: #fafafa;
 }
 
-.mdc-typography{
+.mdc-typography {
   margin: 0;
 }
 
-.full-width{
+.full-width {
   width: 100%;
 }
 
-.full-page{
+.full-page {
   width: 100vw;
   height: 100vh;
 }
 
-.invisible{
+.background{
+  background: #fafafa;
+}
+
+.invisible {
   display: none;
 }
-.mdc-typography--subtitle1{
+
+.mdc-typography--subtitle1 {
   line-height: 1rem;
 }
-.mdc-typography--headline5{
+
+.mdc-typography--headline5 {
   line-height: 1.7rem;
+}
+
+.root-div {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
