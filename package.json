@@ -21,6 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "serve": "serve -s build",
     "deploy": "firebase deploy --only hosting:ta-yrdsb"
   },
   "eslintConfig": {
