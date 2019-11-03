@@ -14,10 +14,10 @@ export default class LPI extends Component {
                     <line className="background" x1={10} y1={10} x2={width - 10} y2={10}
                           strokeWidth={20}
                           strokeLinecap="round"/>
-                    <line className={"foreground-"+(text?"secondary":"primary")} x1={10} y1={10} x2={10 + (width - 20) * value/100} y2={10}
-                          strokeWidth={20}
-                          strokeLinecap="round"/>
-                    <text x="50%" y="50%" dominantBaseline="middle" textAnchor="middle">{text}</text>
+                    {value?<line className={"foreground-"+(text?"secondary":"primary")} x1={10} y1={10} x2={10 + (width - 20) * value/100} y2={10}
+                                 strokeWidth={20}
+                                 strokeLinecap="round"/>:null}
+                    <text x="50%" y="55%" dominantBaseline="middle" textAnchor="middle">{text}</text>
                 </svg>
             </div>
         )

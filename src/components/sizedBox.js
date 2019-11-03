@@ -3,8 +3,8 @@ import React, {Component} from "react"
 export class SizedBox extends Component {
     constructor(props) {
         super(props)
-        this.width = props.width ? props.width + "px" : "0"
-        this.height = props.height ? props.height + "px" : "0"
+        this.width = props.width ? props.width + "px" : null
+        this.height = props.height ? props.height + "px" : null
     }
 
     render() {

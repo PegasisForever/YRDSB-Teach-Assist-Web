@@ -14,6 +14,9 @@ export default class LinearLayout extends React.Component {
         }else if(this.props.horizontal){
             classes+=" horizontal"
         }
+        if (this.props.wrap){
+            classes+=" wrap"
+        }
         if (this.props.reverse){
             classes+=" reverse"
         }

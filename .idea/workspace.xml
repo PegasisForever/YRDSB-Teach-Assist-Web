@@ -2,12 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be4c7382-c738-4232-a45b-55ed2fea1497" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/linear-progress-indicator.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/linearProgressIndicator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/strings.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/summarypage/summaryCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/linear-layout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/linear-layout.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/linear-progress-indicator.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/linear-progress-indicator.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/linearLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/linearLayout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/linearProgressIndicator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/linearProgressIndicator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/sizedBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sizedBox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/courseUtilities.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/courseUtilities.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/loginpage/loginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/loginpage/loginPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/summarypage/summary-page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/summarypage/summary-page.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/summarypage/summaryPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/summarypage/summaryPage.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -134,7 +140,7 @@
       <workItem from="1572215196297" duration="2144000" />
       <workItem from="1572382271124" duration="29000" />
       <workItem from="1572725185806" duration="1593000" />
-      <workItem from="1572733607649" duration="7727000" />
+      <workItem from="1572733607649" duration="15897000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1572012150825</created>
@@ -199,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572735857835</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="+ multi-language support&#10;+ linear progress indicator">
+      <created>1572742658430</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1572742658430</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,6 +241,7 @@
     <MESSAGE value="+ id to text fields" />
     <MESSAGE value="+ Padding Component&#10;~ Moved loginPage to new location&#10;+ summarypage, working" />
     <MESSAGE value="+ summary card, include course name, period and room" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ summary card, include course name, period and room" />
+    <MESSAGE value="+ multi-language support&#10;+ linear progress indicator" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ multi-language support&#10;+ linear progress indicator" />
   </component>
 </project>
