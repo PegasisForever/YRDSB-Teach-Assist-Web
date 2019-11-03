@@ -155,7 +155,7 @@ let strings = {
         "ok": "OK",
         "moodle": "Moodle",
         "logout": "退出登录",
-        "remember_me":"记住帐号",
+        "remember_me":"记住密码",
     }
 }
 

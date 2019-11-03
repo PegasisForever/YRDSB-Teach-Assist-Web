@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be4c7382-c738-4232-a45b-55ed2fea1497" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/summarypage/loadingPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CircularProgressBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CircularProgressBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/circular-progress-bar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/circular-progress-bar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/loginpage/login-page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/loginpage/login-page.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/loginpage/loginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/loginpage/loginPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/strings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/strings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/summarypage/summaryPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/summarypage/summaryPage.js" afterDir="false" />
-    </list>
+    <list default="true" id="be4c7382-c738-4232-a45b-55ed2fea1497" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +63,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="npm.deploy">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -139,7 +126,7 @@
       <workItem from="1572215196297" duration="2144000" />
       <workItem from="1572382271124" duration="29000" />
       <workItem from="1572725185806" duration="1593000" />
-      <workItem from="1572733607649" duration="24589000" />
+      <workItem from="1572733607649" duration="24836000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1572012150825</created>
@@ -246,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572757169153</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="+ remember me button&#10;+ loading page appears if user is saved">
+      <created>1572759846698</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1572759846698</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -281,6 +275,7 @@
     <MESSAGE value="+ switch page (no animation)" />
     <MESSAGE value="~ fixed summary chart display when data is incomplete" />
     <MESSAGE value="+ save login state cross refresh&#10;+ logout button" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ save login state cross refresh&#10;+ logout button" />
+    <MESSAGE value="+ remember me button&#10;+ loading page appears if user is saved" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ remember me button&#10;+ loading page appears if user is saved" />
   </component>
 </project>
