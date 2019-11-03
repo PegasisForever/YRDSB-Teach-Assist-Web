@@ -8,6 +8,9 @@ import {SizedBox} from "../components/sizedBox"
 import CircularProgressBar from "../components/CircularProgressBar"
 import net from "../tools"
 import getString from "../strings"
+import {store} from "../dataStore"
+import setCurrentPage from "../index"
+import SummaryPage from "../summarypage/summaryPage"
 
 function TATitle() {
     return (<LinearLayout vertical align={"center"} item={"center"}>
@@ -48,7 +51,7 @@ class LoginForm extends Component {
                 isValid={this.state.numberValid}
                 onChange={(e) => {
                     if (/[0-9]|^$/.test(e.currentTarget.value))
-                        this.setState({number: e.currentTarget.value,numberValid: true})
+                        this.setState({number: e.currentTarget.value, numberValid: true})
                 }}/>
         </TextField>)
     }
@@ -65,7 +68,7 @@ class LoginForm extends Component {
                 id={"password_tf"}
                 value={this.state.password}
                 isValid={this.state.passwordValid}
-                onChange={(e) => this.setState({password: e.currentTarget.value,passwordValid: true})}/>
+                onChange={(e) => this.setState({password: e.currentTarget.value, passwordValid: true})}/>
         </TextField>)
     }
 
@@ -81,7 +84,8 @@ class LoginForm extends Component {
                 <LinearLayout horizontal align={"end"}>
                     {this.state.isLoading ? <CircularProgressBar/> : null}
                     <SizedBox width={12}/>
-                    <Button disabled={this.state.isLoading} raised type="submit" onClick={this.onLogin}>{getString("login")}</Button>
+                    <Button disabled={this.state.isLoading} raised type="submit"
+                            onClick={this.onLogin}>{getString("login")}</Button>
                     <SizedBox width={12}/>
                 </LinearLayout>
             </form>
@@ -89,7 +93,7 @@ class LoginForm extends Component {
     }
 
     onLogin(event) {
-        if (event){
+        if (event) {
             event.preventDefault()
         }
         this.setState({
@@ -123,7 +127,8 @@ class LoginForm extends Component {
                     isLoading: false,
                 })
                 if (statusCode === 200) {
-                    alert("correct")
+                    store("course-list", JSON.parse(response))
+                    setCurrentPage(<SummaryPage/>)
                 } else if (statusCode === 401) {
                     this.setState({
                         passwordValid: false,
