@@ -55,7 +55,7 @@ function getOverallChart(course, width, height) {
                     <stop offset="100%" style={{stopColor: "rgb(128,216,255)", stopOpacity: 0.05}}/>
                 </linearGradient>
             </defs>
-            <path d={d + " v " + (72 - points[points.length - 1][1]) + ` h -${width} z`} fill="url(#grad1)"
+            <path d={d + " v " + (height - points[points.length - 1][1]) + ` h -${width} z`} fill="url(#grad1)"
                   stroke="none"/>
             <path d={d} fill="none" stroke="#038FCE" strokeWidth={2}/>
         </svg>
@@ -72,23 +72,23 @@ export default function SummaryCard(props) {
         subTitleStrs.push(getString("room_number").replace("%s", course.room))
     }
     return (<Padding all={16}>
-            <SizedBox width={464}>
+            <SizedBox width={492}>
                 <Card>
                     <CardPrimaryContent>
                         <Padding all={24}>
-                            <LinearLayout horizontal>
+                            <LinearLayout horizontal item={"center"}>
                                 <LinearLayout vertical>
                                     <Headline5>{getDisplayName(course)}</Headline5>
-                                    <SizedBox height={6}/>
+                                    <SizedBox height={8}/>
                                     <Subtitle1>{subTitleStrs.join(" - ")}</Subtitle1>
-                                    <SizedBox height={16}/>
-                                    <LPI width={course.overall_mark ? 300 : 416}
+                                    <SizedBox height={24}/>
+                                    <LPI width={course.overall_mark ? 300 : 444}
                                          value={course.overall_mark}
                                          text={course.overall_mark ? (course.overall_mark + "%") : getString("marks_unavailable")}/>
                                 </LinearLayout>
                                 {course.overall_mark ? [
-                                    <SizedBox width={16}/>,
-                                    getOverallChart(course, 100, 72)] : null}
+                                    <SizedBox width={24}/>,
+                                    getOverallChart(course, 120, 94)] : null}
                             </LinearLayout>
                         </Padding>
                     </CardPrimaryContent>

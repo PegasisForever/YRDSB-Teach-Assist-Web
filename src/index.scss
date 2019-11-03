@@ -37,6 +37,10 @@ body{
   margin: 0;
 }
 
+.full-width{
+  width: 100%;
+}
+
 .full-page{
   width: 100vw;
   height: 100vh;
@@ -45,7 +49,9 @@ body{
 .invisible{
   display: none;
 }
-
-.mdc-typography{
+.mdc-typography--subtitle1{
   line-height: 1rem;
+}
+.mdc-typography--headline5{
+  line-height: 1.7rem;
 }
