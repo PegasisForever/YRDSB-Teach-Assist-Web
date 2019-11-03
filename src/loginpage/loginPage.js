@@ -1,6 +1,7 @@
-import React, {Component} from "react"
+import React, {Component, Fragment} from "react"
 import LinearLayout from "../components/linearLayout"
-import {Headline5, Subtitle1} from "@material/react-typography"
+import {Headline5, Subtitle1, Body1, Body2} from "@material/react-typography"
+import Checkbox from '@material/react-checkbox'
 import TextField, {HelperText, Input} from '@material/react-text-field'
 import MaterialIcon from '@material/react-material-icon'
 import Button from '@material/react-button'
@@ -33,7 +34,8 @@ class LoginForm extends Component {
             password: "",
             passwordValid: true,
             isLoading: false,
-            passwordIncorrect: false
+            passwordIncorrect: false,
+            remember: false
         }
 
         this.onLogin = this.onLogin.bind(this)
@@ -71,16 +73,35 @@ class LoginForm extends Component {
         </TextField>)
     }
 
+    getRememberMeCheckBox() {
+        return (
+            <LinearLayout horizontal item={"center"}>
+                <Checkbox
+                    nativeControlId="remember-cb"
+                    checked={this.state.remember}
+                    onChange={(e) => this.setState({
+                        remember: e.target.checked
+                    })
+                    }
+                />
+                <label htmlFor="remember-cb">
+                    <Body2>{getString("remember_me")}</Body2>
+                </label>
+            </LinearLayout>
+        )
+    }
+
     render() {
         return (<LinearLayout vertical align={"center"} item={"stretch"}>
             <Subtitle1 style={{"textAlign": "center"}}>{getString("login_your_account")}</Subtitle1>
+            <SizedBox height={8}/>
             <form onSubmit={this.onLogin}>
                 <SizedBox height={8}/>
                 {this.getStudentNumberTF()}
                 <SizedBox height={8}/>
                 {this.getPasswordTF()}
-                <SizedBox height={4}/>
-                <LinearLayout horizontal align={"end"}>
+                {this.getRememberMeCheckBox()}
+                <LinearLayout horizontal align={"end"} item={"center"}>
                     {this.state.isLoading ? <CircularProgressBar/> : null}
                     <SizedBox width={12}/>
                     <Button disabled={this.state.isLoading} raised type="submit"
@@ -126,7 +147,13 @@ class LoginForm extends Component {
                     isLoading: false,
                 })
                 if (statusCode === 200) {
-                    sessionStorage.setItem("course-list", response);
+                    sessionStorage.setItem("course-list", response)
+                    if (this.state.remember) {
+                        localStorage.setItem("account", JSON.stringify({
+                            number: this.state.number,
+                            password: this.state.password
+                        }))
+                    }
                     setCurrentPage(<SummaryPage/>)
                 } else if (statusCode === 401) {
                     this.setState({

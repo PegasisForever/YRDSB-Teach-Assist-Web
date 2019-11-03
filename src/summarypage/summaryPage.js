@@ -30,6 +30,7 @@ export default function SummaryPage() {
                 </LinearLayout>
                 <Button className="logout-btn" outlined onClick={()=>{
                     sessionStorage.removeItem("course-list")
+                    localStorage.removeItem("account")
                     window.location.reload();
                 }}>
                     {getString("logout")}

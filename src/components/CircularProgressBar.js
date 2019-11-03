@@ -26,8 +26,11 @@ export default class CircularProgressBar extends Component {
     t = 600
 
     render() {
+        let size=this.props.size?this.props.size:32
+        let strokeWidth=this.props.strokeWidth?this.props.strokeWidth:3.5
         return (
-            <div className={"circular-progress-bar"}>
+            <div className={"circular-progress-bar"} style={{
+                width:size+"px", height:size+"px"}}>
                 <Animate
                     show={true}
                     start={{x1: 0, x2: 30}}
@@ -38,9 +41,9 @@ export default class CircularProgressBar extends Component {
                 >
                     {({x1, x2}) => {
                         return (
-                            <svg className="rotate-animation" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                                <path fill="none" strokeWidth="5"
-                                      d={describeArc(24, 24, 20, x1, x2)}
+                            <svg className="rotate-animation" viewBox={`0 0 ${size} ${size}`} xmlns="http://www.w3.org/2000/svg">
+                                <path fill="none" strokeWidth={strokeWidth}
+                                      d={describeArc(size/2, size/2, (size-strokeWidth)/2, x1, x2)}
                                 />
                             </svg>
                         )
