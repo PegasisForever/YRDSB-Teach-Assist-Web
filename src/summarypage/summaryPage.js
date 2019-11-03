@@ -26,6 +26,7 @@ export default class SummaryPage extends Component {
         this.props.setPage(<LoginPage setPage={this.props.setPage}/>, () => {
             sessionStorage.removeItem("course-list")
             localStorage.removeItem("account")
+            sessionStorage.removeItem("account")
         })
     }
 

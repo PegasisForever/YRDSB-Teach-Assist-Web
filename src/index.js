@@ -5,9 +5,9 @@ import LoginPage from "./loginpage/loginPage"
 import LoadingPage from "./summarypage/loadingPage"
 import SummaryPage from "./summarypage/summaryPage"
 
-let states={
-    login:LoginPage,
-    summary:SummaryPage
+let states = {
+    login: LoginPage,
+    summary: SummaryPage
 }
 
 class Root extends Component {
@@ -16,30 +16,31 @@ class Root extends Component {
         this.setPage = this.setPage.bind(this)
 
         let page
-
-        if ((!process.env.NODE_ENV || process.env.NODE_ENV === 'development') && sessionStorage.getItem("state")) {
-            page=React.createElement(
+        const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV === "development"
+        if (isDevelopment && sessionStorage.getItem("state")) {
+            page = React.createElement(
                 states[sessionStorage.getItem("state")],
                 {setPage: this.setPage}
             )
         } else {
-            if (sessionStorage.getItem("state")){
+            if (sessionStorage.getItem("state") === "login") {
+                page = <LoginPage setPage={this.setPage}/>
+            } else if (sessionStorage.getItem("state")) {
                 page = <LoadingPage setPage={this.setPage}
                                     nextPage={states[sessionStorage.getItem("state")]}/>
-            } else if (localStorage.getItem("account")){
-                console.log(SummaryPage)
+            } else if (localStorage.getItem("account")) {
                 page = <LoadingPage setPage={this.setPage}
                                     nextPage={SummaryPage}/>
-            }else{
+            } else {
                 page = <LoginPage setPage={this.setPage}/>
             }
         }
 
         this.state = {
             page1: null,
-            key1:1,
+            key1: 1,
             page2: page,
-            key2:2
+            key2: 2
         }
     }
 
@@ -47,9 +48,9 @@ class Root extends Component {
         this.setState(prevState => {
             return {
                 page1: prevState.page2,
-                key1:prevState.key2,
+                key1: prevState.key2,
                 page2: page,
-                key2:prevState.key2+1
+                key2: prevState.key2 + 1
             }
         })
         setTimeout(() => {
@@ -69,7 +70,6 @@ class Root extends Component {
         </Fragment>)
     }
 }
-
 
 
 ReactDOM.render(

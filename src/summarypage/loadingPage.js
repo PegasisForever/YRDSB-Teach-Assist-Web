@@ -7,11 +7,10 @@ import {easeQuadInOut} from "d3-ease"
 
 export default function LoadingPage(props) {
     net.post("https://api.pegasis.site/public/yrdsb_ta/getmark",
-        JSON.parse(localStorage.getItem("account")),
+        JSON.parse(sessionStorage.getItem("account")?sessionStorage.getItem("account"):localStorage.getItem("account")),
         (statusCode, response) => {
             if (statusCode === 200) {
                 sessionStorage.setItem("course-list", response)
-                console.log(props)
                 props.setPage(React.createElement(
                     props.nextPage,
                     {setPage: props.setPage}

@@ -149,11 +149,13 @@ class LoginForm extends Component {
                 })
                 if (statusCode === 200) {
                     sessionStorage.setItem("course-list", response)
+                    let account=JSON.stringify({
+                        number: this.state.number,
+                        password: this.state.password
+                    })
+                    sessionStorage.setItem("account", account)
                     if (this.state.remember) {
-                        localStorage.setItem("account", JSON.stringify({
-                            number: this.state.number,
-                            password: this.state.password
-                        }))
+                        localStorage.setItem("account", account)
                     }
                     this.props.setPage(<SummaryPage setPage={this.props.setPage}/>)
                 } else if (statusCode === 401) {
@@ -170,9 +172,15 @@ class LoginForm extends Component {
     }
 }
 
-export default function LoginPage(props) {
-    sessionStorage.setItem("state", "login")
-    return (<Animate
+export default class LoginPage extends Component {
+    constructor(props) {
+        super(props)
+        sessionStorage.setItem("state", "login")
+    }
+
+
+    render() {
+        return (<Animate
             show={true}
             start={{opacity: 0}}
             enter={{
@@ -185,9 +193,10 @@ export default function LoginPage(props) {
                     <LinearLayout horizontal align={"center"} item={"stretch"}>
                         <TATitle/>
                         <Divider/>
-                        <LoginForm setPage={props.setPage}/>
+                        <LoginForm setPage={this.props.setPage}/>
                     </LinearLayout>
                 </LinearLayout>)
             }}
         </Animate>)
+    }
 }
