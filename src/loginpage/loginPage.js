@@ -7,6 +7,7 @@ import Button from '@material/react-button'
 import {SizedBox} from "../components/sizedBox"
 import CircularProgressBar from "../components/CircularProgressBar"
 import net from "../tools"
+import getString from "../strings"
 
 function TATitle() {
     return (<LinearLayout vertical align={"center"} item={"center"}>
@@ -38,7 +39,7 @@ class LoginForm extends Component {
 
     getStudentNumberTF() {
         return (<TextField
-            label="Student Number"
+            label={getString("student_number")}
             leadingIcon={<MaterialIcon icon="account_circle"/>}>
             <Input
                 id={"student_number_tf"}
@@ -54,10 +55,10 @@ class LoginForm extends Component {
 
     getPasswordTF() {
         return (<TextField
-            label="Password"
+            label={getString("password")}
             leadingIcon={<MaterialIcon icon="lock"/>}
             helperText={<HelperText validation>
-                {this.state.passwordIncorrect ? "Student number or password incorrect." : null}
+                {this.state.passwordIncorrect ? getString("student_number_or_password_incorrect") : null}
             </HelperText>}>
             <Input
                 type="password"
@@ -70,7 +71,7 @@ class LoginForm extends Component {
 
     render() {
         return (<LinearLayout vertical align={"center"} item={"stretch"}>
-            <Subtitle1 style={{"textAlign": "center"}}>Login Your Account:</Subtitle1>
+            <Subtitle1 style={{"textAlign": "center"}}>{getString("login_your_account")}</Subtitle1>
             <form onSubmit={this.onLogin}>
                 <SizedBox height={8}/>
                 {this.getStudentNumberTF()}
@@ -80,7 +81,7 @@ class LoginForm extends Component {
                 <LinearLayout horizontal align={"end"}>
                     {this.state.isLoading ? <CircularProgressBar/> : null}
                     <SizedBox width={12}/>
-                    <Button disabled={this.state.isLoading} raised type="submit" onClick={this.onLogin}>Login</Button>
+                    <Button disabled={this.state.isLoading} raised type="submit" onClick={this.onLogin}>{getString("login")}</Button>
                     <SizedBox width={12}/>
                 </LinearLayout>
             </form>

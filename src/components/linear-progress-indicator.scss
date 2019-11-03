@@ -1,0 +1,18 @@
+.linear-progress-indicator {
+  .foreground-primary {
+    stroke: $mdc-theme-primary;
+  }
+
+  .foreground-secondary {
+    stroke: $mdc-theme-secondary;
+  }
+
+  .background {
+    stroke: #b7c9cc;
+  }
+
+  text {
+    font-size: 15px;
+    font-family: sans-serif;
+  }
+}
