@@ -2,8 +2,13 @@ import React, {Component, Fragment} from 'react'
 import ReactDOM from "react-dom"
 import "./index.scss"
 import LoginPage from "./loginpage/loginPage"
-import SummaryPage from "./summarypage/summaryPage"
 import LoadingPage from "./summarypage/loadingPage"
+import SummaryPage from "./summarypage/summaryPage"
+
+let states={
+    login:LoginPage,
+    summary:SummaryPage
+}
 
 class Root extends Component {
     constructor(props) {
@@ -11,12 +16,23 @@ class Root extends Component {
         this.setPage = this.setPage.bind(this)
 
         let page
-        if (sessionStorage.getItem("course-list")) {
-            page = <SummaryPage setPage={this.setPage}/>
-        } else if (localStorage.getItem("account")) {
-            page = <LoadingPage setPage={this.setPage}/>
+
+        if ((!process.env.NODE_ENV || process.env.NODE_ENV === 'development') && sessionStorage.getItem("state")) {
+            page=React.createElement(
+                states[sessionStorage.getItem("state")],
+                {setPage: this.setPage}
+            )
         } else {
-            page = <LoginPage setPage={this.setPage}/>
+            if (sessionStorage.getItem("state")){
+                page = <LoadingPage setPage={this.setPage}
+                                    nextPage={states[sessionStorage.getItem("state")]}/>
+            } else if (localStorage.getItem("account")){
+                console.log(SummaryPage)
+                page = <LoadingPage setPage={this.setPage}
+                                    nextPage={SummaryPage}/>
+            }else{
+                page = <LoginPage setPage={this.setPage}/>
+            }
         }
 
         this.state = {
@@ -53,6 +69,8 @@ class Root extends Component {
         </Fragment>)
     }
 }
+
+
 
 ReactDOM.render(
     <Root/>,

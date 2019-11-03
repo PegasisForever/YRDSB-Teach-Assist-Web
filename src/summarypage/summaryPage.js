@@ -12,8 +12,25 @@ import LoginPage from "../loginpage/loginPage"
 import {easeQuadInOut} from "d3-ease"
 import Animate from "react-move/Animate"
 
-export default function SummaryPage(props) {
-        let courseList = JSON.parse(sessionStorage.getItem("course-list"))
+export default class SummaryPage extends Component {
+    constructor(props) {
+        super(props)
+        this.state={
+            courseList:JSON.parse(sessionStorage.getItem("course-list"))
+        }
+        this.logout = this.logout.bind(this)
+        sessionStorage.setItem("state", "summary")
+    }
+
+    logout(){
+        this.props.setPage(<LoginPage setPage={this.props.setPage}/>, () => {
+            sessionStorage.removeItem("course-list")
+            localStorage.removeItem("account")
+        })
+    }
+
+    render() {
+        let courseList = this.state.courseList
         let total = 0
         let availableCourseCount = 0
         courseList.forEach(course => {
@@ -41,15 +58,12 @@ export default function SummaryPage(props) {
                                 </Padding>
                                 <Headline5 className="title">YRDSB Teach Assist</Headline5>
                             </LinearLayout>
-                            <Button className="logout-btn" outlined onClick={() => {
-                                props.setPage(<LoginPage setPage={props.setPage}/>, () => {
-                                    sessionStorage.removeItem("course-list")
-                                    localStorage.removeItem("account")
-                                })
-                            }}>
-                                {getString("logout")}
-                            </Button>
-                            <SizedBox width={16}/>
+                            <LinearLayout horizontal align={"end"} item={"center"}>
+                                <Button className="logout-btn" outlined onClick={this.logout}>
+                                    {getString("logout")}
+                                </Button>
+                                <SizedBox width={16}/>
+                            </LinearLayout>
                         </LinearLayout>
                         {!Number.isNaN(avg) ? <Fragment>
                             <SizedBox height={8}/>
@@ -59,7 +73,7 @@ export default function SummaryPage(props) {
                             <SizedBox height={8}/>
                             <LPI width={400} value={avg}/>
                         </Fragment> : null}
-                        <SizedBox height={48}/>
+                        <SizedBox height={32}/>
                         <LinearLayout className="course-card-list" horizontal wrap align={"center"}>
                             {courseList.map(course => {
                                 return <SummaryCard key={course.code} course={course}/>
@@ -72,4 +86,5 @@ export default function SummaryPage(props) {
             </Animate>
         )
 
+    }
 }

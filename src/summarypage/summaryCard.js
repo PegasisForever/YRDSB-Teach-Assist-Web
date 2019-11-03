@@ -1,4 +1,4 @@
-import React from "react"
+import React,{Fragment} from "react"
 import {getCourseOverallList, getDisplayName} from "../courseUtilities"
 import getString from "../strings"
 import Card, {CardPrimaryContent} from "@material/react-card"
@@ -89,9 +89,10 @@ export default function SummaryCard(props) {
                                          value={course.overall_mark}
                                          text={course.overall_mark ? (course.overall_mark + "%") : getString("marks_unavailable")}/>
                                 </LinearLayout>
-                                {course.overall_mark ? [
-                                    <SizedBox width={24}/>,
-                                    getOverallChart(course, 120, 94)] : null}
+                                {course.overall_mark ? <Fragment>
+                                    <SizedBox width={24}/>
+                                    {getOverallChart(course, 120, 94)}
+                                </Fragment> : null}
                             </LinearLayout>
                         </Padding>
                     </CardPrimaryContent>

@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be4c7382-c738-4232-a45b-55ed2fea1497" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/statistic.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CircularProgressBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CircularProgressBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/linearLayout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/linearLayout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/loginpage/loginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/loginpage/loginPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/strings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/strings.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/summarypage/loadingPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/summarypage/loadingPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/summarypage/summaryCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/summarypage/summaryCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/summarypage/summaryPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/summarypage/summaryPage.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -137,7 +136,8 @@
       <workItem from="1572382271124" duration="29000" />
       <workItem from="1572725185806" duration="1593000" />
       <workItem from="1572733607649" duration="25069000" />
-      <workItem from="1572760093432" duration="4026000" />
+      <workItem from="1572760093432" duration="4373000" />
+      <workItem from="1572802103596" duration="3437000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1572012150825</created>
@@ -258,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572759976324</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="+ transition animation">
+      <created>1572764322978</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1572764322978</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,6 +302,7 @@
     <MESSAGE value="+ save login state cross refresh&#10;+ logout button" />
     <MESSAGE value="+ remember me button&#10;+ loading page appears if user is saved" />
     <MESSAGE value="~ changed one translation" />
-    <option name="LAST_COMMIT_MESSAGE" value="~ changed one translation" />
+    <MESSAGE value="+ transition animation" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ transition animation" />
   </component>
 </project>

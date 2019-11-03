@@ -2,7 +2,6 @@ import LinearLayout from "../components/linearLayout"
 import React from "react"
 import CircularProgressBar from "../components/CircularProgressBar"
 import net from "../tools"
-import SummaryPage from "./summaryPage"
 import Animate from "react-move/Animate"
 import {easeQuadInOut} from "d3-ease"
 
@@ -12,7 +11,11 @@ export default function LoadingPage(props) {
         (statusCode, response) => {
             if (statusCode === 200) {
                 sessionStorage.setItem("course-list", response)
-                props.setPage(<SummaryPage setPage={props.setPage}/>)
+                console.log(props)
+                props.setPage(React.createElement(
+                    props.nextPage,
+                    {setPage: props.setPage}
+                ))
             } else if (statusCode === 401) {
 
             } else {

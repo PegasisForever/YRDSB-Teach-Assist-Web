@@ -54,7 +54,7 @@ export default class CircularProgressBar extends Component {
 
     componentDidMount() {
         this.setState({x2: this.state.x2 + 200})
-        setTimeout(() => {
+        this.timeoutID=setTimeout(() => {
             this.setState({x1: this.state.x1 + 200})
         }, this.t * 1.2)
         this.intervalID=setInterval(() => {
@@ -68,6 +68,9 @@ export default class CircularProgressBar extends Component {
     componentWillUnmount(){
         if (this.intervalID){
             clearInterval(this.intervalID)
+        }
+        if (this.timeoutID){
+            clearTimeout(this.timeoutID)
         }
     }
 }

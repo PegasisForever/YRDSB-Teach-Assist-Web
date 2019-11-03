@@ -171,6 +171,7 @@ class LoginForm extends Component {
 }
 
 export default function LoginPage(props) {
+    sessionStorage.setItem("state", "login")
     return (<Animate
             show={true}
             start={{opacity: 0}}

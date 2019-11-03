@@ -76,7 +76,8 @@ let strings = {
         "ok": "OK",
         "moodle": "Moodle",
         "logout": "Logout",
-        "remember_me":"Remember Me",
+        "remember_me": "Remember Me",
+        "refresh": "Refresh",
     },
     "zh": {
         "login_your_account": "登录帐号：",
@@ -155,7 +156,8 @@ let strings = {
         "ok": "OK",
         "moodle": "Moodle",
         "logout": "退出登录",
-        "remember_me":"记住密码",
+        "remember_me": "记住密码",
+        "refresh": "刷新",
     }
 }
 
