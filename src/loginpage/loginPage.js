@@ -8,7 +8,6 @@ import {SizedBox} from "../components/sizedBox"
 import CircularProgressBar from "../components/CircularProgressBar"
 import net from "../tools"
 import getString from "../strings"
-import {store} from "../dataStore"
 import setCurrentPage from "../index"
 import SummaryPage from "../summarypage/summaryPage"
 
@@ -127,7 +126,7 @@ class LoginForm extends Component {
                     isLoading: false,
                 })
                 if (statusCode === 200) {
-                    store("course-list", JSON.parse(response))
+                    sessionStorage.setItem("course-list", response);
                     setCurrentPage(<SummaryPage/>)
                 } else if (statusCode === 401) {
                     this.setState({

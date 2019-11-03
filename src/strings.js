@@ -75,6 +75,7 @@ let strings = {
         "no_google_play_warning_content": "Google Play services is not supported by your device. You will not be able to receive notifications.",
         "ok": "OK",
         "moodle": "Moodle",
+        "logout": "Logout",
     },
     "zh": {
         "login_your_account": "登录帐号：",
@@ -152,14 +153,15 @@ let strings = {
         "no_google_play_warning_content": "由于您的设备不支持Google Play服务框架，您将无法收到通知。",
         "ok": "OK",
         "moodle": "Moodle",
+        "logout": "退出登录",
     }
 }
 
-let language=navigator.language.split("-")[0]
+let language = navigator.language.split("-")[0]
 
 export default function getString(id) {
-    if (!strings[language]){
-        language="en"
+    if (!strings[language]) {
+        language = "en"
     }
     return strings[language][id]
 }

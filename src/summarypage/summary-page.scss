@@ -1,12 +1,24 @@
-.course-card-list{
+.course-card-list {
   max-width: 1048px;
 }
 
-.title{
+.title {
   font-size: 1.3rem;
   color: #444;
 }
 
-.average{
+.average {
   font-weight: 400;
+}
+
+.logout-btn {
+  border-width: 0;
+  text-transform: capitalize;
+  .mdc-button__label{
+    color: #555;
+  }
+}
+
+.logout-btn.mdc-button::before, .logout-btn.mdc-button::after {
+  background-color: var(--mdc-theme-primary, #555);
 }

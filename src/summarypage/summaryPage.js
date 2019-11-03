@@ -1,16 +1,16 @@
 import React from "react"
-import {read} from "../dataStore"
 import SummaryCard from "./summaryCard"
 import "./summary-page.scss"
 import LinearLayout from "../components/linearLayout"
 import {Headline1, Headline5} from "@material/react-typography"
 import {Padding} from "../components/padding"
 import {SizedBox} from "../components/sizedBox"
+import Button from '@material/react-button';
 import getString from "../strings"
 import LPI from "../components/linearProgressIndicator"
 
 export default function SummaryPage() {
-    let courseList = read("course-list")
+    let courseList = JSON.parse(sessionStorage.getItem("course-list"))
     let total = 0
     let availableCourseCount = 0
     courseList.forEach(course => {
@@ -21,11 +21,20 @@ export default function SummaryPage() {
     })
     let avg = total / availableCourseCount
     return (<LinearLayout vertical item={"center"}>
-            <LinearLayout className="full-width" horizontal align={"start"} item={"center"}>
-                <Padding all={16}>
-                    <img src={"/launcher192.png"} width={50} alt={"logo"}/>
-                </Padding>
-                <Headline5 className="title">YRDSB Teach Assist</Headline5>
+            <LinearLayout className="full-width" horizontal align={"space-between"} item={"center"}>
+                <LinearLayout className="full-width" horizontal align={"start"} item={"center"}>
+                    <Padding all={16}>
+                        <img src={"/launcher192.png"} width={50} alt={"logo"}/>
+                    </Padding>
+                    <Headline5 className="title">YRDSB Teach Assist</Headline5>
+                </LinearLayout>
+                <Button className="logout-btn" outlined onClick={()=>{
+                    sessionStorage.removeItem("course-list")
+                    window.location.reload();
+                }}>
+                    {getString("logout")}
+                </Button>
+                <SizedBox width={16}/>
             </LinearLayout>
             {!Number.isNaN(avg) ? [
                 <SizedBox height={8}/>,
