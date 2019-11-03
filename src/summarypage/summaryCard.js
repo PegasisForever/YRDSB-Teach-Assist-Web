@@ -42,6 +42,9 @@ function getOverallChart(course, width, height) {
     let points = getCourseOverallList(course).map(overall => {
         return [overall[0] * space, width - overall[1] * width / 100]
     })
+    if (points[0][0]!==0){ //if index of first point isn't zero
+        points.unshift([0,points[0][1]])
+    }
     let d = points.reduce((acc, point, i, a) => i === 0
         ? `M ${point[0]},${point[1]}`
         : `${acc} ${bezier(point, i, a)}`

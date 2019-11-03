@@ -40,6 +40,7 @@ export default function SummaryPage() {
                 {courseList.map(course => {
                     return <SummaryCard key={course.code} course={course}/>
                 })}
+                <SizedBox width={524}/>
             </LinearLayout>
         </LinearLayout>
     )
