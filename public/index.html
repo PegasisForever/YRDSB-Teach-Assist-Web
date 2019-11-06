@@ -19,5 +19,23 @@
 <body>
 <noscript>You need to enable JavaScript to run YRDSB Teach Assist.</noscript>
 <div id="root"></div>
+
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-performance.js"></script>
+<script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyA91cwJ3Hlg9Y6CX7jqp3m-GijUeL8Ov6I",
+        authDomain: "yrdsb-teach-assist.firebaseapp.com",
+        databaseURL: "https://yrdsb-teach-assist.firebaseio.com",
+        projectId: "yrdsb-teach-assist",
+        storageBucket: "yrdsb-teach-assist.appspot.com",
+        messagingSenderId: "753361894145",
+        appId: "1:753361894145:web:e1616fedbf6a33c56d3900",
+        measurementId: "G-B3VBLCMM1G"
+    };
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+</script>
 </body>
 </html>

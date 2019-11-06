@@ -6,5 +6,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="firebase-app" level="application" />
+    <orderEntry type="library" name="firebase-analytics" level="application" />
+    <orderEntry type="library" name="firebase-performance" level="application" />
   </component>
 </module>

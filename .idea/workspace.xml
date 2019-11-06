@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be4c7382-c738-4232-a45b-55ed2fea1497" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/ta.yrdsb.pegasis.site.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ta.yrdsb.pegasis.site.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -67,7 +67,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.deploy">
+  <component name="RunManager" selected="npm.start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -143,7 +143,10 @@
       <workItem from="1572725185806" duration="1593000" />
       <workItem from="1572733607649" duration="25069000" />
       <workItem from="1572760093432" duration="4373000" />
-      <workItem from="1572802103596" duration="5760000" />
+      <workItem from="1572802103596" duration="5867000" />
+      <workItem from="1572822423227" duration="5000" />
+      <workItem from="1572839847887" duration="52000" />
+      <workItem from="1573048843629" duration="356000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1572012150825</created>
@@ -285,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572807748909</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="~ fixed page description">
+      <created>1572808513818</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1572808513818</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -325,6 +335,7 @@
     <MESSAGE value="+ transition animation" />
     <MESSAGE value="+ refresh browser to refresh&#10;+ in development mode refresh browser don't cause refresh" />
     <MESSAGE value="+ fixed login page refresh error" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ fixed login page refresh error" />
+    <MESSAGE value="~ fixed page description" />
+    <option name="LAST_COMMIT_MESSAGE" value="~ fixed page description" />
   </component>
 </project>
