@@ -186,6 +186,8 @@ export default class DetailPage extends Component {
 
     onSidePanelClick(index) {
         sessionStorage.setItem("selected-course", index.toString())
+        sessionStorage.removeItem("tab-index")
+        this.initTabIndex=0
         this.setState({
             selectedCourse: index
         })
@@ -218,6 +220,7 @@ export default class DetailPage extends Component {
                        startWidth={this.props.startWidth}
                        startHeight={this.props.startHeight}
                        onExit={this.onExit}/>
+            <input style={{position:"fixed",left:"-1000000px"}} type="button" autoFocus/>
         </div>
     }
 }
