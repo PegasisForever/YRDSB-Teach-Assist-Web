@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from 'react'
+import React, {Component} from 'react'
 import ReactDOM from "react-dom"
 import "./index.scss"
 import LoginPage from "./loginpage/loginPage"
@@ -64,12 +64,10 @@ class Root extends Component {
     }
 
     render() {
-        return (<Fragment>
-            {[
+        return [
                 <div key={this.state.key1} className="root-div full-page">{this.state.page1}</div>,
                 <div key={this.state.key2} className="root-div full-page">{this.state.page2}</div>
-            ]}
-        </Fragment>)
+            ]
     }
 }
 

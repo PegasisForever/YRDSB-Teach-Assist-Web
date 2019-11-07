@@ -92,7 +92,7 @@ class MainPanel extends Component {
                 x: [300], y: [0],
                 width: [window.innerWidth - 300], height: [window.innerHeight],
                 opacity: [this.props.opacity],
-                timing: {duration: 550 * getAnimationScale(), ease: easeExpInOut}
+                timing: {duration: 600 * getAnimationScale(), ease: easeExpInOut}
             }}
             update={{
                 opacity: [this.props.opacity],
@@ -102,6 +102,7 @@ class MainPanel extends Component {
             {({x, y, width, height, opacity}) => {
                 return <div className="main-panel-root"
                             style={opacity === 1 ? undefined : {
+                                overflow:"hidden",
                                 left: x + "px", top: y + "px",
                                 opacity: opacity,
                                 width: width + "px",

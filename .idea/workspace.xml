@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be4c7382-c738-4232-a45b-55ed2fea1497" name="Default Changelist" comment="">
+    <list default="true" id="be4c7382-c738-4232-a45b-55ed2fea1497" name="Default Changelist" comment="~ add fade to side panel exit animation">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/pegasis.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/pegasis.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/detailpage/detailPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/detailpage/detailPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,6 +31,7 @@
   <component name="ProjectId" id="1SeSMzFDkhHGBC7IZMI516MYn6x" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/node_modules" />
@@ -146,7 +149,9 @@
       <workItem from="1572822423227" duration="5000" />
       <workItem from="1572839847887" duration="52000" />
       <workItem from="1573048843629" duration="356000" />
-      <workItem from="1573050050763" duration="26001000" />
+      <workItem from="1573050050763" duration="26234000" />
+      <workItem from="1573136409112" duration="1539000" />
+      <workItem from="1573143859763" duration="214000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1572012150825</created>
@@ -323,7 +328,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573103117167</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="~ add fade to side panel exit animation">
+      <created>1573103471386</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1573103471386</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -343,7 +355,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="init commit" />
     <MESSAGE value="+ icons&#10;+ LinearLayout" />
     <MESSAGE value="+ loginPage,not functioning" />
     <MESSAGE value="~ arrange files&#10;+ login page functioning" />
@@ -368,6 +379,7 @@
     <MESSAGE value="+ detail page&#10;+ detail page enter animation" />
     <MESSAGE value="+ detail page exit animation&#10;+ detail page save status" />
     <MESSAGE value="+ prevent detail page auto focus&#10;+ reset tabindex when change course" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ prevent detail page auto focus&#10;+ reset tabindex when change course" />
+    <MESSAGE value="~ add fade to side panel exit animation" />
+    <option name="LAST_COMMIT_MESSAGE" value="~ add fade to side panel exit animation" />
   </component>
 </project>
