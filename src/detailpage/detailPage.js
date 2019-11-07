@@ -65,21 +65,6 @@ function SidePanel(props) {
 }
 
 class MainPanel extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            tabIndex: props.initTabIndex
-        }
-        this.updateTabIndex = this.updateTabIndex.bind(this)
-    }
-
-    updateTabIndex(i) {
-        sessionStorage.setItem("tab-index", i.toString())
-        this.setState({
-            tabIndex: i
-        })
-    }
-
     render() {
         return <Animate
             show={true}
@@ -109,8 +94,8 @@ class MainPanel extends Component {
                                 height: height + "px"
                             }}>
                     <TitleBar course={this.props.course}
-                              tabIndex={this.state.tabIndex}
-                              onUpdate={this.updateTabIndex}
+                              tabIndex={this.props.tabIndex}
+                              onChangeTab={this.props.onChangeTab}
                               onExit={this.props.onExit}
                               padding={padding}/>
                 </div>
@@ -120,7 +105,6 @@ class MainPanel extends Component {
 }
 
 function TitleBar(props) {
-    console.log(props.padding)
     let course = props.course
     return <LinearLayout className="title-bar" vertical>
         <IconButton className="back-button" onClick={props.onExit}>
@@ -149,7 +133,7 @@ function TitleBar(props) {
         <TabBar
             className="tab-bar"
             activeIndex={props.tabIndex}
-            handleActiveIndexUpdate={props.onUpdate}>
+            handleActiveIndexUpdate={props.onChangeTab}>
             <Tab>
                 <span className='mdc-tab__text-label'>{getString("assignments")}</span>
             </Tab>
@@ -172,10 +156,11 @@ export default class DetailPage extends Component {
         } else {
             selectedCourse = 0
         }
-        this.initTabIndex = sessionStorage.getItem("tab-index") ?
+        let initTabIndex = sessionStorage.getItem("tab-index") ?
             parseInt(sessionStorage.getItem("tab-index")) : 0
         this.state = {
             selectedCourse: selectedCourse,
+            tabIndex: initTabIndex,
             courseList: courses,
             sidePanelOffset: 0,
             sidePanelOpacity: 1,
@@ -185,15 +170,23 @@ export default class DetailPage extends Component {
         sessionStorage.setItem("selected-course", selectedCourse.toString())
         sessionStorage.setItem("state", "detail")
         this.onSidePanelClick = this.onSidePanelClick.bind(this)
+        this.onChangeTab = this.onChangeTab.bind(this)
         this.onExit = this.onExit.bind(this)
     }
 
     onSidePanelClick(index) {
         sessionStorage.setItem("selected-course", index.toString())
         sessionStorage.removeItem("tab-index")
-        this.initTabIndex = 0
         this.setState({
+            tabIndex: 0,
             selectedCourse: index
+        })
+    }
+
+    onChangeTab(index) {
+        sessionStorage.setItem("tab-index", index.toString())
+        this.setState({
+            tabIndex: index
         })
     }
 
@@ -219,14 +212,15 @@ export default class DetailPage extends Component {
                        opacity={this.state.sidePanelOpacity}
                        fadeTransition={typeof this.props.startX === "undefined"}/>
             <MainPanel course={courses[this.state.selectedCourse]}
-                       initTabIndex={this.initTabIndex}
+                       tabIndex={this.state.tabIndex}
                        opacity={this.state.mainPanelOpacity}
                        fadeTransition={typeof this.props.startX === "undefined"}
                        startX={this.props.startX}
                        startY={this.props.startY}
                        startWidth={this.props.startWidth}
                        startHeight={this.props.startHeight}
-                       onExit={this.onExit}/>
+                       onExit={this.onExit}
+                       onChangeTab={this.onChangeTab}/>
             <input style={{position: "fixed", left: "-1000000px"}} type="button" autoFocus/>
         </div>
     }
