@@ -4,7 +4,6 @@
     <list default="true" id="be4c7382-c738-4232-a45b-55ed2fea1497" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/detailpage/detailPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/detailpage/detailPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -147,7 +146,7 @@
       <workItem from="1572822423227" duration="5000" />
       <workItem from="1572839847887" duration="52000" />
       <workItem from="1573048843629" duration="356000" />
-      <workItem from="1573050050763" duration="25639000" />
+      <workItem from="1573050050763" duration="26001000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1572012150825</created>
@@ -317,7 +316,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573102199877</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="+ prevent detail page auto focus&#10;+ reset tabindex when change course">
+      <created>1573103117167</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1573103117167</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -361,6 +367,7 @@
     <MESSAGE value="+ firebase analytics and performance" />
     <MESSAGE value="+ detail page&#10;+ detail page enter animation" />
     <MESSAGE value="+ detail page exit animation&#10;+ detail page save status" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ detail page exit animation&#10;+ detail page save status" />
+    <MESSAGE value="+ prevent detail page auto focus&#10;+ reset tabindex when change course" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ prevent detail page auto focus&#10;+ reset tabindex when change course" />
   </component>
 </project>

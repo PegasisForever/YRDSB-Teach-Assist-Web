@@ -20,13 +20,13 @@ function SidePanel(props) {
     let selectedCode = props.courseList[props.selected].code
     return <Animate
         show={true}
-        start={props.fadeTransition ? {offset: 0, opacity: 0} : {offset: -300, opacity: 1}}
+        start={{offset: props.fadeTransition ? 0 : -300, opacity: 0}}
         enter={{
-            offset: [props.offset], opacity: [1],
+            offset: [props.offset], opacity: [props.opacity],
             timing: {duration: 500 * getAnimationScale(), ease: easeExpInOut}
         }}
         update={{
-            offset: [props.offset], opacity: [1],
+            offset: [props.offset], opacity: [props.opacity],
             timing: {duration: 500 * getAnimationScale(), ease: easeExpInOut}
         }}>
         {({offset, opacity}) => {
@@ -101,7 +101,7 @@ class MainPanel extends Component {
         >
             {({x, y, width, height, opacity}) => {
                 return <div className="main-panel-root"
-                            style={opacity===1?undefined:{
+                            style={opacity === 1 ? undefined : {
                                 left: x + "px", top: y + "px",
                                 opacity: opacity,
                                 width: width + "px",
@@ -175,6 +175,7 @@ export default class DetailPage extends Component {
             selectedCourse: selectedCourse,
             courseList: courses,
             sidePanelOffset: 0,
+            sidePanelOpacity:1,
             mainPanelOpacity: 1,
         }
 
@@ -187,7 +188,7 @@ export default class DetailPage extends Component {
     onSidePanelClick(index) {
         sessionStorage.setItem("selected-course", index.toString())
         sessionStorage.removeItem("tab-index")
-        this.initTabIndex=0
+        this.initTabIndex = 0
         this.setState({
             selectedCourse: index
         })
@@ -196,6 +197,7 @@ export default class DetailPage extends Component {
     onExit() {
         this.setState({
             sidePanelOffset: -300,
+            sidePanelOpacity:0,
             mainPanelOpacity: 0
         })
         this.props.setPage(<SummaryPage setPage={this.props.setPage}/>, () => {
@@ -211,6 +213,7 @@ export default class DetailPage extends Component {
                        selected={this.state.selectedCourse}
                        onClick={this.onSidePanelClick}
                        offset={this.state.sidePanelOffset}
+                       opacity={this.state.sidePanelOpacity}
                        fadeTransition={typeof this.props.startX === "undefined"}/>
             <MainPanel course={courses[this.state.selectedCourse]}
                        initTabIndex={this.initTabIndex}
@@ -220,7 +223,7 @@ export default class DetailPage extends Component {
                        startWidth={this.props.startWidth}
                        startHeight={this.props.startHeight}
                        onExit={this.onExit}/>
-            <input style={{position:"fixed",left:"-1000000px"}} type="button" autoFocus/>
+            <input style={{position: "fixed", left: "-1000000px"}} type="button" autoFocus/>
         </div>
     }
 }
