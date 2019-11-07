@@ -10,22 +10,27 @@ import {SizedBox} from "../components/sizedBox"
 import MaterialIcon from "@material/react-material-icon"
 import TabBar from "@material/react-tab-bar"
 import Tab from "@material/react-tab"
-import {easeExpInOut} from "d3-ease"
+import {easeCubicInOut, easeExpInOut} from "d3-ease"
 import Animate from "react-move/Animate"
 import IconButton from '@material/react-icon-button'
 import {getAnimationScale} from "../index"
+import SummaryPage from "../summarypage/summaryPage"
 
 function SidePanel(props) {
     let selectedCode = props.courseList[props.selected].code
     return <Animate
         show={true}
-        start={{offset: -300}}
+        start={props.fadeTransition ? {offset: 0, opacity: 0} : {offset: -300, opacity: 1}}
         enter={{
-            offset: [0],
-            timing: {duration: 500*getAnimationScale(), ease: easeExpInOut}
+            offset: [props.offset], opacity: [1],
+            timing: {duration: 500 * getAnimationScale(), ease: easeExpInOut}
+        }}
+        update={{
+            offset: [props.offset], opacity: [1],
+            timing: {duration: 500 * getAnimationScale(), ease: easeExpInOut}
         }}>
-        {({offset}) => {
-            return <Card style={{transform: `translate(${offset}px)`}} className="side-panel">
+        {({offset, opacity}) => {
+            return <Card style={{transform: `translate(${offset}px)`, opacity: opacity}} className="side-panel">
                 <LinearLayout className="full-width" horizontal align={"start"} item={"center"}>
                     <Padding all={16}>
                         <img src={"/launcher192.png"} width={50} alt={"logo"}/>
@@ -63,12 +68,13 @@ class MainPanel extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            tabIndex: 0
+            tabIndex: props.initTabIndex
         }
         this.updateTabIndex = this.updateTabIndex.bind(this)
     }
 
     updateTabIndex(i) {
+        sessionStorage.setItem("tab-index", i.toString())
         this.setState({
             tabIndex: i
         })
@@ -85,20 +91,26 @@ class MainPanel extends Component {
             enter={{
                 x: [300], y: [0],
                 width: [window.innerWidth - 300], height: [window.innerHeight],
-                opacity: [1],
-                timing: {duration: 500*getAnimationScale(), ease: easeExpInOut}
+                opacity: [this.props.opacity],
+                timing: {duration: 550 * getAnimationScale(), ease: easeExpInOut}
             }}
-            leave={() => ({})}
+            update={{
+                opacity: [this.props.opacity],
+                timing: {duration: 500 * getAnimationScale(), ease: easeCubicInOut}
+            }}
         >
             {({x, y, width, height, opacity}) => {
                 return <div className="main-panel-root"
-                            style={{
+                            style={opacity===1?undefined:{
                                 left: x + "px", top: y + "px",
                                 opacity: opacity,
                                 width: width + "px",
                                 height: height + "px"
                             }}>
-                    <TitleBar course={this.props.course} tabIndex={this.state.tabIndex} onUpdate={this.updateTabIndex}/>
+                    <TitleBar course={this.props.course}
+                              tabIndex={this.state.tabIndex}
+                              onUpdate={this.updateTabIndex}
+                              onExit={this.props.onExit}/>
                 </div>
             }}
         </Animate>
@@ -108,7 +120,7 @@ class MainPanel extends Component {
 function TitleBar(props) {
     let course = props.course
     return <LinearLayout className="title-bar" vertical>
-        <IconButton className="back-button">
+        <IconButton className="back-button" onClick={props.onExit}>
             <MaterialIcon icon="arrow_back"/>
         </IconButton>
         <Padding all={32} l={76}>
@@ -149,17 +161,44 @@ export default class DetailPage extends Component {
     constructor(props) {
         super(props)
         let courses = JSON.parse(sessionStorage.getItem("course-list"))
-        this.state = {
-            selectedCourse: props.selectedCourse,
-            courseList: courses
+        let selectedCourse
+        if (props.selectedCourse) {
+            selectedCourse = props.selectedCourse
+        } else if (sessionStorage.getItem("selected-course")) {
+            selectedCourse = parseInt(sessionStorage.getItem("selected-course"))
+        } else {
+            selectedCourse = 0
         }
+        this.initTabIndex = sessionStorage.getItem("tab-index") ?
+            parseInt(sessionStorage.getItem("tab-index")) : 0
+        this.state = {
+            selectedCourse: selectedCourse,
+            courseList: courses,
+            sidePanelOffset: 0,
+            mainPanelOpacity: 1,
+        }
+
+        sessionStorage.setItem("selected-course", selectedCourse.toString())
         sessionStorage.setItem("state", "detail")
         this.onSidePanelClick = this.onSidePanelClick.bind(this)
+        this.onExit = this.onExit.bind(this)
     }
 
     onSidePanelClick(index) {
+        sessionStorage.setItem("selected-course", index.toString())
         this.setState({
             selectedCourse: index
+        })
+    }
+
+    onExit() {
+        this.setState({
+            sidePanelOffset: -300,
+            mainPanelOpacity: 0
+        })
+        this.props.setPage(<SummaryPage setPage={this.props.setPage}/>, () => {
+            sessionStorage.removeItem("selected-course")
+            sessionStorage.removeItem("tab-index")
         })
     }
 
@@ -168,12 +207,17 @@ export default class DetailPage extends Component {
         return <div className="full-width">
             <SidePanel courseList={courses}
                        selected={this.state.selectedCourse}
-                       onClick={this.onSidePanelClick}/>
+                       onClick={this.onSidePanelClick}
+                       offset={this.state.sidePanelOffset}
+                       fadeTransition={typeof this.props.startX === "undefined"}/>
             <MainPanel course={courses[this.state.selectedCourse]}
+                       initTabIndex={this.initTabIndex}
+                       opacity={this.state.mainPanelOpacity}
                        startX={this.props.startX}
                        startY={this.props.startY}
-            startWidth={this.props.startWidth}
-            startHeight={this.props.startHeight}/>
+                       startWidth={this.props.startWidth}
+                       startHeight={this.props.startHeight}
+                       onExit={this.onExit}/>
         </div>
     }
 }

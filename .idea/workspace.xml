@@ -2,21 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be4c7382-c738-4232-a45b-55ed2fea1497" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/detailpage/detail-page.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/detailpage/detailPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/linear-layout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/linear-layout.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/linear-progress-indicator.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/linear-progress-indicator.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/linearProgressIndicator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/linearProgressIndicator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/padding.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/padding.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/sizedBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/sizedBox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/courseUtilities.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/courseUtilities.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/detailpage/detailPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/detailpage/detailPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/summarypage/summary-page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/summarypage/summary-page.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/summarypage/summaryCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/summarypage/summaryCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/loginpage/loginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/loginpage/loginPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/summarypage/loadingPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/summarypage/loadingPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/summarypage/summaryPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/summarypage/summaryPage.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -160,7 +150,7 @@
       <workItem from="1572822423227" duration="5000" />
       <workItem from="1572839847887" duration="52000" />
       <workItem from="1573048843629" duration="356000" />
-      <workItem from="1573050050763" duration="21164000" />
+      <workItem from="1573050050763" duration="24766000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1572012150825</created>
@@ -316,7 +306,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573050105120</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="+ detail page&#10;+ detail page enter animation">
+      <created>1573098644134</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1573098644134</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -358,6 +355,7 @@
     <MESSAGE value="+ fixed login page refresh error" />
     <MESSAGE value="~ fixed page description" />
     <MESSAGE value="+ firebase analytics and performance" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ firebase analytics and performance" />
+    <MESSAGE value="+ detail page&#10;+ detail page enter animation" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ detail page&#10;+ detail page enter animation" />
   </component>
 </project>

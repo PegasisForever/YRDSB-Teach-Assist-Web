@@ -38,8 +38,6 @@ class Root extends Component {
             }
         }
 
-        page= <SummaryPage setPage={this.setPage}/>
-
         this.state = {
             page1: null,
             key1: 1,
@@ -82,5 +80,5 @@ ReactDOM.render(
 )
 
 export function getAnimationScale() {
-    return 5
+    return 1
 }

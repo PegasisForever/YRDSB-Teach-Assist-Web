@@ -9,7 +9,7 @@ import Button from '@material/react-button'
 import getString from "../strings"
 import LPI from "../components/linearProgressIndicator"
 import LoginPage from "../loginpage/loginPage"
-import {easeCubicInOut, easeExpInOut, easeQuadInOut} from "d3-ease"
+import {easeExpInOut, easeQuadInOut} from "d3-ease"
 import Animate from "react-move/Animate"
 import DetailPage from "../detailpage/detailPage"
 import domtoimage from "dom-to-image"
@@ -44,7 +44,8 @@ export default class SummaryPage extends Component {
             animationStartY: undefined,
             animationWidth: undefined,
             animationHeight: undefined,
-            selectedCourseIndex: undefined
+            selectedCourseIndex: undefined,
+            opacity:1,
         }
         this.cardRefs = []
         this.logout = this.logout.bind(this)
@@ -53,6 +54,9 @@ export default class SummaryPage extends Component {
     }
 
     logout() {
+        this.setState({
+            opacity:0
+        })
         this.props.setPage(<LoginPage setPage={this.props.setPage}/>, () => {
             sessionStorage.removeItem("course-list")
             localStorage.removeItem("account")
@@ -104,11 +108,15 @@ export default class SummaryPage extends Component {
                 show={true}
                 start={{opacity: 0}}
                 enter={{
-                    opacity: [1],
-                    timing: {duration: 500, ease: easeQuadInOut}
+                    opacity: [this.state.opacity],
+                    timing: {duration: 500*getAnimationScale(), ease: easeQuadInOut}
+                }}
+                update={{
+                    opacity: [this.state.opacity],
+                    timing: { duration: 500*getAnimationScale(), ease: easeQuadInOut },
                 }}>
                 {({opacity}) => {
-                    return <LinearLayout style={{opacity: opacity}} className="full-page background" vertical
+                    return <LinearLayout style={{opacity: opacity}} className="full-page" vertical
                                          item={"center"}>
                         <AnimateCard url={this.state.animatedCardSvgUrl}
                                      startX={this.state.animationStartX}

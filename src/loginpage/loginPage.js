@@ -12,6 +12,7 @@ import getString from "../strings"
 import SummaryPage from "../summarypage/summaryPage"
 import Animate from "react-move/Animate"
 import {easeQuadInOut} from "d3-ease"
+import {getAnimationScale} from "../index"
 
 function TATitle() {
     return (<LinearLayout vertical align={"center"} item={"center"}>
@@ -36,7 +37,7 @@ class LoginForm extends Component {
             passwordValid: true,
             isLoading: false,
             passwordIncorrect: false,
-            remember: false
+            remember: false,
         }
 
         this.onLogin = this.onLogin.bind(this)
@@ -144,9 +145,11 @@ class LoginForm extends Component {
                 password: this.state.password
             },
             (statusCode, response) => {
-                this.setState({
-                    isLoading: false,
-                })
+                if (statusCode !== 200) {
+                    this.setState({
+                        isLoading: false,
+                    })
+                }
                 if (statusCode === 200) {
                     sessionStorage.setItem("course-list", response)
                     let account=JSON.stringify({
@@ -157,7 +160,7 @@ class LoginForm extends Component {
                     if (this.state.remember) {
                         localStorage.setItem("account", account)
                     }
-                    this.props.setPage(<SummaryPage setPage={this.props.setPage}/>)
+                    this.props.gotoSummary()
                 } else if (statusCode === 401) {
                     this.setState({
                         passwordValid: false,
@@ -175,25 +178,39 @@ class LoginForm extends Component {
 export default class LoginPage extends Component {
     constructor(props) {
         super(props)
+        this.state={
+            opacity:1
+        }
+        this.gotoSummary = this.gotoSummary.bind(this)
         sessionStorage.setItem("state", "login")
     }
 
+    gotoSummary(){
+        this.setState({
+            opacity:0
+        })
+        this.props.setPage(<SummaryPage setPage={this.props.setPage}/>)
+    }
 
     render() {
         return (<Animate
             show={true}
             start={{opacity: 0}}
             enter={{
-                opacity: [1],
-                timing: {duration: 500, ease: easeQuadInOut}
+                opacity: [this.state.opacity],
+                timing: {duration: 500*getAnimationScale(), ease: easeQuadInOut}
+            }}
+            update={{
+                opacity: [this.state.opacity],
+                timing: { duration: 500*getAnimationScale(), ease: easeQuadInOut },
             }}>
             {({opacity}) => {
-                return (<LinearLayout style={{opacity: opacity}} className="full-page background" vertical
+                return (<LinearLayout style={{opacity: opacity}} className="full-page" vertical
                                       align={"center"}>
                     <LinearLayout horizontal align={"center"} item={"stretch"}>
                         <TATitle/>
                         <Divider/>
-                        <LoginForm setPage={this.props.setPage}/>
+                        <LoginForm gotoSummary={this.gotoSummary}/>
                     </LinearLayout>
                 </LinearLayout>)
             }}
