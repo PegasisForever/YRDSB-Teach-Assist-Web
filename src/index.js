@@ -4,10 +4,12 @@ import "./index.scss"
 import LoginPage from "./loginpage/loginPage"
 import LoadingPage from "./summarypage/loadingPage"
 import SummaryPage from "./summarypage/summaryPage"
+import DetailPage from "./detailpage/detailPage"
 
 let states = {
     login: LoginPage,
-    summary: SummaryPage
+    summary: SummaryPage,
+    detail:DetailPage
 }
 
 class Root extends Component {
@@ -36,6 +38,8 @@ class Root extends Component {
             }
         }
 
+        page= <SummaryPage setPage={this.setPage}/>
+
         this.state = {
             page1: null,
             key1: 1,
@@ -58,7 +62,7 @@ class Root extends Component {
             this.setState({
                 page1: null
             })
-        }, transitionTime ? transitionTime : 500)
+        }, transitionTime ? transitionTime : 500*getAnimationScale())
     }
 
     render() {
@@ -76,3 +80,7 @@ ReactDOM.render(
     <Root/>,
     document.getElementById('root')
 )
+
+export function getAnimationScale() {
+    return 5
+}

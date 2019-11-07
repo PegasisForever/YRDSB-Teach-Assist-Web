@@ -1,9 +1,22 @@
+import getString from "./strings"
+
 export function getDisplayName(course){
     if (course.name!==""){
         return course.name
     }else{
         return course.code
     }
+}
+
+export function getPeriodRoom(course) {
+    let strs = []
+    if (course.block !== "") {
+        strs.push(getString("period_number").replace("%s", course.block))
+    }
+    if (course.room !== "") {
+        strs.push(getString("room_number").replace("%s", course.room))
+    }
+    return strs.join(" - ")
 }
 
 export function getCourseOverallList(course) {

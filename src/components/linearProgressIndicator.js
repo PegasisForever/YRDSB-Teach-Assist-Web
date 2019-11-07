@@ -1,25 +1,26 @@
-import React, {Component} from "react"
+import React from "react"
 
-export default class LPI extends Component {
-    render() {
-        let width = this.props.width
-        let value = this.props.value
-        let text = this.props.text
-        return (
-            <div className="linear-progress-indicator"
-                 style={{width: width + "px", height: "20px"}}>
-                <svg
-                    viewBox={"0 0 " + width + " 20"}
-                    xmlns="http://www.w3.org/2000/svg">
-                    <line className="background" x1={10} y1={10} x2={width - 10} y2={10}
-                          strokeWidth={20}
-                          strokeLinecap="round"/>
-                    {value?<line className={"foreground-"+(text?"secondary":"primary")} x1={10} y1={10} x2={10 + (width - 20) * value/100} y2={10}
-                                 strokeWidth={20}
-                                 strokeLinecap="round"/>:null}
-                    <text x="50%" y="55%" dominantBaseline="middle" textAnchor="middle">{text}</text>
-                </svg>
-            </div>
-        )
-    }
+export default function LPI(props) {
+    let height = props.height ? props.height : 20
+    let width = props.width
+    let value = props.value
+    let text = props.text
+    return (
+        <div className="linear-progress-indicator"
+             style={{width: width + "px", height: height + "px"}}>
+            <svg
+                viewBox={"0 0 " + width + " " + height}
+                xmlns="http://www.w3.org/2000/svg">
+                <line className="background" x1={height / 2} y1={height / 2} x2={width - height / 2} y2={height / 2}
+                      strokeWidth={height}
+                      strokeLinecap="round"/>
+                {value ?
+                    <line className={"foreground-" + (text ? "secondary" : "primary")} x1={height / 2} y1={height / 2}
+                          x2={height / 2 + (width - height) * value / 100} y2={height / 2}
+                          strokeWidth={height}
+                          strokeLinecap="round"/> : null}
+                <text x="50%" y="55%" dominantBaseline="middle" textAnchor="middle">{text}</text>
+            </svg>
+        </div>
+    )
 }

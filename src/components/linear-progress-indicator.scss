@@ -1,4 +1,6 @@
 .linear-progress-indicator {
+  position: relative;
+
   .foreground-primary {
     stroke: $mdc-theme-primary;
   }
@@ -9,6 +11,10 @@
 
   .background {
     stroke: #b7c9cc;
+  }
+
+  svg{
+    position: absolute;
   }
 
   text {

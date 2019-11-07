@@ -1,5 +1,5 @@
 import React,{Fragment} from "react"
-import {getCourseOverallList, getDisplayName} from "../courseUtilities"
+import {getCourseOverallList, getDisplayName, getPeriodRoom} from "../courseUtilities"
 import getString from "../strings"
 import Card, {CardPrimaryContent} from "@material/react-card"
 import {Padding} from "../components/padding"
@@ -40,7 +40,7 @@ function bezier(point, i, a) {
 function getOverallChart(course, width, height) {
     let space = width / (course.assignments.length - 1)
     let points = getCourseOverallList(course).map(overall => {
-        return [overall[0] * space, width - overall[1] * width / 100]
+        return [overall[0] * space, width - overall[1] * width / 105]
     })
     if (points[0][0]!==0){ //if index of first point isn't zero
         points.unshift([0,points[0][1]])
@@ -67,23 +67,16 @@ function getOverallChart(course, width, height) {
 
 export default function SummaryCard(props) {
     let course = props.course
-    let subTitleStrs = []
-    if (course.block !== "") {
-        subTitleStrs.push(getString("period_number").replace("%s", course.block))
-    }
-    if (course.room !== "") {
-        subTitleStrs.push(getString("room_number").replace("%s", course.room))
-    }
-    return (<Padding all={16}>
+    return (<Padding all={16} className={props.className}>
             <SizedBox width={492}>
                 <Card>
-                    <CardPrimaryContent>
-                        <Padding all={24}>
+                    <CardPrimaryContent onClick={props.onClick}>
+                        <Padding all={24} re={props.r} className={"white-bg"}>
                             <LinearLayout horizontal item={"center"}>
                                 <LinearLayout vertical>
                                     <Headline5>{getDisplayName(course)}</Headline5>
                                     <SizedBox height={8}/>
-                                    <Subtitle1>{subTitleStrs.join(" - ")}</Subtitle1>
+                                    <Subtitle1>{getPeriodRoom(course)}</Subtitle1>
                                     <SizedBox height={24}/>
                                     <LPI width={course.overall_mark ? 300 : 444}
                                          value={course.overall_mark}

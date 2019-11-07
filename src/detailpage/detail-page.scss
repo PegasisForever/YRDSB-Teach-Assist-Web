@@ -1,0 +1,45 @@
+.title {
+  font-size: 1.3rem;
+  color: #444;
+}
+
+.side-panel {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+
+  .mdc-typography--headline5 {
+    font-size: 1.3rem;
+  }
+
+  .material-icons {
+    color: gray;
+  }
+
+  .selected {
+    background: #eee;
+  }
+}
+
+.main-panel-root {
+  position: absolute;
+  left: 300px;
+  background: #fafafa;
+  top: 0;
+  right: 0;
+}
+
+.title-bar{
+  background: white;
+  .tab-bar{
+    width: 400px;
+  }
+  .back-button{
+    position: absolute;
+    left: 16px;
+    top:28px;
+  }
+}
