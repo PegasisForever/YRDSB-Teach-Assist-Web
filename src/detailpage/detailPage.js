@@ -86,23 +86,23 @@ class MainPanel extends Component {
             start={{
                 x: this.props.startX, y: this.props.startY,
                 width: this.props.startWidth, height: this.props.startHeight,
-                opacity: 0
+                padding: this.props.fadeTransition ? 32 : 0, opacity: 0
             }}
             enter={{
                 x: [300], y: [0],
                 width: [window.innerWidth - 300], height: [window.innerHeight],
-                opacity: [this.props.opacity],
-                timing: {duration: 600 * getAnimationScale(), ease: easeExpInOut}
+                padding: [32], opacity: [this.props.opacity],
+                timing: {duration: 500 * getAnimationScale(), ease: easeExpInOut}
             }}
             update={{
                 opacity: [this.props.opacity],
                 timing: {duration: 500 * getAnimationScale(), ease: easeCubicInOut}
             }}
         >
-            {({x, y, width, height, opacity}) => {
+            {({x, y, width, height, opacity, padding}) => {
                 return <div className="main-panel-root"
                             style={opacity === 1 ? undefined : {
-                                overflow:"hidden",
+                                overflow: "hidden",
                                 left: x + "px", top: y + "px",
                                 opacity: opacity,
                                 width: width + "px",
@@ -111,7 +111,8 @@ class MainPanel extends Component {
                     <TitleBar course={this.props.course}
                               tabIndex={this.state.tabIndex}
                               onUpdate={this.updateTabIndex}
-                              onExit={this.props.onExit}/>
+                              onExit={this.props.onExit}
+                              padding={padding}/>
                 </div>
             }}
         </Animate>
@@ -119,12 +120,13 @@ class MainPanel extends Component {
 }
 
 function TitleBar(props) {
+    console.log(props.padding)
     let course = props.course
     return <LinearLayout className="title-bar" vertical>
         <IconButton className="back-button" onClick={props.onExit}>
             <MaterialIcon icon="arrow_back"/>
         </IconButton>
-        <Padding all={32} l={76}>
+        <Padding all={props.padding} l={props.padding * 2.375}>
             <LinearLayout horizontal item={"end"}>
                 <div>
                     {course.name !== "" ? <Fragment>
@@ -176,7 +178,7 @@ export default class DetailPage extends Component {
             selectedCourse: selectedCourse,
             courseList: courses,
             sidePanelOffset: 0,
-            sidePanelOpacity:1,
+            sidePanelOpacity: 1,
             mainPanelOpacity: 1,
         }
 
@@ -198,7 +200,7 @@ export default class DetailPage extends Component {
     onExit() {
         this.setState({
             sidePanelOffset: -300,
-            sidePanelOpacity:0,
+            sidePanelOpacity: 0,
             mainPanelOpacity: 0
         })
         this.props.setPage(<SummaryPage setPage={this.props.setPage}/>, () => {
@@ -219,6 +221,7 @@ export default class DetailPage extends Component {
             <MainPanel course={courses[this.state.selectedCourse]}
                        initTabIndex={this.initTabIndex}
                        opacity={this.state.mainPanelOpacity}
+                       fadeTransition={typeof this.props.startX === "undefined"}
                        startX={this.props.startX}
                        startY={this.props.startY}
                        startWidth={this.props.startWidth}

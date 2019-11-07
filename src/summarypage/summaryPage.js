@@ -21,8 +21,8 @@ function AnimateCard(props) {
         start={{x: props.startX, y: props.startY, width: props.width, height: props.height, opacity: 1}}
         enter={{
             x: [300], y: [0], width: [window.innerWidth - 300], height: [window.innerHeight],
-            opacity: [0],
-            timing: {duration: 500*getAnimationScale(), ease: easeExpInOut}
+            opacity: [-0.5],
+            timing: {duration: 500 * getAnimationScale(), ease: easeExpInOut}
         }}>
         {({x, y, width, height, opacity}) => {
             return <img className="animation-card" width={width + "px"}
@@ -45,7 +45,7 @@ export default class SummaryPage extends Component {
             animationWidth: undefined,
             animationHeight: undefined,
             selectedCourseIndex: undefined,
-            opacity:1,
+            opacity: 1,
         }
         this.cardRefs = []
         this.logout = this.logout.bind(this)
@@ -55,7 +55,7 @@ export default class SummaryPage extends Component {
 
     logout() {
         this.setState({
-            opacity:0
+            opacity: 0
         })
         this.props.setPage(<LoginPage setPage={this.props.setPage}/>, () => {
             sessionStorage.removeItem("course-list")
@@ -67,6 +67,8 @@ export default class SummaryPage extends Component {
     openDetailPage(index) {
         let self = this
         let node = this.cardRefs[index].current
+        let w = node.offsetWidth
+        let h = node.offsetHeight
         let rect = node.getBoundingClientRect()
         domtoimage.toSvg(this.cardRefs[index].current)
             .then(function (dataUrl) {
@@ -75,8 +77,8 @@ export default class SummaryPage extends Component {
                     animatedCardSvgUrl: dataUrl,
                     animationStartX: rect.left,
                     animationStartY: rect.top,
-                    animationWidth: node.clientWidth,
-                    animationHeight: node.clientHeight
+                    animationWidth: w,
+                    animationHeight: h
                 })
                 self.props.setPage(React.createElement(
                     DetailPage,
@@ -85,10 +87,10 @@ export default class SummaryPage extends Component {
                         selectedCourse: index,
                         startX: rect.left,
                         startY: rect.top,
-                        startWidth: node.clientWidth,
-                        startHeight: node.clientHeight
+                        startWidth: w,
+                        startHeight: h,
                     }
-                ))
+                ),()=>{},400)
             })
     }
 
@@ -109,11 +111,11 @@ export default class SummaryPage extends Component {
                 start={{opacity: 0}}
                 enter={{
                     opacity: [this.state.opacity],
-                    timing: {duration: 500*getAnimationScale(), ease: easeQuadInOut}
+                    timing: {duration: 500 * getAnimationScale(), ease: easeQuadInOut}
                 }}
                 update={{
                     opacity: [this.state.opacity],
-                    timing: { duration: 500*getAnimationScale(), ease: easeQuadInOut },
+                    timing: {duration: 500 * getAnimationScale(), ease: easeQuadInOut},
                 }}>
                 {({opacity}) => {
                     return <LinearLayout style={{opacity: opacity}} className="full-page" vertical
@@ -154,8 +156,8 @@ export default class SummaryPage extends Component {
                                 let ref = React.createRef()
                                 this.cardRefs.push(ref)
                                 return i === this.state.selectedCourseIndex ?
-                                    <SizedBox width={this.state.animationWidth+32}
-                                              height={this.state.animationHeight+32}/> :
+                                    <SizedBox width={this.state.animationWidth + 32}
+                                              height={this.state.animationHeight + 32}/> :
                                     <SummaryCard
                                         key={course.code}
                                         r={ref}

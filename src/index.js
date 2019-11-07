@@ -60,7 +60,7 @@ class Root extends Component {
             this.setState({
                 page1: null
             })
-        }, transitionTime ? transitionTime : 500*getAnimationScale())
+        }, (transitionTime ? transitionTime : 500)*getAnimationScale())
     }
 
     render() {

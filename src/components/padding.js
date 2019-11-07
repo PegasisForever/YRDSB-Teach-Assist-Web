@@ -1,33 +1,28 @@
-import React, {Component} from "react"
+import React from "react"
 
-export class Padding extends Component {
-    constructor(props) {
-        super(props)
-        this.t = "0"
-        this.r = "0"
-        this.b = "0"
-        this.l = "0"
-        if (props.all) {
-            this.t = props.all + "px"
-            this.r = props.all + "px"
-            this.b = props.all + "px"
-            this.l = props.all + "px"
-        }
-        this.t = props.t ? props.t + "px" : this.t
-        this.r = props.r ? props.r + "px" : this.r
-        this.b = props.b ? props.b + "px" : this.b
-        this.l = props.l ? props.l + "px" : this.l
+export function Padding(props) {
+    let t = "0"
+    let r = "0"
+    let b = "0"
+    let l = "0"
+    if (props.all) {
+        t = props.all + "px"
+        r = props.all + "px"
+        b = props.all + "px"
+        l = props.all + "px"
     }
+    t = props.t ? props.t + "px" : t
+    r = props.r ? props.r + "px" : r
+    b = props.b ? props.b + "px" : b
+    l = props.l ? props.l + "px" : l
 
-    render() {
-        return (<div
-            ref={this.props.re}
-            className={this.props.className}
-            style={{
-            paddingTop: this.t,
-            paddingRight: this.r,
-            paddingBottom: this.b,
-            paddingLeft: this.l
-        }}>{this.props.children}</div>)
-    }
+    return <div
+        ref={props.re}
+        className={props.className}
+        style={{
+            paddingTop: t,
+            paddingRight: r,
+            paddingBottom: b,
+            paddingLeft: l
+        }}>{props.children}</div>
 }
