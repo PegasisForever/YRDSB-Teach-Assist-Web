@@ -66,6 +66,32 @@ function SidePanel(props) {
 }
 
 class MainPanel extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            showSecondBackBtn: false
+        }
+        this.scrollListener = this.scrollListener.bind(this)
+    }
+
+    componentDidMount() {
+        window.addEventListener('scroll', this.scrollListener)
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.scrollListener)
+    }
+
+    scrollListener(event) {
+        let shouldShowButton=event.currentTarget.scrollTop >= 208
+        if (shouldShowButton!==this.state.showSecondBackBtn){
+            this.setState({
+                showSecondBackBtn: shouldShowButton
+            })
+        }
+
+    }
+
     render() {
         return <Animate
             show={true}
@@ -83,23 +109,49 @@ class MainPanel extends Component {
             update={{
                 opacity: [this.props.opacity],
                 timing: {duration: 500 * getAnimationScale(), ease: easeCubicInOut}
-            }}
-        >
+            }}>
             {({x, y, width, height, opacity, padding}) => {
+                let style
+                if (opacity!==1){
+                    if (padding===32){
+                        style={
+                            opacity: opacity,
+                        }
+                    }else{
+                        style={
+                            overflow: "hidden",
+                            left: x + "px", top: y + "px",
+                            opacity: opacity,
+                            width: width + "px",
+                            height: height + "px"
+                        }
+                    }
+                }
                 return <div className="main-panel-root"
-                            style={opacity === 1 ? undefined : {
-                                overflow: "hidden",
-                                left: x + "px", top: y + "px",
-                                opacity: opacity,
-                                width: width + "px",
-                                height: height + "px"
-                            }}>
+                            style={style} onScroll={this.scrollListener}>
+                    <Animate
+                        show={true}
+                        start={{
+                            size:0
+                        }}
+                        update={{
+                            size:[this.state.showSecondBackBtn?1:0],
+                            timing: {duration: 500 * getAnimationScale(), ease: easeCubicInOut}
+                        }}>
+                        {({size})=>{
+                            return <IconButton style={{transform:`scale(${size})`}} className="float-back-button" onClick={this.props.onExit}>
+                                <MaterialIcon icon="arrow_back"/>
+                            </IconButton>
+                        }}
+                    </Animate>
                     <TitleBar course={this.props.course}
                               tabIndex={this.props.tabIndex}
                               onChangeTab={this.props.onChangeTab}
                               onExit={this.props.onExit}
                               padding={padding}/>
-                    <AssignmentTab assignments={this.props.course.assignments} weights={this.props.course.weight_table}/>
+                    <AssignmentTab assignments={this.props.course.assignments}
+                                   weights={this.props.course.weight_table}
+                                   onExit={this.props.onExit}/>
                 </div>
             }}
         </Animate>
@@ -113,11 +165,11 @@ function TitleBar(props) {
             <MaterialIcon icon="arrow_back"/>
         </IconButton>
         <Padding all={props.padding} l={props.padding * 2.375}>
-            <Headline4 style={{whiteSpace: "nowrap"}}>{course.name?course.name:course.code}</Headline4>
+            <Headline4 style={{whiteSpace: "nowrap"}}>{course.name ? course.name : course.code}</Headline4>
             <SizedBox height={8}/>
             <LinearLayout horizontal>
                 <div>
-                    {course.name?<Body1>{course.code}</Body1>:null}
+                    {course.name ? <Body1>{course.code}</Body1> : null}
                     <Body1>{getPeriodRoom(course)}</Body1>
                 </div>
                 <SizedBox width={128}/>

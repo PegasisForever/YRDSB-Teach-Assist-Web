@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be4c7382-c738-4232-a45b-55ed2fea1497" name="Default Changelist" comment="+ reset tab index on change between courses">
-      <change afterPath="$PROJECT_DIR$/src/detailpage/AssignmentTab.js" afterDir="false" />
+    <list default="true" id="be4c7382-c738-4232-a45b-55ed2fea1497" name="Default Changelist" comment="+">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/linearProgressIndicator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/linearProgressIndicator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/padding.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/padding.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/courseUtilities.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/courseUtilities.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/detailpage/detail-page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/detailpage/detail-page.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/detailpage/detailPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/detailpage/detailPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/strings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/strings.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -160,7 +154,7 @@
       <workItem from="1573148198062" duration="2778000" />
       <workItem from="1573161728744" duration="2114000" />
       <workItem from="1573239740588" duration="5409000" />
-      <workItem from="1573248106357" duration="6099000" />
+      <workItem from="1573248106357" duration="8856000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1572012150825</created>
@@ -365,7 +359,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573162363319</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="+ finished assignment tab">
+      <created>1573254377296</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1573254377296</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -385,7 +386,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="~ fixed circular progress bar memory leak&#10;~ allow browser to save passwords" />
     <MESSAGE value="+ redirect to ~.web.app if on ~.firebaseapp.com" />
     <MESSAGE value="+ id to text fields" />
     <MESSAGE value="+ Padding Component&#10;~ Moved loginPage to new location&#10;+ summarypage, working" />
@@ -410,6 +410,7 @@
     <MESSAGE value="~ fix animation" />
     <MESSAGE value="+ more perfect animation" />
     <MESSAGE value="+ reset tab index on change between courses" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ reset tab index on change between courses" />
+    <MESSAGE value="+ finished assignment tab" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ finished assignment tab" />
   </component>
 </project>

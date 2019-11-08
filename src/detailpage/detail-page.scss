@@ -27,13 +27,19 @@
 .main-panel-root {
   position: absolute;
   left: 300px;
-  background: #fafafa;
   top: 0;
   right: 0;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  background: #fafafa;
 }
 
 .title-bar {
+  position: relative;
   background: white;
+  z-index: 600;
 
   .tab-bar {
     width: 400px;
@@ -44,6 +50,15 @@
     left: 16px;
     top: 28px;
   }
+}
+
+.float-back-button{
+  z-index: 550;
+  position: fixed;
+  left: 316px;
+  top: 16px;
+
+  color: #333;
 }
 
 .assignment-desc{
