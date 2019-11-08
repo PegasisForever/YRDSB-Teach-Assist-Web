@@ -1,9 +1,9 @@
 import getString from "./strings"
 
-export function getDisplayName(course){
-    if (course.name!==""){
+export function getDisplayName(course) {
+    if (course.name !== "") {
         return course.name
-    }else{
+    } else {
         return course.code
     }
 }
@@ -53,29 +53,65 @@ export function getCourseOverallList(course) {
         let Ta = T / Tn
         let Ca = C / Cn
         let Aa = A / An
-        let avg = 0.0;
-        let avgn = 0.0;
+        let avg = 0.0
+        let avgn = 0.0
         if (Ka >= 0.0) {
-            avg += Ka * course.weight_table.KU.W;
-            avgn += course.weight_table.KU.W;
+            avg += Ka * course.weight_table.KU.W
+            avgn += course.weight_table.KU.W
         }
         if (Ta >= 0.0) {
-            avg += Ta * course.weight_table.T.W;
-            avgn += course.weight_table.T.W;
+            avg += Ta * course.weight_table.T.W
+            avgn += course.weight_table.T.W
         }
         if (Ca >= 0.0) {
-            avg += Ca * course.weight_table.C.W;
-            avgn += course.weight_table.C.W;
+            avg += Ca * course.weight_table.C.W
+            avgn += course.weight_table.C.W
         }
         if (Aa >= 0.0) {
-            avg += Aa * course.weight_table.A.W;
-            avgn += course.weight_table.A.W;
+            avg += Aa * course.weight_table.A.W
+            avgn += course.weight_table.A.W
         }
 
-        if (avgn>0.0){
-            overallList.push([i,avg / avgn * 100])
+        if (avgn > 0.0) {
+            overallList.push([i, avg / avgn * 100])
         }
         i++
     })
     return overallList
+}
+
+function isWeightZeroOrNull(smallmark) {
+    return smallmark ? smallmark === 0 : true
+}
+
+export function isNoWeight(assi) {
+    return isWeightZeroOrNull(assi.KU) &&
+        isWeightZeroOrNull(assi.T) &&
+        isWeightZeroOrNull(assi.C) &&
+        isWeightZeroOrNull(assi.A) &&
+        isWeightZeroOrNull(assi.O)
+}
+
+export function getAverage(assi, weights) {
+    let get = 0.0
+    let total = 0.0
+
+    if (assi.KU && assi.KU.finished) {
+        get += assi.KU.get / assi.KU.total * weights.KU.CW
+        total += weights.KU.CW
+    }
+    if (assi.T && assi.T.finished) {
+        get += assi.T.get / assi.T.total * weights.T.CW
+        total += weights.T.CW
+    }
+    if (assi.C && assi.C.finished) {
+        get += assi.C.get / assi.C.total * weights.C.CW
+        total += weights.C.CW
+    }
+    if (assi.A && assi.A.finished) {
+        get += assi.A.get / assi.A.total * weights.A.CW
+        total += weights.A.CW
+    }
+
+    return (total > 0) ? (get / total * 100) : null
 }

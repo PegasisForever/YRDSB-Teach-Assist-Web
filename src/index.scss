@@ -51,7 +51,7 @@ body {
   height: 100vh;
 }
 
-.background{
+.background {
   background: #fafafa;
 }
 
@@ -71,4 +71,11 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+svg {
+  text {
+    dominant-baseline: middle;
+    text-anchor: middle;
+  }
 }

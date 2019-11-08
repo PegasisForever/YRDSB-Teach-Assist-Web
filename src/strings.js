@@ -66,7 +66,7 @@ let strings = {
         "no_weight": "No weight",
         "overall": "Overall",
         "average": "Average",
-        "avg:": "Avg: ",
+        "avg:": "Average: ",
         "untitled_assignment": "Untitled Assignment",
         "in_development": "In Development 🚧",
         "dismiss": "Dismiss",

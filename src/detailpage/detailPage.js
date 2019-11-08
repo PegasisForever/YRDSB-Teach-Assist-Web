@@ -15,6 +15,7 @@ import Animate from "react-move/Animate"
 import IconButton from '@material/react-icon-button'
 import {getAnimationScale} from "../index"
 import SummaryPage from "../summarypage/summaryPage"
+import AssignmentTab from "./AssignmentTab"
 
 function SidePanel(props) {
     let selectedCode = props.courseList[props.selected].code
@@ -98,6 +99,7 @@ class MainPanel extends Component {
                               onChangeTab={this.props.onChangeTab}
                               onExit={this.props.onExit}
                               padding={padding}/>
+                    <AssignmentTab assignments={this.props.course.assignments} weights={this.props.course.weight_table}/>
                 </div>
             }}
         </Animate>
@@ -111,16 +113,11 @@ function TitleBar(props) {
             <MaterialIcon icon="arrow_back"/>
         </IconButton>
         <Padding all={props.padding} l={props.padding * 2.375}>
-            <LinearLayout horizontal item={"end"}>
+            <Headline4 style={{whiteSpace: "nowrap"}}>{course.name?course.name:course.code}</Headline4>
+            <SizedBox height={8}/>
+            <LinearLayout horizontal>
                 <div>
-                    {course.name !== "" ? <Fragment>
-                        <Headline4>{course.name}</Headline4>
-                        <SizedBox height={8}/>
-                        <Body1>{course.code}</Body1>
-                    </Fragment> : <Fragment>
-                        <Headline4>{course.code}</Headline4>
-                        <SizedBox height={8}/>
-                    </Fragment>}
+                    {course.name?<Body1>{course.code}</Body1>:null}
                     <Body1>{getPeriodRoom(course)}</Body1>
                 </div>
                 <SizedBox width={128}/>

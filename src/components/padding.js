@@ -19,10 +19,10 @@ export function Padding(props) {
     return <div
         ref={props.re}
         className={props.className}
-        style={{
-            paddingTop: t,
-            paddingRight: r,
-            paddingBottom: b,
-            paddingLeft: l
-        }}>{props.children}</div>
+        style={{...{
+                paddingTop: t,
+                paddingRight: r,
+                paddingBottom: b,
+                paddingLeft: l
+            },...props.style}}>{props.children}</div>
 }

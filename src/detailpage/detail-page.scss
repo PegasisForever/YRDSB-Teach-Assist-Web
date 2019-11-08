@@ -16,7 +16,7 @@
   }
 
   .material-icons {
-    color: gray;
+    color: #9E9E9E;
   }
 
   .selected {
@@ -32,14 +32,47 @@
   right: 0;
 }
 
-.title-bar{
+.title-bar {
   background: white;
-  .tab-bar{
+
+  .tab-bar {
     width: 400px;
   }
-  .back-button{
+
+  .back-button {
     position: absolute;
     left: 16px;
-    top:28px;
+    top: 28px;
+  }
+}
+
+.assignment-desc{
+  color: #666;
+}
+
+.assignment-feedback{
+  color: #222;
+}
+
+svg {
+  text {
+    font-family: Roboto, sans-serif;
+    fill: #333;
+  }
+
+  text.percent{
+    font-size: 16px;
+  }
+
+  text.get{
+    font-size: 12px;
+  }
+
+  text.category {
+    font-size: 16px;
+  }
+
+  text.weight {
+    font-size: 12px;
   }
 }

@@ -9,8 +9,8 @@ export default function LPI(props) {
         <div className="linear-progress-indicator"
              style={{width: width + "px", height: height + "px"}}>
             <svg
-                viewBox={"0 0 " + width + " " + height}
-                xmlns="http://www.w3.org/2000/svg">
+                width={width + "px"}
+                height={height + "px"}>
                 <line className="background" x1={height / 2} y1={height / 2} x2={width - height / 2} y2={height / 2}
                       strokeWidth={height}
                       strokeLinecap="round"/>
@@ -19,7 +19,7 @@ export default function LPI(props) {
                           x2={height / 2 + (width - height) * value / 100} y2={height / 2}
                           strokeWidth={height}
                           strokeLinecap="round"/> : null}
-                <text x="50%" y="55%" dominantBaseline="middle" textAnchor="middle">{text}</text>
+                <text x="50%" y="55%" style={{fill: "black"}}>{text}</text>
             </svg>
         </div>
     )
