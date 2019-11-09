@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be4c7382-c738-4232-a45b-55ed2fea1497" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/detailpage/Divider.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/detailpage/StatisticsTab.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/detailpage/AssignmentTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/detailpage/AssignmentTab.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/detailpage/detail-page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/detailpage/detail-page.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/detailpage/StatisticsTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/detailpage/StatisticsTab.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/detailpage/detailPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/detailpage/detailPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/summarypage/summaryPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/summarypage/summaryPage.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -161,7 +156,7 @@
       <workItem from="1573148198062" duration="2778000" />
       <workItem from="1573161728744" duration="2114000" />
       <workItem from="1573239740588" duration="5409000" />
-      <workItem from="1573248106357" duration="20952000" />
+      <workItem from="1573248106357" duration="21380000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1572012150825</created>
@@ -394,7 +389,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573260506891</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="+ statistics tab almost finished&#10;~ solved some key warning problem&#10;~ fixed can't go to new page when old page is doing transition">
+      <created>1573270095846</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1573270095846</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -414,7 +416,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="+ summary card, include course name, period and room" />
     <MESSAGE value="+ multi-language support&#10;+ linear progress indicator" />
     <MESSAGE value="+ Summary card working" />
     <MESSAGE value="+ Summary page working" />
@@ -439,6 +440,7 @@
     <MESSAGE value="+ detail page floating back button" />
     <MESSAGE value="+ scroll bar now overlays" />
     <MESSAGE value="+ tab bar scrolling" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ tab bar scrolling" />
+    <MESSAGE value="+ statistics tab almost finished&#10;~ solved some key warning problem&#10;~ fixed can't go to new page when old page is doing transition" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ statistics tab almost finished&#10;~ solved some key warning problem&#10;~ fixed can't go to new page when old page is doing transition" />
   </component>
 </project>

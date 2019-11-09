@@ -1,4 +1,4 @@
-import React, {Component, Fragment} from "react"
+import React, {Component} from "react"
 import Card, {CardPrimaryContent} from "@material/react-card"
 import {Padding} from "../components/padding"
 import {Body1, Headline4, Headline5} from "@material/react-typography"

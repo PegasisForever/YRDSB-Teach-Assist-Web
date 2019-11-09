@@ -107,7 +107,7 @@ export default function AssignmentTab(props) {
     })
     return <LinearLayout vertical item={"center"} style={{
         transform: `translateX(${props.tabOffset}px)`,
-        position: "absolute", width: "calc(100vw - 300px)"
+        position: "absolute", width: "100%"
     }}>
         {listItems}
     </LinearLayout>

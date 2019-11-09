@@ -92,7 +92,7 @@ export function StatisticsTab(props) {
     let course = props.course
     return <LinearLayout vertical item={"center"} style={{
         transform: `translateX(${props.tabOffset}px)`,
-        position: "absolute", width: "calc(100vw - 300px)"
+        position: "absolute", width: "100%"
     }}>
         <SizedBox height={32}/>
         <Headline5>{getString("overall")}</Headline5>
