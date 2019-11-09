@@ -122,7 +122,6 @@ class MainPanel extends Component {
                         }
                     } else {
                         style = {
-                            overflow: "hidden",
                             left: x + "px", top: y + "px",
                             opacity: opacity,
                             width: width + "px",
