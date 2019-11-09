@@ -105,7 +105,7 @@ export default function AssignmentTab(props) {
                 <div style={{width: "700px", height: "0", borderBottom: "1px solid rgba(0, 0, 0, 0.2)"}}/>}
         </Fragment>
     })
-    return <LinearLayout vertical item={"center"}>
+    return <LinearLayout style={{transform:`translateX(${props.tabOffset}px)`}} vertical item={"center"}>
         {listItems}
     </LinearLayout>
 }

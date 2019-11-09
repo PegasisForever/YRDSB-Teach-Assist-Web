@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="be4c7382-c738-4232-a45b-55ed2fea1497" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/detailpage/detail-page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/detailpage/detail-page.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/detailpage/AssignmentTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/detailpage/AssignmentTab.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/detailpage/detailPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/detailpage/detailPage.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -153,7 +154,7 @@
       <workItem from="1573148198062" duration="2778000" />
       <workItem from="1573161728744" duration="2114000" />
       <workItem from="1573239740588" duration="5409000" />
-      <workItem from="1573248106357" duration="9358000" />
+      <workItem from="1573248106357" duration="11395000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1572012150825</created>
@@ -372,7 +373,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573257182553</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="+ scroll bar now overlays">
+      <created>1573257657831</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1573257657831</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -392,7 +400,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="+ id to text fields" />
     <MESSAGE value="+ Padding Component&#10;~ Moved loginPage to new location&#10;+ summarypage, working" />
     <MESSAGE value="+ summary card, include course name, period and room" />
     <MESSAGE value="+ multi-language support&#10;+ linear progress indicator" />
@@ -417,6 +424,7 @@
     <MESSAGE value="+ reset tab index on change between courses" />
     <MESSAGE value="+ finished assignment tab" />
     <MESSAGE value="+ detail page floating back button" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ detail page floating back button" />
+    <MESSAGE value="+ scroll bar now overlays" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ scroll bar now overlays" />
   </component>
 </project>

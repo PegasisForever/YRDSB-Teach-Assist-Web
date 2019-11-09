@@ -83,8 +83,8 @@ class MainPanel extends Component {
     }
 
     scrollListener(event) {
-        let shouldShowButton=event.currentTarget.scrollTop >= 208
-        if (shouldShowButton!==this.state.showSecondBackBtn){
+        let shouldShowButton = event.currentTarget.scrollTop >= 208
+        if (shouldShowButton !== this.state.showSecondBackBtn) {
             this.setState({
                 showSecondBackBtn: shouldShowButton
             })
@@ -96,6 +96,7 @@ class MainPanel extends Component {
         return <Animate
             show={true}
             start={{
+                tabOffset: -this.props.tabIndex * (window.innerWidth - 300),
                 x: this.props.startX, y: this.props.startY,
                 width: this.props.startWidth, height: this.props.startHeight,
                 padding: this.props.fadeTransition ? 32 : 0, opacity: 0
@@ -107,18 +108,19 @@ class MainPanel extends Component {
                 timing: {duration: 500 * getAnimationScale(), ease: easeExpInOut}
             }}
             update={{
+                tabOffset: [-this.props.tabIndex * (window.innerWidth - 300)],
                 opacity: [this.props.opacity],
                 timing: {duration: 500 * getAnimationScale(), ease: easeCubicInOut}
             }}>
-            {({x, y, width, height, opacity, padding}) => {
+            {({x, y, width, height, opacity, padding, tabOffset}) => {
                 let style
-                if (opacity!==1){
-                    if (padding===32){
-                        style={
+                if (opacity !== 1) {
+                    if (padding === 32) {
+                        style = {
                             opacity: opacity,
                         }
-                    }else{
-                        style={
+                    } else {
+                        style = {
                             overflow: "hidden",
                             left: x + "px", top: y + "px",
                             opacity: opacity,
@@ -132,14 +134,15 @@ class MainPanel extends Component {
                     <Animate
                         show={true}
                         start={{
-                            size:0
+                            size: 0
                         }}
                         update={{
-                            size:[this.state.showSecondBackBtn?1:0],
+                            size: [this.state.showSecondBackBtn ? 1 : 0],
                             timing: {duration: 500 * getAnimationScale(), ease: easeCubicInOut}
                         }}>
-                        {({size})=>{
-                            return <IconButton style={{transform:`scale(${size})`}} className="float-back-button" onClick={this.props.onExit}>
+                        {({size}) => {
+                            return <IconButton style={{transform: `scale(${size})`}} className="float-back-button"
+                                               onClick={this.props.onExit}>
                                 <MaterialIcon icon="arrow_back"/>
                             </IconButton>
                         }}
@@ -151,6 +154,7 @@ class MainPanel extends Component {
                               padding={padding}/>
                     <AssignmentTab assignments={this.props.course.assignments}
                                    weights={this.props.course.weight_table}
+                                   tabOffset={tabOffset}
                                    onExit={this.props.onExit}/>
                 </div>
             }}
@@ -214,6 +218,7 @@ export default class DetailPage extends Component {
             sidePanelOffset: 0,
             sidePanelOpacity: 1,
             mainPanelOpacity: 1,
+            tabOffset: 0,
         }
 
         sessionStorage.setItem("selected-course", selectedCourse.toString())
