@@ -76,7 +76,7 @@ class Root extends Component {
 
 
 ReactDOM.render(
-    <Root/>,
+    window.innerWidth>1050?<Root/>:<p>Please open this page in a desktop browser.</p>,
     document.getElementById('root')
 )
 

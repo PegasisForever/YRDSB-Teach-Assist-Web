@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be4c7382-c738-4232-a45b-55ed2fea1497" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/detailpage/detail-page.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/detailpage/detail-page.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -152,7 +154,8 @@
       <workItem from="1573148198062" duration="2778000" />
       <workItem from="1573161728744" duration="2114000" />
       <workItem from="1573239740588" duration="5409000" />
-      <workItem from="1573248106357" duration="21439000" />
+      <workItem from="1573248106357" duration="22376000" />
+      <workItem from="1573323804315" duration="227000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1572012150825</created>
@@ -399,7 +402,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573270481121</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="~ change animation speed to 1x">
+      <created>1573270584637</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1573270584637</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -419,7 +429,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="+ Summary card working" />
     <MESSAGE value="+ Summary page working" />
     <MESSAGE value="+ switch page (no animation)" />
     <MESSAGE value="~ fixed summary chart display when data is incomplete" />
@@ -444,6 +453,7 @@
     <MESSAGE value="+ tab bar scrolling" />
     <MESSAGE value="+ statistics tab almost finished&#10;~ solved some key warning problem&#10;~ fixed can't go to new page when old page is doing transition" />
     <MESSAGE value="~ fixed animation" />
-    <option name="LAST_COMMIT_MESSAGE" value="~ fixed animation" />
+    <MESSAGE value="~ change animation speed to 1x" />
+    <option name="LAST_COMMIT_MESSAGE" value="~ change animation speed to 1x" />
   </component>
 </project>
