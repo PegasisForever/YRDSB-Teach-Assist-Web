@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be4c7382-c738-4232-a45b-55ed2fea1497" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/detailpage/AssignmentTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/detailpage/AssignmentTab.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/detailpage/StatisticsTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/detailpage/StatisticsTab.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/detailpage/detailPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/detailpage/detailPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -156,7 +152,7 @@
       <workItem from="1573148198062" duration="2778000" />
       <workItem from="1573161728744" duration="2114000" />
       <workItem from="1573239740588" duration="5409000" />
-      <workItem from="1573248106357" duration="21380000" />
+      <workItem from="1573248106357" duration="21439000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1572012150825</created>
@@ -396,7 +392,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573270095846</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="~ fixed animation">
+      <created>1573270481121</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1573270481121</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -416,7 +419,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="+ multi-language support&#10;+ linear progress indicator" />
     <MESSAGE value="+ Summary card working" />
     <MESSAGE value="+ Summary page working" />
     <MESSAGE value="+ switch page (no animation)" />
@@ -441,6 +443,7 @@
     <MESSAGE value="+ scroll bar now overlays" />
     <MESSAGE value="+ tab bar scrolling" />
     <MESSAGE value="+ statistics tab almost finished&#10;~ solved some key warning problem&#10;~ fixed can't go to new page when old page is doing transition" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ statistics tab almost finished&#10;~ solved some key warning problem&#10;~ fixed can't go to new page when old page is doing transition" />
+    <MESSAGE value="~ fixed animation" />
+    <option name="LAST_COMMIT_MESSAGE" value="~ fixed animation" />
   </component>
 </project>

@@ -81,5 +81,5 @@ ReactDOM.render(
 )
 
 export function getAnimationScale() {
-    return 5
+    return 1
 }
