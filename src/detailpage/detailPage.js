@@ -16,6 +16,7 @@ import IconButton from '@material/react-icon-button'
 import {getAnimationScale} from "../index"
 import SummaryPage from "../summarypage/summaryPage"
 import AssignmentTab from "./AssignmentTab"
+import {StatisticsTab} from "./StatisticsTab"
 
 function SidePanel(props) {
     let selectedCode = props.courseList[props.selected].code
@@ -156,6 +157,10 @@ class MainPanel extends Component {
                                    weights={this.props.course.weight_table}
                                    tabOffset={tabOffset}
                                    onExit={this.props.onExit}/>
+                    <StatisticsTab course={this.props.course}
+                                   tabOffset={tabOffset + window.innerWidth - 300}/>
+
+
                 </div>
             }}
         </Animate>
@@ -230,9 +235,7 @@ export default class DetailPage extends Component {
 
     onSidePanelClick(index) {
         sessionStorage.setItem("selected-course", index.toString())
-        sessionStorage.removeItem("tab-index")
         this.setState({
-            tabIndex: 0,
             selectedCourse: index
         })
     }

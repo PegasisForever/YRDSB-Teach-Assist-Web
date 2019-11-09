@@ -90,7 +90,8 @@ export default class SummaryPage extends Component {
                         startWidth: w,
                         startHeight: h,
                     }
-                ),()=>{},400)
+                ), () => {
+                }, 400)
             })
     }
 
@@ -156,7 +157,8 @@ export default class SummaryPage extends Component {
                                 let ref = React.createRef()
                                 this.cardRefs.push(ref)
                                 return i === this.state.selectedCourseIndex ?
-                                    <SizedBox width={this.state.animationWidth + 32}
+                                    <SizedBox key={course.code}
+                                              width={this.state.animationWidth + 32}
                                               height={this.state.animationHeight + 32}/> :
                                     <SummaryCard
                                         key={course.code}

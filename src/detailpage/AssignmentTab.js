@@ -5,6 +5,7 @@ import {Body1, Headline5} from "@material/react-typography"
 import {Padding} from "../components/padding"
 import {getAverage, isNoWeight} from "../courseUtilities"
 import getString from "../strings"
+import Divider from "./Divider"
 
 let smallmarkCategories = ["KU", "T", "C", "A", "O", "F"]
 let smallmarkColors = {
@@ -44,7 +45,7 @@ function SmallmarkBar(props) {
                 <text className="get" x={x + 25} y={height - vPadding - barHeight - 8}>
                     {Math.floor(smallmark.get * 10) / 10}/{Math.floor(smallmark.total * 10) / 10}</text>
                 <text className="percent" x={x + 25} y={height - vPadding - barHeight - 22}>
-                    {Math.floor(percent * 1000) / 10}</text>
+                    {Math.floor(percent * 10) * 10}</text>
                 <text className="weight" x={x + 25} y={height - 6}>
                     {getString("w:") + smallmark.weight}</text>
             </Fragment> :
@@ -99,13 +100,15 @@ function AssignmentListItem(props) {
 export default function AssignmentTab(props) {
     let assignments = props.assignments.slice().reverse()
     let listItems = assignments.map((assignment, i) => {
-        return <Fragment>
-            <AssignmentListItem key={assignment.name} assignment={assignment} weights={props.weights}/>
-            {i === assignments.length - 1 ? null :
-                <div style={{width: "700px", height: "0", borderBottom: "1px solid rgba(0, 0, 0, 0.2)"}}/>}
+        return <Fragment key={assignment.name}>
+            <AssignmentListItem assignment={assignment} weights={props.weights}/>
+            {i === assignments.length - 1 ? null : <Divider/>}
         </Fragment>
     })
-    return <LinearLayout style={{transform:`translateX(${props.tabOffset}px)`}} vertical item={"center"}>
+    return <LinearLayout vertical item={"center"} style={{
+        transform: `translateX(${props.tabOffset}px)`,
+        position: "absolute", width: "calc(100vw - 300px)"
+    }}>
         {listItems}
     </LinearLayout>
 }

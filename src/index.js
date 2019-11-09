@@ -47,6 +47,9 @@ class Root extends Component {
     }
 
     setPage(page, callback, transitionTime) {
+        if (this.lastSetPageTimeoutID){
+            clearTimeout(this.lastSetPageTimeoutID)
+        }
         this.setState(prevState => {
             return {
                 page1: prevState.page2,
@@ -55,7 +58,7 @@ class Root extends Component {
                 key2: prevState.key2 + 1
             }
         })
-        setTimeout(() => {
+        this.lastSetPageTimeoutID = setTimeout(() => {
             if (callback) callback()
             this.setState({
                 page1: null
