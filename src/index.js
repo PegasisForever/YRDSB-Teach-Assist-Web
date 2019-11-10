@@ -5,6 +5,7 @@ import LoginPage from "./loginpage/loginPage"
 import LoadingPage from "./summarypage/loadingPage"
 import SummaryPage from "./summarypage/summaryPage"
 import DetailPage from "./detailpage/detailPage"
+import {isMobile} from "./tools"
 
 let states = {
     login: LoginPage,
@@ -74,11 +75,18 @@ class Root extends Component {
     }
 }
 
-
 ReactDOM.render(
-    window.innerWidth>1050?<Root/>:<p>Please open this page in a desktop browser.</p>,
+    <Root/>,
     document.getElementById('root')
 )
+
+let isMobileBefore=isMobile()
+window.onresize=function () {
+    let isMobileNow=isMobile()
+    if (isMobileNow!==isMobileBefore){
+        window.location.reload()
+    }
+}
 
 export function getAnimationScale() {
     return 1

@@ -1,24 +1,32 @@
-import React, {Component} from "react"
+import React, {Component, Fragment} from "react"
 import LinearLayout from "../components/linearLayout"
-import {Body2, Headline5, Subtitle1} from "@material/react-typography"
+import {Body1, Body2, Headline5, Subtitle1} from "@material/react-typography"
 import Checkbox from '@material/react-checkbox'
 import TextField, {HelperText, Input} from '@material/react-text-field'
 import MaterialIcon from '@material/react-material-icon'
 import Button from '@material/react-button'
 import {SizedBox} from "../components/sizedBox"
 import CircularProgressBar from "../components/CircularProgressBar"
-import net from "../tools"
+import net, {isMobile} from "../tools"
 import getString from "../strings"
 import SummaryPage from "../summarypage/summaryPage"
 import Animate from "react-move/Animate"
 import {easeQuadInOut} from "d3-ease"
 import {getAnimationScale} from "../index"
+import {Padding} from "../components/padding"
 
 function TATitle() {
     return (<LinearLayout vertical align={"center"} item={"center"}>
-        <img src="./launcher192.png" className="logo" alt="logo"/>
-        <SizedBox height={16}/>
-        <Headline5>YRDSB Teach Assist</Headline5>
+        {isMobile() ? <Fragment>
+                <img src="./launcher192.png" width={130} alt="logo"/>
+                <Body1 style={{fontSize: "20px"}}>YRDSB</Body1>
+                <Body1 style={{fontSize: "20px"}}>Teach Assist</Body1>
+            </Fragment> :
+            <Fragment>
+                <img src="./launcher192.png" width={150} alt="logo"/>
+                <SizedBox height={16}/>
+                <Headline5>YRDSB Teach Assist</Headline5>
+            </Fragment>}
     </LinearLayout>)
 }
 
@@ -36,7 +44,6 @@ class LoginForm extends Component {
             password: "",
             passwordValid: true,
             isLoading: false,
-            passwordIncorrect: false,
             remember: false,
         }
 
@@ -45,6 +52,7 @@ class LoginForm extends Component {
 
     getStudentNumberTF() {
         return (<TextField
+            style={{width:"300px"}}
             label={getString("student_number")}
             leadingIcon={<MaterialIcon icon="account_circle"/>}>
             <Input
@@ -61,11 +69,12 @@ class LoginForm extends Component {
 
     getPasswordTF() {
         return (<TextField
+            style={{width:"300px"}}
             label={getString("password")}
             leadingIcon={<MaterialIcon icon="lock"/>}
-            helperText={<HelperText validation>
-                {this.state.passwordIncorrect ? getString("student_number_or_password_incorrect") : null}
-            </HelperText>}>
+            helperText={!this.state.passwordValid ? <HelperText validation>
+                {getString("student_number_or_password_incorrect")}
+            </HelperText>: null}>
             <Input
                 type="password"
                 id={"password_tf"}
@@ -94,24 +103,43 @@ class LoginForm extends Component {
     }
 
     render() {
-        return (<LinearLayout vertical align={"center"} item={"stretch"}>
-            <Subtitle1 style={{"textAlign": "center"}}>{getString("login_your_account")}</Subtitle1>
-            <SizedBox height={8}/>
-            <form onSubmit={this.onLogin}>
+        return isMobile() ? <LinearLayout vertical align={"center"} item={"center"}>
+                    <Body1 style={{fontSize: "20px", fontWeight: "500", textAlign: "center"}}>
+                        {getString("login_your_account")}</Body1>
+                    <SizedBox height={18}/>
+                    <form onSubmit={this.onLogin}>
+                        {this.getStudentNumberTF()}
+                        <SizedBox height={12}/>
+                        {this.getPasswordTF()}
+                        <SizedBox height={4}/>
+                        {this.getRememberMeCheckBox()}
+                        <LinearLayout horizontal align={"end"} item={"center"}>
+                            {this.state.isLoading ? <CircularProgressBar/> : null}
+                            <SizedBox width={12}/>
+                            <Button disabled={this.state.isLoading} raised type="submit"
+                                    onClick={this.onLogin}>{getString("login")}</Button>
+                            <SizedBox width={12}/>
+                        </LinearLayout>
+                    </form>
+            </LinearLayout> :
+            <LinearLayout vertical align={"center"} item={"stretch"}>
+                <Subtitle1 style={{"textAlign": "center"}}>{getString("login_your_account")}</Subtitle1>
                 <SizedBox height={8}/>
-                {this.getStudentNumberTF()}
-                <SizedBox height={8}/>
-                {this.getPasswordTF()}
-                {this.getRememberMeCheckBox()}
-                <LinearLayout horizontal align={"end"} item={"center"}>
-                    {this.state.isLoading ? <CircularProgressBar/> : null}
-                    <SizedBox width={12}/>
-                    <Button disabled={this.state.isLoading} raised type="submit"
-                            onClick={this.onLogin}>{getString("login")}</Button>
-                    <SizedBox width={12}/>
-                </LinearLayout>
-            </form>
-        </LinearLayout>)
+                <form onSubmit={this.onLogin}>
+                    <SizedBox height={8}/>
+                    {this.getStudentNumberTF()}
+                    <SizedBox height={8}/>
+                    {this.getPasswordTF()}
+                    {this.getRememberMeCheckBox()}
+                    <LinearLayout horizontal align={"end"} item={"center"}>
+                        {this.state.isLoading ? <CircularProgressBar/> : null}
+                        <SizedBox width={12}/>
+                        <Button disabled={this.state.isLoading} raised type="submit"
+                                onClick={this.onLogin}>{getString("login")}</Button>
+                        <SizedBox width={12}/>
+                    </LinearLayout>
+                </form>
+            </LinearLayout>
     }
 
     onLogin(event) {
@@ -121,7 +149,6 @@ class LoginForm extends Component {
         this.setState({
             numberValid: true,
             passwordValid: true,
-            passwordIncorrect: false
         })
         if (this.state.number === "") {
             this.setState({
@@ -152,7 +179,7 @@ class LoginForm extends Component {
                 }
                 if (statusCode === 200) {
                     sessionStorage.setItem("course-list", response)
-                    let account=JSON.stringify({
+                    let account = JSON.stringify({
                         number: this.state.number,
                         password: this.state.password
                     })
@@ -163,8 +190,7 @@ class LoginForm extends Component {
                     this.props.gotoSummary()
                 } else if (statusCode === 401) {
                     this.setState({
-                        passwordValid: false,
-                        passwordIncorrect: true
+                        passwordValid: false
                     })
                 } else {
                     alert(statusCode)
@@ -178,16 +204,16 @@ class LoginForm extends Component {
 export default class LoginPage extends Component {
     constructor(props) {
         super(props)
-        this.state={
-            opacity:1
+        this.state = {
+            opacity: 1
         }
         this.gotoSummary = this.gotoSummary.bind(this)
         sessionStorage.setItem("state", "login")
     }
 
-    gotoSummary(){
+    gotoSummary() {
         this.setState({
-            opacity:0
+            opacity: 0
         })
         this.props.setPage(<SummaryPage setPage={this.props.setPage}/>)
     }
@@ -198,20 +224,26 @@ export default class LoginPage extends Component {
             start={{opacity: 0}}
             enter={{
                 opacity: [this.state.opacity],
-                timing: {duration: 500*getAnimationScale(), ease: easeQuadInOut}
+                timing: {duration: 500 * getAnimationScale(), ease: easeQuadInOut}
             }}
             update={{
                 opacity: [this.state.opacity],
-                timing: { duration: 500*getAnimationScale(), ease: easeQuadInOut },
+                timing: {duration: 500 * getAnimationScale(), ease: easeQuadInOut},
             }}>
             {({opacity}) => {
                 return (<LinearLayout style={{opacity: opacity}} className="full-page" vertical
                                       align={"center"}>
-                    <LinearLayout horizontal align={"center"} item={"stretch"}>
-                        <TATitle/>
-                        <Divider/>
-                        <LoginForm gotoSummary={this.gotoSummary}/>
-                    </LinearLayout>
+                    {isMobile() ?
+                        <Fragment>
+                            <TATitle/>
+                            <SizedBox height={80}/>
+                            <LoginForm gotoSummary={this.gotoSummary}/>
+                        </Fragment> :
+                        <LinearLayout horizontal align={"center"} item={"stretch"}>
+                            <TATitle/>
+                            <Divider/>
+                            <LoginForm gotoSummary={this.gotoSummary}/>
+                        </LinearLayout>}
                 </LinearLayout>)
             }}
         </Animate>)
