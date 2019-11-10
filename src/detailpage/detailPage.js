@@ -172,7 +172,7 @@ function TitleBar(props) {
         <IconButton className="back-button" onClick={props.onExit}>
             <MaterialIcon icon="arrow_back"/>
         </IconButton>
-        <Padding all={props.padding} l={props.padding * 2.375}>
+        <Padding className="selectable" all={props.padding} l={props.padding * 2.375}>
             <Headline4 style={{whiteSpace: "nowrap"}}>{course.name ? course.name : course.code}</Headline4>
             <SizedBox height={8}/>
             <LinearLayout horizontal>

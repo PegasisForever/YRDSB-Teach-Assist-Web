@@ -144,7 +144,7 @@ export default class SummaryPage extends Component {
                             <SizedBox height={8}/>
                             <Headline5>{getString("average")}</Headline5>
                             <SizedBox height={8}/>
-                            <Headline1 className="average">{Math.round(avg * 10) / 10 + "%"}</Headline1>
+                            <Headline1 className="average selectable">{Math.round(avg * 10) / 10 + "%"}</Headline1>
                             <SizedBox height={8}/>
                             <LPI width={400} value={avg}/>
                         </Fragment> : null}

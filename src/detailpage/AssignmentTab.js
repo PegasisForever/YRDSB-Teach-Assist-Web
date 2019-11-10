@@ -84,11 +84,12 @@ function AssignmentListItem(props) {
             <LinearLayout horizontal align={"space-between"}>
                 <SizedBox width={436}>
                     <Padding t={32} b={32}>
-                        <Headline5>{assi.name}</Headline5>
+                        <Headline5 className="selectable">{assi.name}</Headline5>
                         {avg ? <Body1
-                            className="assignment-desc">{getString("avg:") + Math.floor(avg * 10) / 10 + "%"}</Body1> : null}
-                        {isNoWeight(assi) ? <Body1 className="assignment-desc">{getString("no_weight")}</Body1> : null}
-                        {assi.feedback !== "" ? <Body1 className="assignment-feedback">{assi.feedback}</Body1> : null}
+                            className="assignment-desc selectable">{getString("avg:") + Math.floor(avg * 10) / 10 + "%"}</Body1> : null}
+                        {isNoWeight(assi) ?
+                            <Body1 className="assignment-desc selectable">{getString("no_weight")}</Body1> : null}
+                        {assi.feedback !== "" ? <Body1 className="assignment-feedback selectable">{assi.feedback}</Body1> : null}
                     </Padding>
                 </SizedBox>
                 <SmallMarkChart assignment={assi}/>

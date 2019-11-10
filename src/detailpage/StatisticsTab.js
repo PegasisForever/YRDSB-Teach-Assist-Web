@@ -52,7 +52,7 @@ function getChart(course, category) {
     return <LinearLayout vertical>
         {category !== "overall" ? <Fragment>
             <SizedBox height={32}/>
-            <Headline5>{getString(shortNameMap[category])}</Headline5>
+            <Headline5 className="selectable">{getString(shortNameMap[category])}</Headline5>
         </Fragment> : null}
         <SizedBox width={600} height={300}>
             <ResponsiveLine
@@ -97,7 +97,7 @@ export function StatisticsTab(props) {
         <SizedBox height={32}/>
         <Headline5>{getString("overall")}</Headline5>
         <SizedBox height={8}/>
-        <Headline1 className="overall">{Math.round(course.overall_mark * 10) / 10 + "%"}</Headline1>
+        <Headline1 className="overall selectable">{Math.round(course.overall_mark * 10) / 10 + "%"}</Headline1>
         <SizedBox height={8}/>
         <LPI width={400} value={course.overall_mark}/>
         <SizedBox height={16}/>

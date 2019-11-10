@@ -36,6 +36,10 @@ body {
   margin: 0;
   background: #fafafa;
   overflow-x: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .mdc-typography {
@@ -81,13 +85,20 @@ svg {
 }
 
 @media only screen and (max-width: 1050px) {
-  .desktop-only{
+  .desktop-only {
     display: none;
   }
 }
 
 @media only screen and (min-width: 1051px) {
-  .mobile-only{
+  .mobile-only {
     display: none;
   }
+}
+
+.selectable {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
 }

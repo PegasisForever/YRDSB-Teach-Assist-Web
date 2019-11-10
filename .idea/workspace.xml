@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="be4c7382-c738-4232-a45b-55ed2fea1497" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/loginpage/loginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/loginpage/loginPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/detailpage/AssignmentTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/detailpage/AssignmentTab.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/detailpage/StatisticsTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/detailpage/StatisticsTab.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/detailpage/detailPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/detailpage/detailPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/summarypage/summaryPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/summarypage/summaryPage.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -172,7 +175,8 @@
       <workItem from="1573360340135" duration="422000" />
       <workItem from="1573366889117" duration="394000" />
       <workItem from="1573367697870" duration="56000" />
-      <workItem from="1573370765813" duration="4160000" />
+      <workItem from="1573370765813" duration="4676000" />
+      <workItem from="1573375657936" duration="690000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1572012150825</created>
@@ -475,7 +479,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573373850940</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="~ better refresh">
+      <created>1573374973824</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1573374973824</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -495,7 +506,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="+ refresh browser to refresh&#10;+ in development mode refresh browser don't cause refresh" />
     <MESSAGE value="+ fixed login page refresh error" />
     <MESSAGE value="~ fixed page description" />
     <MESSAGE value="+ firebase analytics and performance" />
@@ -520,6 +530,7 @@
     <MESSAGE value="~ better chinese translation" />
     <MESSAGE value="~ change resource path to relative&#10;+ electron&#10;- firebase performence sdk" />
     <MESSAGE value="+ login page for mobile" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ login page for mobile" />
+    <MESSAGE value="~ better refresh" />
+    <option name="LAST_COMMIT_MESSAGE" value="~ better refresh" />
   </component>
 </project>
