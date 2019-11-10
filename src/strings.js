@@ -155,7 +155,7 @@ let strings = {
         "no_google_play_warning_content": "由于您的设备不支持Google Play服务框架，您将无法收到通知。",
         "ok": "OK",
         "moodle": "Moodle",
-        "logout": "退出登录",
+        "logout": "登出",
         "remember_me": "记住密码",
         "refresh": "刷新",
     }

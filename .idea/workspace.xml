@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be4c7382-c738-4232-a45b-55ed2fea1497" name="Default Changelist" comment="">
+    <list default="true" id="be4c7382-c738-4232-a45b-55ed2fea1497" name="Default Changelist" comment="+ better better scroll bar">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/detailpage/detailPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/detailpage/detailPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/strings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/strings.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +67,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="npm.deploy">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -155,7 +154,8 @@
       <workItem from="1573161728744" duration="2114000" />
       <workItem from="1573239740588" duration="5409000" />
       <workItem from="1573248106357" duration="22376000" />
-      <workItem from="1573323804315" duration="652000" />
+      <workItem from="1573323804315" duration="1090000" />
+      <workItem from="1573356457292" duration="660000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1572012150825</created>
@@ -423,7 +423,21 @@
       <option name="project" value="LOCAL" />
       <updated>1573324293305</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="+ better scroll bar">
+      <created>1573324538039</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1573324538039</updated>
+    </task>
+    <task id="LOCAL-00040" summary="+ better better scroll bar">
+      <created>1573324556388</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1573324556388</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -443,8 +457,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="~ fixed summary chart display when data is incomplete" />
-    <MESSAGE value="+ save login state cross refresh&#10;+ logout button" />
     <MESSAGE value="+ remember me button&#10;+ loading page appears if user is saved" />
     <MESSAGE value="~ changed one translation" />
     <MESSAGE value="+ transition animation" />
@@ -468,6 +480,8 @@
     <MESSAGE value="~ change animation speed to 1x" />
     <MESSAGE value="+ tip to open in desktop&#10;+ firefox &amp; edge scroll fix" />
     <MESSAGE value="+ chrome better scroll" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ chrome better scroll" />
+    <MESSAGE value="+ better scroll bar" />
+    <MESSAGE value="+ better better scroll bar" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ better better scroll bar" />
   </component>
 </project>
