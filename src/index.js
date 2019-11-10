@@ -10,7 +10,7 @@ import {isMobile} from "./tools"
 let states = {
     login: LoginPage,
     summary: SummaryPage,
-    detail:DetailPage
+    detail: DetailPage
 }
 
 class Root extends Component {
@@ -48,7 +48,7 @@ class Root extends Component {
     }
 
     setPage(page, callback, transitionTime) {
-        if (this.lastSetPageTimeoutID){
+        if (this.lastSetPageTimeoutID) {
             clearTimeout(this.lastSetPageTimeoutID)
         }
         this.setState(prevState => {
@@ -64,14 +64,14 @@ class Root extends Component {
             this.setState({
                 page1: null
             })
-        }, (transitionTime ? transitionTime : 500)*getAnimationScale())
+        }, (transitionTime ? transitionTime : 500) * getAnimationScale())
     }
 
     render() {
         return [
-                <div key={this.state.key1} className="root-div full-page">{this.state.page1}</div>,
-                <div key={this.state.key2} className="root-div full-page">{this.state.page2}</div>
-            ]
+            <div key={this.state.key1} className="root-div full-page">{this.state.page1}</div>,
+            <div key={this.state.key2} className="root-div full-page">{this.state.page2}</div>
+        ]
     }
 }
 
@@ -79,14 +79,6 @@ ReactDOM.render(
     <Root/>,
     document.getElementById('root')
 )
-
-let isMobileBefore=isMobile()
-window.onresize=function () {
-    let isMobileNow=isMobile()
-    if (isMobileNow!==isMobileBefore){
-        window.location.reload()
-    }
-}
 
 export function getAnimationScale() {
     return 1

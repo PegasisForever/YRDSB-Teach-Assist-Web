@@ -13,7 +13,6 @@ import SummaryPage from "../summarypage/summaryPage"
 import Animate from "react-move/Animate"
 import {easeQuadInOut} from "d3-ease"
 import {getAnimationScale} from "../index"
-import {Padding} from "../components/padding"
 
 function TATitle() {
     return (<LinearLayout vertical align={"center"} item={"center"}>
@@ -52,7 +51,7 @@ class LoginForm extends Component {
 
     getStudentNumberTF() {
         return (<TextField
-            style={{width:"300px"}}
+            style={{width: "300px"}}
             label={getString("student_number")}
             leadingIcon={<MaterialIcon icon="account_circle"/>}>
             <Input
@@ -69,12 +68,12 @@ class LoginForm extends Component {
 
     getPasswordTF() {
         return (<TextField
-            style={{width:"300px"}}
+            style={{width: "300px"}}
             label={getString("password")}
             leadingIcon={<MaterialIcon icon="lock"/>}
             helperText={!this.state.passwordValid ? <HelperText validation>
                 {getString("student_number_or_password_incorrect")}
-            </HelperText>: null}>
+            </HelperText> : null}>
             <Input
                 type="password"
                 id={"password_tf"}
@@ -104,23 +103,23 @@ class LoginForm extends Component {
 
     render() {
         return isMobile() ? <LinearLayout vertical align={"center"} item={"center"}>
-                    <Body1 style={{fontSize: "20px", fontWeight: "500", textAlign: "center"}}>
-                        {getString("login_your_account")}</Body1>
-                    <SizedBox height={18}/>
-                    <form onSubmit={this.onLogin}>
-                        {this.getStudentNumberTF()}
-                        <SizedBox height={12}/>
-                        {this.getPasswordTF()}
-                        <SizedBox height={4}/>
-                        {this.getRememberMeCheckBox()}
-                        <LinearLayout horizontal align={"end"} item={"center"}>
-                            {this.state.isLoading ? <CircularProgressBar/> : null}
-                            <SizedBox width={12}/>
-                            <Button disabled={this.state.isLoading} raised type="submit"
-                                    onClick={this.onLogin}>{getString("login")}</Button>
-                            <SizedBox width={12}/>
-                        </LinearLayout>
-                    </form>
+                <Body1 style={{fontSize: "20px", fontWeight: "500", textAlign: "center"}}>
+                    {getString("login_your_account")}</Body1>
+                <SizedBox height={18}/>
+                <form onSubmit={this.onLogin}>
+                    {this.getStudentNumberTF()}
+                    <SizedBox height={12}/>
+                    {this.getPasswordTF()}
+                    <SizedBox height={4}/>
+                    {this.getRememberMeCheckBox()}
+                    <LinearLayout horizontal align={"end"} item={"center"}>
+                        {this.state.isLoading ? <CircularProgressBar/> : null}
+                        <SizedBox width={12}/>
+                        <Button disabled={this.state.isLoading} raised type="submit"
+                                onClick={this.onLogin}>{getString("login")}</Button>
+                        <SizedBox width={12}/>
+                    </LinearLayout>
+                </form>
             </LinearLayout> :
             <LinearLayout vertical align={"center"} item={"stretch"}>
                 <Subtitle1 style={{"textAlign": "center"}}>{getString("login_your_account")}</Subtitle1>
@@ -130,6 +129,7 @@ class LoginForm extends Component {
                     {this.getStudentNumberTF()}
                     <SizedBox height={8}/>
                     {this.getPasswordTF()}
+                    <SizedBox height={4}/>
                     {this.getRememberMeCheckBox()}
                     <LinearLayout horizontal align={"end"} item={"center"}>
                         {this.state.isLoading ? <CircularProgressBar/> : null}
@@ -209,6 +209,22 @@ export default class LoginPage extends Component {
         }
         this.gotoSummary = this.gotoSummary.bind(this)
         sessionStorage.setItem("state", "login")
+    }
+
+    updateIsMobile = () => {
+        let isMobileNow = isMobile()
+        if (isMobileNow !== this.isMobile) {
+            this.isMobile = isMobileNow
+            this.forceUpdate()
+        }
+    }
+
+    componentDidMount() {
+        window.addEventListener('resize', this.updateIsMobile)
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.updateIsMobile)
     }
 
     gotoSummary() {
