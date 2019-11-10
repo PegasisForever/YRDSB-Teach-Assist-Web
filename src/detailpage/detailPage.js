@@ -35,7 +35,7 @@ function SidePanel(props) {
             return <Card style={{transform: `translate(${offset}px)`, opacity: opacity}} className="side-panel">
                 <LinearLayout className="full-width" horizontal align={"start"} item={"center"}>
                     <Padding all={16}>
-                        <img src={"/launcher192.png"} width={50} alt={"logo"}/>
+                        <img src={"./launcher192.png"} width={50} alt={"logo"}/>
                     </Padding>
                     <Headline5 className="title">YRDSB Teach Assist</Headline5>
                 </LinearLayout>

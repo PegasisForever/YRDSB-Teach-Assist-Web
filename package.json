@@ -1,6 +1,7 @@
 {
   "name": "ta.yrdsb.pegasis.site",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "homepage": "./",
   "private": true,
   "dependencies": {
     "@material/react-button": "^0.15.0",
@@ -27,6 +28,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "electron": "electron src-electron/main.js",
     "build": "react-scripts build",
     "serve": "serve -s build",
     "deploy": "firebase deploy --only hosting:ta-yrdsb"
@@ -45,5 +47,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "electron": "^7.1.1"
   }
 }

@@ -16,7 +16,7 @@ import {getAnimationScale} from "../index"
 
 function TATitle() {
     return (<LinearLayout vertical align={"center"} item={"center"}>
-        <img src="/launcher192.png" className="logo" alt="logo"/>
+        <img src="./launcher192.png" className="logo" alt="logo"/>
         <SizedBox height={16}/>
         <Headline5>YRDSB Teach Assist</Headline5>
     </LinearLayout>)

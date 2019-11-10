@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be4c7382-c738-4232-a45b-55ed2fea1497" name="Default Changelist" comment="+ better better scroll bar">
+    <list default="true" id="be4c7382-c738-4232-a45b-55ed2fea1497" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src-electron/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/strings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/strings.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/detailpage/detailPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/detailpage/detailPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/loginpage/loginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/loginpage/loginPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/summarypage/summaryPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/summarypage/summaryPage.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -93,6 +99,16 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="electron" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="electron" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="serve" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -121,7 +137,13 @@
       <item itemvalue="npm.deploy" />
       <item itemvalue="npm.build" />
       <item itemvalue="npm.start" />
+      <item itemvalue="npm.electron" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.electron" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -156,6 +178,10 @@
       <workItem from="1573248106357" duration="22376000" />
       <workItem from="1573323804315" duration="1090000" />
       <workItem from="1573356457292" duration="660000" />
+      <workItem from="1573359571446" duration="728000" />
+      <workItem from="1573360340135" duration="422000" />
+      <workItem from="1573366889117" duration="394000" />
+      <workItem from="1573367697870" duration="56000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1572012150825</created>
@@ -437,7 +463,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573324556388</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="~ better chinese translation">
+      <created>1573359595305</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1573359595305</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -457,7 +490,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="+ remember me button&#10;+ loading page appears if user is saved" />
     <MESSAGE value="~ changed one translation" />
     <MESSAGE value="+ transition animation" />
     <MESSAGE value="+ refresh browser to refresh&#10;+ in development mode refresh browser don't cause refresh" />
@@ -482,6 +514,7 @@
     <MESSAGE value="+ chrome better scroll" />
     <MESSAGE value="+ better scroll bar" />
     <MESSAGE value="+ better better scroll bar" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ better better scroll bar" />
+    <MESSAGE value="~ better chinese translation" />
+    <option name="LAST_COMMIT_MESSAGE" value="~ better chinese translation" />
   </component>
 </project>
