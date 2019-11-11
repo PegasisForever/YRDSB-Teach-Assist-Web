@@ -78,6 +78,7 @@ let strings = {
         "logout": "Logout",
         "remember_me": "Remember Me",
         "refresh": "Refresh",
+        "are_you_sure_to_logout":"Are you sure to logout?",
     },
     "zh": {
         "login_your_account": "登录帐号：",
@@ -158,6 +159,7 @@ let strings = {
         "logout": "登出",
         "remember_me": "记住密码",
         "refresh": "刷新",
+        "are_you_sure_to_logout":"确定要登出吗？",
     }
 }
 

@@ -1,11 +1,11 @@
-import React, {Component} from 'react'
+import React, {Component, Fragment} from 'react'
 import ReactDOM from "react-dom"
 import "./index.scss"
 import LoginPage from "./loginpage/loginPage"
 import LoadingPage from "./summarypage/loadingPage"
 import SummaryPage from "./summarypage/summaryPage"
 import DetailPage from "./detailpage/detailPage"
-import {isMobile} from "./tools"
+import Alert from "./components/alert"
 
 let states = {
     login: LoginPage,
@@ -13,29 +13,35 @@ let states = {
     detail: DetailPage
 }
 
+let showDialog
+let delDialog
+let setPage
+
 class Root extends Component {
     constructor(props) {
         super(props)
         this.setPage = this.setPage.bind(this)
+        this.showDialog = this.showDialog.bind(this)
+        this.delDialog = this.delDialog.bind(this)
+        setPage = this.setPage
+        showDialog = this.showDialog
+        delDialog = this.delDialog
 
         let page
         const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV === "development"
         if (isDevelopment && sessionStorage.getItem("state")) {
             page = React.createElement(
-                states[sessionStorage.getItem("state")],
-                {setPage: this.setPage}
+                states[sessionStorage.getItem("state")]
             )
         } else {
             if (sessionStorage.getItem("state") === "login") {
-                page = <LoginPage setPage={this.setPage}/>
+                page = <LoginPage/>
             } else if (sessionStorage.getItem("state")) {
-                page = <LoadingPage setPage={this.setPage}
-                                    nextPage={states[sessionStorage.getItem("state")]}/>
+                page = <LoadingPage nextPage={states[sessionStorage.getItem("state")]}/>
             } else if (localStorage.getItem("account")) {
-                page = <LoadingPage setPage={this.setPage}
-                                    nextPage={SummaryPage}/>
+                page = <LoadingPage nextPage={SummaryPage}/>
             } else {
-                page = <LoginPage setPage={this.setPage}/>
+                page = <LoginPage/>
             }
         }
 
@@ -43,8 +49,21 @@ class Root extends Component {
             page1: null,
             key1: 1,
             page2: page,
-            key2: 2
+            key2: 2,
+            dialog: null
         }
+    }
+
+    showDialog(dialog) {
+        this.setState({
+            dialog: dialog
+        })
+    }
+
+    delDialog() {
+        this.setState({
+            dialog: null
+        })
     }
 
     setPage(page, callback, transitionTime) {
@@ -68,10 +87,11 @@ class Root extends Component {
     }
 
     render() {
-        return [
-            <div key={this.state.key1} className="root-div full-page">{this.state.page1}</div>,
+        return <Fragment>
+            <div key={this.state.key1} className="root-div full-page">{this.state.page1}</div>
             <div key={this.state.key2} className="root-div full-page">{this.state.page2}</div>
-        ]
+            {this.state.dialog}
+        </Fragment>
     }
 }
 
@@ -83,3 +103,5 @@ ReactDOM.render(
 export function getAnimationScale() {
     return 1
 }
+
+export {showDialog, delDialog, setPage}

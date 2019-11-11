@@ -13,7 +13,8 @@ import {easeExpInOut, easeQuadInOut} from "d3-ease"
 import Animate from "react-move/Animate"
 import DetailPage from "../detailpage/detailPage"
 import domtoimage from "dom-to-image"
-import {getAnimationScale} from "../index"
+import {getAnimationScale, setPage, showDialog} from "../index"
+import {ConfirmDialog} from "../components/alert"
 
 function AnimateCard(props) {
     return props.url ? <Animate
@@ -54,14 +55,22 @@ export default class SummaryPage extends Component {
     }
 
     logout() {
-        this.setState({
-            opacity: 0
-        })
-        this.props.setPage(<LoginPage setPage={this.props.setPage}/>, () => {
-            sessionStorage.removeItem("course-list")
-            localStorage.removeItem("account")
-            sessionStorage.removeItem("account")
-        })
+        showDialog(<ConfirmDialog
+            content={getString("are_you_sure_to_logout")}
+            confirmText={getString("logout")}
+            onConfirm={() => {
+                this.setState({
+                    opacity: 0
+                })
+                setPage(<LoginPage/>, () => {
+                    sessionStorage.removeItem("course-list")
+                    localStorage.removeItem("account")
+                    sessionStorage.removeItem("account")
+                })
+            }
+            }/>)
+
+
     }
 
     openDetailPage(index) {
@@ -80,10 +89,9 @@ export default class SummaryPage extends Component {
                     animationWidth: w,
                     animationHeight: h
                 })
-                self.props.setPage(React.createElement(
+                setPage(React.createElement(
                     DetailPage,
                     {
-                        setPage: self.props.setPage,
                         selectedCourse: index,
                         startX: rect.left,
                         startY: rect.top,

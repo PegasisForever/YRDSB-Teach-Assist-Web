@@ -13,7 +13,7 @@ import Tab from "@material/react-tab"
 import {easeCubicInOut, easeExpInOut} from "d3-ease"
 import Animate from "react-move/Animate"
 import IconButton from '@material/react-icon-button'
-import {getAnimationScale} from "../index"
+import {getAnimationScale, setPage} from "../index"
 import SummaryPage from "../summarypage/summaryPage"
 import AssignmentTab from "./AssignmentTab"
 import {StatisticsTab} from "./StatisticsTab"
@@ -252,7 +252,7 @@ export default class DetailPage extends Component {
             sidePanelOpacity: 0,
             mainPanelOpacity: 0
         })
-        this.props.setPage(<SummaryPage setPage={this.props.setPage}/>, () => {
+        setPage(<SummaryPage/>, () => {
             sessionStorage.removeItem("selected-course")
             sessionStorage.removeItem("tab-index")
         })

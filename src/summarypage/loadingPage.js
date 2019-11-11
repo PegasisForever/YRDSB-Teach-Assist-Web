@@ -4,7 +4,7 @@ import CircularProgressBar from "../components/CircularProgressBar"
 import net from "../tools"
 import Animate from "react-move/Animate"
 import {easeQuadInOut} from "d3-ease"
-import {getAnimationScale} from "../index"
+import {getAnimationScale, setPage} from "../index"
 
 export default class LoadingPage extends Component {
     constructor(props) {
@@ -24,9 +24,8 @@ export default class LoadingPage extends Component {
                     this.setState({
                         opacity:0
                     })
-                    this.props.setPage(React.createElement(
-                        this.props.nextPage,
-                        {setPage: this.props.setPage}
+                    setPage(React.createElement(
+                        this.props.nextPage
                     ))
                 } else if (statusCode === 401) {
 

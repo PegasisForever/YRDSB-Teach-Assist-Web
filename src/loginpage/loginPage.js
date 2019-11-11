@@ -12,7 +12,8 @@ import getString from "../strings"
 import SummaryPage from "../summarypage/summaryPage"
 import Animate from "react-move/Animate"
 import {easeQuadInOut} from "d3-ease"
-import {getAnimationScale} from "../index"
+import {getAnimationScale, setPage, showDialog} from "../index"
+import {Alert} from "../components/alert"
 
 function TATitle() {
     return (<LinearLayout vertical align={"center"} item={"center"}>
@@ -146,6 +147,7 @@ class LoginForm extends Component {
         if (event) {
             event.preventDefault()
         }
+
         this.setState({
             numberValid: true,
             passwordValid: true,
@@ -192,7 +194,12 @@ class LoginForm extends Component {
                     this.setState({
                         passwordValid: false
                     })
+                } else if (statusCode === 500) {
+                    showDialog(<Alert content={getString("server_internal_error")}/>)
+                } else if (statusCode === 0) {
+                    showDialog(<Alert content={getString("connection_failed")}/>)
                 } else {
+                    showDialog(<Alert content={getString("error_code") + statusCode}/>)
                     alert(statusCode)
                 }
             })
@@ -200,6 +207,7 @@ class LoginForm extends Component {
 
     }
 }
+
 
 export default class LoginPage extends Component {
     constructor(props) {
@@ -231,7 +239,7 @@ export default class LoginPage extends Component {
         this.setState({
             opacity: 0
         })
-        this.props.setPage(<SummaryPage setPage={this.props.setPage}/>)
+        setPage(<SummaryPage/>)
     }
 
     render() {
