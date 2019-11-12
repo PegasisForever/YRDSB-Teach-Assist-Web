@@ -3,13 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="be4c7382-c738-4232-a45b-55ed2fea1497" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/detailpage/detailPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/detailpage/detailPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/loginpage/loginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/loginpage/loginPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/strings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/strings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/summarypage/loadingPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/summarypage/loadingPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/summarypage/summaryPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/summarypage/summaryPage.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,7 +31,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/build" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -78,7 +71,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="npm.deploy">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -200,7 +193,7 @@
       <workItem from="1573445008348" duration="3485000" />
       <workItem from="1573448662025" duration="729000" />
       <workItem from="1573457898266" duration="1706000" />
-      <workItem from="1573554479967" duration="1919000" />
+      <workItem from="1573554479967" duration="2461000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1572012150825</created>
@@ -524,7 +517,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573448301897</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="+ lang parameter in url&#10;+ different title for login page and loading page&#10;+ better description&#10;+ keyword">
+      <created>1573556470184</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1573556470184</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -544,7 +544,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="+ firebase analytics and performance" />
     <MESSAGE value="+ detail page&#10;+ detail page enter animation" />
     <MESSAGE value="+ detail page exit animation&#10;+ detail page save status" />
     <MESSAGE value="+ prevent detail page auto focus&#10;+ reset tabindex when change course" />
@@ -569,6 +568,7 @@
     <MESSAGE value="~ better refresh" />
     <MESSAGE value="+ selectable control" />
     <MESSAGE value="+ logout confirm dialog&#10;+ login error alert" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ logout confirm dialog&#10;+ login error alert" />
+    <MESSAGE value="+ lang parameter in url&#10;+ different title for login page and loading page&#10;+ better description&#10;+ keyword" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ lang parameter in url&#10;+ different title for login page and loading page&#10;+ better description&#10;+ keyword" />
   </component>
 </project>
