@@ -3,12 +3,12 @@
   "name": "YRDSB Teach Assist",
   "icons": [
     {
-      "src": "launcher192.png",
+      "src": "/launcher192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "launcher512.png",
+      "src": "/launcher512.png",
       "type": "image/png",
       "sizes": "512x512"
     }

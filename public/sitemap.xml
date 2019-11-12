@@ -4,12 +4,4 @@
       <loc>https://ta-yrdsb.web.app/</loc>
       <changefreq>weekly</changefreq>
    </url>
-   <url>
-      <loc>https://ta-yrdsb.web.app/?lang=en</loc>
-      <changefreq>weekly</changefreq>
-   </url>
-   <url>
-      <loc>https://ta-yrdsb.web.app/?lang=zh</loc>
-      <changefreq>weekly</changefreq>
-   </url>
 </urlset> 

@@ -12,18 +12,18 @@ import getString from "../strings"
 import SummaryPage from "../summarypage/summaryPage"
 import Animate from "react-move/Animate"
 import {easeQuadInOut} from "d3-ease"
-import {getAnimationScale, setPage, showDialog} from "../index"
+import {getAnimationScale, getPublicURL, setPage, showDialog} from "../index"
 import {Alert} from "../components/alert"
 
 function TATitle() {
     return (<LinearLayout vertical align={"center"} item={"center"}>
         {isMobile() ? <Fragment>
-                <img src="./launcher192.png" width={130} alt="logo"/>
+                <img src={getPublicURL()+"launcher192.png"} width="130px" alt="logo"/>
                 <Body1 style={{fontSize: "20px"}}>YRDSB</Body1>
                 <Body1 style={{fontSize: "20px"}}>Teach Assist</Body1>
             </Fragment> :
             <Fragment>
-                <img src="./launcher192.png" width={150} alt="logo"/>
+                <img src={getPublicURL()+"launcher192.png"} width="130px" alt="logo"/>
                 <SizedBox height={16}/>
                 <Headline5>YRDSB Teach Assist</Headline5>
             </Fragment>}

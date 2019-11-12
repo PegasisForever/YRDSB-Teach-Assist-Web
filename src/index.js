@@ -103,4 +103,8 @@ export function getAnimationScale() {
     return 1
 }
 
+export function getPublicURL() {
+    return "/"
+}
+
 export {showDialog, delDialog, setPage}

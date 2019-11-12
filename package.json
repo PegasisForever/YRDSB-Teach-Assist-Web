@@ -1,7 +1,7 @@
 {
   "name": "ta.yrdsb.pegasis.site",
   "version": "1.0.0",
-  "homepage": "./",
+  "homepage": "/",
   "private": true,
   "dependencies": {
     "@material/react-button": "^0.15.0",

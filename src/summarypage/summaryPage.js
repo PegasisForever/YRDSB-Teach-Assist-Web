@@ -13,7 +13,7 @@ import {easeExpInOut, easeQuadInOut} from "d3-ease"
 import Animate from "react-move/Animate"
 import DetailPage from "../detailpage/detailPage"
 import domtoimage from "dom-to-image"
-import {getAnimationScale, setPage, showDialog} from "../index"
+import {getAnimationScale, getPublicURL, setPage, showDialog} from "../index"
 import {ConfirmDialog} from "../components/alert"
 
 function AnimateCard(props) {
@@ -142,7 +142,7 @@ export default class SummaryPage extends Component {
                         <LinearLayout className="full-width" horizontal align={"space-between"} item={"center"}>
                             <LinearLayout className="full-width" horizontal align={"start"} item={"center"}>
                                 <Padding all={16}>
-                                    <img src={"./launcher192.png"} width={50} alt={"logo"}/>
+                                    <img src={getPublicURL()+"launcher192.png"} width="50px" alt={"logo"}/>
                                 </Padding>
                                 <Headline5 className="title">YRDSB Teach Assist</Headline5>
                             </LinearLayout>
