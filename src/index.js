@@ -5,7 +5,6 @@ import LoginPage from "./loginpage/loginPage"
 import LoadingPage from "./summarypage/loadingPage"
 import SummaryPage from "./summarypage/summaryPage"
 import DetailPage from "./detailpage/detailPage"
-import Alert from "./components/alert"
 
 let states = {
     login: LoginPage,

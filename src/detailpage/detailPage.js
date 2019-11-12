@@ -225,11 +225,15 @@ export default class DetailPage extends Component {
             tabOffset: 0,
         }
 
-        sessionStorage.setItem("selected-course", selectedCourse.toString())
-        sessionStorage.setItem("state", "detail")
         this.onSidePanelClick = this.onSidePanelClick.bind(this)
         this.onChangeTab = this.onChangeTab.bind(this)
         this.onExit = this.onExit.bind(this)
+    }
+
+    componentDidMount() {
+        sessionStorage.setItem("selected-course", this.state.selectedCourse.toString())
+        sessionStorage.setItem("state", "detail")
+        document.title = getString("title")
     }
 
     onSidePanelClick(index) {

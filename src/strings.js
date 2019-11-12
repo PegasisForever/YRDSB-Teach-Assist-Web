@@ -79,6 +79,9 @@ let strings = {
         "remember_me": "Remember Me",
         "refresh": "Refresh",
         "are_you_sure_to_logout":"Are you sure to logout?",
+        "title":"YRDSB Teach Assist",
+        "login_title":"Login | YRDSB Teach Assist",
+        "loading_title":"Loading | YRDSB Teach Assist",
     },
     "zh": {
         "login_your_account": "登录帐号：",
@@ -160,12 +163,16 @@ let strings = {
         "remember_me": "记住密码",
         "refresh": "刷新",
         "are_you_sure_to_logout":"确定要登出吗？",
+        "title":"YRDSB Teach Assist",
+        "login_title":"登录 | YRDSB Teach Assist",
+        "loading_title":"正在加载 | YRDSB Teach Assist",
     }
 }
 
-let language = navigator.language.split("-")[0]
+let language = (new URL(window.location)).searchParams.get("lang") || navigator.language.split("-")[0]
 
 export default function getString(id) {
+
     if (!strings[language]) {
         language = "en"
     }

@@ -5,15 +5,16 @@ import net from "../tools"
 import Animate from "react-move/Animate"
 import {easeQuadInOut} from "d3-ease"
 import {getAnimationScale, setPage} from "../index"
+import getString from "../strings"
 
 export default class LoadingPage extends Component {
-    constructor(props) {
-        super(props)
-        this.state={
-            opacity:1
-        }
+    state={
+        opacity:1
     }
 
+    componentDidMount() {
+        document.title = getString("loading_title")
+    }
 
     render() {
         net.post("https://api.pegasis.site/public/yrdsb_ta/getmark",

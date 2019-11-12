@@ -216,7 +216,6 @@ export default class LoginPage extends Component {
             opacity: 1
         }
         this.gotoSummary = this.gotoSummary.bind(this)
-        sessionStorage.setItem("state", "login")
     }
 
     updateIsMobile = () => {
@@ -228,7 +227,10 @@ export default class LoginPage extends Component {
     }
 
     componentDidMount() {
+        sessionStorage.setItem("state", "login")
+
         window.addEventListener('resize', this.updateIsMobile)
+        document.title = getString("login_title")
     }
 
     componentWillUnmount() {

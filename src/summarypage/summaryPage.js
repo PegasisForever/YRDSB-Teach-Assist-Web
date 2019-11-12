@@ -51,7 +51,12 @@ export default class SummaryPage extends Component {
         this.cardRefs = []
         this.logout = this.logout.bind(this)
         this.openDetailPage = this.openDetailPage.bind(this)
+    }
+
+    componentDidMount() {
         sessionStorage.setItem("state", "summary")
+        document.title = getString("title")
+        // window.history.pushState(null,null, "summary");
     }
 
     logout() {
