@@ -110,6 +110,7 @@ export default function AssignmentTab(props) {
         transform: `translateX(${props.tabOffset}px)`,
         position: "absolute", width: "100%"
     }}>
-        {listItems}
+        {assignments.length>0?listItems:
+            <Headline5 style={{marginTop:(window.innerHeight/2-200)+"px"}}>{getString("assignments_unavailable")}</Headline5>}
     </LinearLayout>
 }

@@ -1,7 +1,7 @@
 import getString from "./strings"
 
 export function getDisplayName(course) {
-    if (course.name !== "") {
+    if (course.name !== null) {
         return course.name
     } else {
         return course.code
@@ -10,10 +10,10 @@ export function getDisplayName(course) {
 
 export function getPeriodRoom(course) {
     let strs = []
-    if (course.block !== "") {
+    if (course.block !== null) {
         strs.push(getString("period_number").replace("%s", course.block))
     }
-    if (course.room !== "") {
+    if (course.room !== null) {
         strs.push(getString("room_number").replace("%s", course.room))
     }
     return strs.join(" - ")
@@ -31,6 +31,8 @@ export function getCourseOverallList(course) {
     let Cn = 0
     let A = 0
     let An = 0
+    let O = 0
+    let On = 0
     course.assignments.forEach((assi) => {
         if (assi.KU && assi.KU.available && assi.KU.finished) {
             K += assi.KU.get * assi.KU.weight
@@ -48,11 +50,16 @@ export function getCourseOverallList(course) {
             A += assi.A.get * assi.A.weight
             An += assi.A.total * assi.A.weight
         }
+        if (assi.O && assi.O.available && assi.O.finished) {
+            O += assi.O.get * assi.O.weight
+            On += assi.O.total * assi.O.weight
+        }
 
         let Ka = K / Kn
         let Ta = T / Tn
         let Ca = C / Cn
         let Aa = A / An
+        let Oa = O / On
         let avg = 0.0
         let avgn = 0.0
         if (Ka >= 0.0) {
@@ -71,12 +78,17 @@ export function getCourseOverallList(course) {
             avg += Aa * course.weight_table.A.W
             avgn += course.weight_table.A.W
         }
+        if (Oa >= 0.0) {
+            avg += Oa * course.weight_table.O.W
+            avgn += course.weight_table.O.W
+        }
 
         if (avgn > 0.0) {
             overallList.push([i, avg / avgn * 100])
         }
         i++
     })
+
     return overallList
 }
 

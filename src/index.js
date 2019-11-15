@@ -15,6 +15,8 @@ let states = {
 let showDialog
 let delDialog
 let setPage
+let baseUrl = "https://api.pegasis.site/public/yrdsb_ta"
+//http://localhost:5005
 
 class Root extends Component {
     constructor(props) {
@@ -107,4 +109,4 @@ export function getPublicURL() {
     return "/"
 }
 
-export {showDialog, delDialog, setPage}
+export {showDialog, delDialog, setPage, baseUrl}

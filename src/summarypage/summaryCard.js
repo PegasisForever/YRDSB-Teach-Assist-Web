@@ -1,4 +1,4 @@
-import React,{Fragment} from "react"
+import React, {Fragment} from "react"
 import {getCourseOverallList, getDisplayName, getPeriodRoom} from "../courseUtilities"
 import getString from "../strings"
 import Card, {CardPrimaryContent} from "@material/react-card"
@@ -38,12 +38,15 @@ function bezier(point, i, a) {
 }
 
 function getOverallChart(course, width, height) {
-    let space = width / (course.assignments.length - 1)
+    let space = (course.assignments.length > 1) ? (width / (course.assignments.length - 1)) : width
     let points = getCourseOverallList(course).map(overall => {
         return [overall[0] * space, width - overall[1] * width / 105]
     })
-    if (points[0][0]!==0){ //if index of first point isn't zero
-        points.unshift([0,points[0][1]])
+    if (points[0][0] !== 0) { //if index of first point isn't zero
+        points.unshift([0, points[0][1]])
+    }
+    if (points.length===1){
+        points.push([width, points[0][1]])
     }
     let d = points.reduce((acc, point, i, a) => i === 0
         ? `M ${point[0]},${point[1]}`
@@ -74,7 +77,7 @@ export default function SummaryCard(props) {
                         <Padding all={24} re={props.r} className={"white-bg"}>
                             <LinearLayout horizontal item={"center"}>
                                 <LinearLayout vertical>
-                                    <Headline5>{getDisplayName(course)}</Headline5>
+                                    <Headline5 style={{width:"300px"}}>{getDisplayName(course)}</Headline5>
                                     <SizedBox height={8}/>
                                     <Subtitle1>{getPeriodRoom(course)}</Subtitle1>
                                     <SizedBox height={24}/>

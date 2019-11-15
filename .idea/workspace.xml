@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be4c7382-c738-4232-a45b-55ed2fea1497" name="Default Changelist" comment="">
+    <list default="true" id="be4c7382-c738-4232-a45b-55ed2fea1497" name="Default Changelist" comment="+ use new api&#10;+ fix summary chart not display when there's only one assignment&#10;+ tips in detail page when marks unavailable">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/public/sitemap.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/courseUtilities.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/courseUtilities.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/detailpage/AssignmentTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/detailpage/AssignmentTab.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/detailpage/StatisticsTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/detailpage/StatisticsTab.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/detailpage/detailPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/detailpage/detailPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/loginpage/loginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/loginpage/loginPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/summarypage/summaryPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/summarypage/summaryPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/summarypage/loadingPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/summarypage/loadingPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/summarypage/summaryCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/summarypage/summaryCard.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +80,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.deploy">
+  <component name="RunManager" selected="npm.start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -203,7 +204,11 @@
       <workItem from="1573457898266" duration="1706000" />
       <workItem from="1573554479967" duration="2588000" />
       <workItem from="1573558064041" duration="95000" />
-      <workItem from="1573558398784" duration="837000" />
+      <workItem from="1573558398784" duration="948000" />
+      <workItem from="1573607405078" duration="16000" />
+      <workItem from="1573611351409" duration="260000" />
+      <workItem from="1573754306407" duration="28000" />
+      <workItem from="1573789474060" duration="3371000" />
     </task>
     <task id="LOCAL-00001" summary="init commit">
       <created>1572012150825</created>
@@ -541,7 +546,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573556952213</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="+ assets based on public url">
+      <created>1573559341918</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1573559341918</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -561,7 +573,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="+ detail page exit animation&#10;+ detail page save status" />
     <MESSAGE value="+ prevent detail page auto focus&#10;+ reset tabindex when change course" />
     <MESSAGE value="~ add fade to side panel exit animation" />
     <MESSAGE value="~ fix animation" />
@@ -586,6 +597,7 @@
     <MESSAGE value="+ logout confirm dialog&#10;+ login error alert" />
     <MESSAGE value="+ lang parameter in url&#10;+ different title for login page and loading page&#10;+ better description&#10;+ keyword" />
     <MESSAGE value="+ sitemap" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ sitemap" />
+    <MESSAGE value="+ assets based on public url" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ assets based on public url" />
   </component>
 </project>

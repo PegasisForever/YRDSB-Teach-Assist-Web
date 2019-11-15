@@ -4,7 +4,7 @@ import CircularProgressBar from "../components/CircularProgressBar"
 import net from "../tools"
 import Animate from "react-move/Animate"
 import {easeQuadInOut} from "d3-ease"
-import {getAnimationScale, setPage} from "../index"
+import {baseUrl, getAnimationScale, setPage} from "../index"
 import getString from "../strings"
 
 export default class LoadingPage extends Component {
@@ -17,7 +17,7 @@ export default class LoadingPage extends Component {
     }
 
     render() {
-        net.post("https://api.pegasis.site/public/yrdsb_ta/getmark",
+        net.post(baseUrl+"/getmark",
             JSON.parse(sessionStorage.getItem("account") ? sessionStorage.getItem("account") : localStorage.getItem("account")),
             (statusCode, response) => {
                 if (statusCode === 200) {

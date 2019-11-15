@@ -1,4 +1,4 @@
-import React, {Component} from "react"
+import React, {Component, Fragment} from "react"
 import Card, {CardPrimaryContent} from "@material/react-card"
 import {Padding} from "../components/padding"
 import {Body1, Headline4, Headline5} from "@material/react-typography"
@@ -181,10 +181,10 @@ function TitleBar(props) {
                     <Body1>{getPeriodRoom(course)}</Body1>
                 </div>
                 <SizedBox width={128}/>
-                <div>
+                {(course.start_time && course.end_time)?<div>
                     <Body1>{getString("course_about_starttime:") + course.start_time}</Body1>
                     <Body1>{getString("course_about_endtime:") + course.end_time}</Body1>
-                </div>
+                </div>:null}
             </LinearLayout>
         </Padding>
         <TabBar

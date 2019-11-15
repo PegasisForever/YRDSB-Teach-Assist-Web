@@ -12,18 +12,18 @@ import getString from "../strings"
 import SummaryPage from "../summarypage/summaryPage"
 import Animate from "react-move/Animate"
 import {easeQuadInOut} from "d3-ease"
-import {getAnimationScale, getPublicURL, setPage, showDialog} from "../index"
+import {baseUrl, getAnimationScale, getPublicURL, setPage, showDialog} from "../index"
 import {Alert} from "../components/alert"
 
 function TATitle() {
     return (<LinearLayout vertical align={"center"} item={"center"}>
         {isMobile() ? <Fragment>
-                <img src={getPublicURL()+"launcher192.png"} width="130px" alt="logo"/>
+                <img src={getPublicURL() + "launcher192.png"} width="130px" alt="logo"/>
                 <Body1 style={{fontSize: "20px"}}>YRDSB</Body1>
                 <Body1 style={{fontSize: "20px"}}>Teach Assist</Body1>
             </Fragment> :
             <Fragment>
-                <img src={getPublicURL()+"launcher192.png"} width="130px" alt="logo"/>
+                <img src={getPublicURL() + "launcher192.png"} width="130px" alt="logo"/>
                 <SizedBox height={16}/>
                 <Headline5>YRDSB Teach Assist</Headline5>
             </Fragment>}
@@ -168,7 +168,7 @@ class LoginForm extends Component {
         this.setState({
             isLoading: true,
         })
-        net.post("https://api.pegasis.site/public/yrdsb_ta/getmark",
+        net.post(baseUrl + "/getmark",
             {
                 number: this.state.number,
                 password: this.state.password

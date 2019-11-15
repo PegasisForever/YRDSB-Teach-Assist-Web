@@ -94,21 +94,23 @@ export function StatisticsTab(props) {
         transform: `translateX(${props.tabOffset}px)`,
         position: "absolute", width: "100%"
     }}>
-        <SizedBox height={32}/>
-        <Headline5>{getString("overall")}</Headline5>
-        <SizedBox height={8}/>
-        <Headline1 className="overall selectable">{Math.round(course.overall_mark * 10) / 10 + "%"}</Headline1>
-        <SizedBox height={8}/>
-        <LPI width={400} value={course.overall_mark}/>
-        <SizedBox height={16}/>
-        {getChart(course, "overall")}
-        <Divider/>
-        {getChart(course, "KU")}
-        <Divider/>
-        {getChart(course, "T")}
-        <Divider/>
-        {getChart(course, "C")}
-        <Divider/>
-        {getChart(course, "A")}
+        {course.overall_mark?<Fragment>
+            <SizedBox height={32}/>
+            <Headline5>{getString("overall")}</Headline5>
+            <SizedBox height={8}/>
+            <Headline1 className="overall selectable">{Math.round(course.overall_mark * 10) / 10 + "%"}</Headline1>
+            <SizedBox height={8}/>
+            <LPI width={400} value={course.overall_mark}/>
+            <SizedBox height={16}/>
+            {getChart(course, "overall")}
+            <Divider/>
+            {getChart(course, "KU")}
+            <Divider/>
+            {getChart(course, "T")}
+            <Divider/>
+            {getChart(course, "C")}
+            <Divider/>
+            {getChart(course, "A")}
+        </Fragment>:<Headline5 style={{marginTop:(window.innerHeight/2-200)+"px"}}>{getString("statistics_unavailable")}</Headline5>}
     </LinearLayout>
 }
