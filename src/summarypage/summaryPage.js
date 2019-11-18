@@ -12,25 +12,34 @@ import LoginPage from "../loginpage/loginPage"
 import {easeExpInOut, easeQuadInOut} from "d3-ease"
 import Animate from "react-move/Animate"
 import DetailPage from "../detailpage/detailPage"
-import domtoimage from "dom-to-image"
 import {getAnimationScale, getPublicURL, setPage, showDialog} from "../index"
 import {ConfirmDialog} from "../components/alert"
 
 function AnimateCard(props) {
-    return props.url ? <Animate
+    return props.course ? <Animate
         show={true}
-        start={{x: props.startX, y: props.startY, width: props.width, height: props.height, opacity: 1}}
+        start={{x: props.startX, y: props.startY, widthScale: 1, heightScale: 1, opacity: 1}}
         enter={{
-            x: [300], y: [0], width: [window.innerWidth - 300], height: [window.innerHeight],
+            x: [(window.innerWidth - 300) / 2 + 300 - props.width / 2],
+            y: [window.innerHeight / 2 - props.height / 2],
+            widthScale: [(window.innerWidth - 300) / (props.width)],
+            heightScale: [(window.innerHeight) / (props.height+2)],
             opacity: [-0.5],
             timing: {duration: 500 * getAnimationScale(), ease: easeExpInOut}
         }}>
-        {({x, y, width, height, opacity}) => {
-            return <img className="animation-card" width={width + "px"}
-                        height={height + "px"}
-                        style={{left: x + "px", top: y + "px", opacity: opacity}}
-                        src={props.url}
-                        alt=""/>
+        {({x, y, widthScale, heightScale, opacity}) => {
+            return (<SummaryCard
+                noPadding
+                course={props.course}
+                onClick={() => {
+                }}
+                style={{
+                    position: "absolute",
+                    zIndex: "500",
+                    transform: `scale(${widthScale},${heightScale})`,
+                    left: x + "px", top: y + "px", opacity: opacity
+                }}
+            />)
         }}
     </Animate> : <SizedBox/>
 }
@@ -84,28 +93,26 @@ export default class SummaryPage extends Component {
         let w = node.offsetWidth
         let h = node.offsetHeight
         let rect = node.getBoundingClientRect()
-        domtoimage.toSvg(this.cardRefs[index].current)
-            .then(function (dataUrl) {
-                self.setState({
-                    selectedCourseIndex: index,
-                    animatedCardSvgUrl: dataUrl,
-                    animationStartX: rect.left,
-                    animationStartY: rect.top,
-                    animationWidth: w,
-                    animationHeight: h
-                })
-                setPage(React.createElement(
-                    DetailPage,
-                    {
-                        selectedCourse: index,
-                        startX: rect.left,
-                        startY: rect.top,
-                        startWidth: w,
-                        startHeight: h,
-                    }
-                ), () => {
-                }, 400)
-            })
+
+        self.setState({
+            selectedCourseIndex: index,
+            animationStartX: rect.left,
+            animationStartY: rect.top,
+            animationWidth: w,
+            animationHeight: h
+        })
+
+        setPage(React.createElement(
+            DetailPage,
+            {
+                selectedCourse: index,
+                startX: rect.left,
+                startY: rect.top,
+                startWidth: w,
+                startHeight: h,
+            }
+        ), () => {
+        }, 400)
     }
 
     render() {
@@ -134,15 +141,16 @@ export default class SummaryPage extends Component {
                 {({opacity}) => {
                     return <LinearLayout style={{opacity: opacity}} className="full-page" vertical
                                          item={"center"}>
-                        <AnimateCard url={this.state.animatedCardSvgUrl}
-                                     startX={this.state.animationStartX}
-                                     startY={this.state.animationStartY}
-                                     width={this.state.animationWidth}
-                                     height={this.state.animationHeight}/>
+                        <AnimateCard
+                            course={courseList[this.state.selectedCourseIndex]}
+                            startX={this.state.animationStartX}
+                            startY={this.state.animationStartY}
+                            width={this.state.animationWidth}
+                            height={this.state.animationHeight}/>
                         <LinearLayout className="full-width" horizontal align={"space-between"} item={"center"}>
                             <LinearLayout className="full-width" horizontal align={"start"} item={"center"}>
                                 <Padding all={16}>
-                                    <img src={getPublicURL()+"launcher192.png"} width="50px" alt={"logo"}/>
+                                    <img src={getPublicURL() + "launcher192.png"} width="50px" alt={"logo"}/>
                                 </Padding>
                                 <Headline5 className="title">YRDSB Teach Assist</Headline5>
                             </LinearLayout>
@@ -171,8 +179,8 @@ export default class SummaryPage extends Component {
                                 this.cardRefs.push(ref)
                                 return i === this.state.selectedCourseIndex ?
                                     <SizedBox key={course.code}
-                                              width={this.state.animationWidth + 32}
-                                              height={this.state.animationHeight + 32}/> :
+                                              width={this.state.animationWidth+32}
+                                              height={this.state.animationHeight+32}/> :
                                     <SummaryCard
                                         key={course.code}
                                         r={ref}

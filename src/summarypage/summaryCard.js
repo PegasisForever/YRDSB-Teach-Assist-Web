@@ -45,7 +45,7 @@ function getOverallChart(course, width, height) {
     if (points[0][0] !== 0) { //if index of first point isn't zero
         points.unshift([0, points[0][1]])
     }
-    if (points.length===1){
+    if (points.length === 1) {
         points.push([width, points[0][1]])
     }
     let d = points.reduce((acc, point, i, a) => i === 0
@@ -70,14 +70,14 @@ function getOverallChart(course, width, height) {
 
 export default function SummaryCard(props) {
     let course = props.course
-    return (<Padding all={16} className={props.className}>
+    return (<Padding all={props.noPadding ? 0 : 16} className={props.className} style={props.style}>
             <SizedBox width={492}>
                 <Card>
                     <CardPrimaryContent onClick={props.onClick}>
                         <Padding all={24} re={props.r} className={"white-bg"}>
                             <LinearLayout horizontal item={"center"}>
                                 <LinearLayout vertical>
-                                    <Headline5 style={{width:"300px"}}>{getDisplayName(course)}</Headline5>
+                                    <Headline5 style={{width: "300px"}}>{getDisplayName(course)}</Headline5>
                                     <SizedBox height={8}/>
                                     <Subtitle1>{getPeriodRoom(course)}</Subtitle1>
                                     <SizedBox height={24}/>
