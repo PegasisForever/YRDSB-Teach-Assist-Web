@@ -1,4 +1,4 @@
-import React, {Fragment} from "react"
+import React, {Component, Fragment} from "react"
 import LinearLayout from "../components/linearLayout"
 import {SizedBox} from "../components/sizedBox"
 import {Body1, Headline5} from "@material/react-typography"
@@ -89,7 +89,8 @@ function AssignmentListItem(props) {
                             className="assignment-desc selectable">{getString("avg:") + Math.floor(avg * 10) / 10 + "%"}</Body1> : null}
                         {isNoWeight(assi) ?
                             <Body1 className="assignment-desc selectable">{getString("no_weight")}</Body1> : null}
-                        {assi.feedback !== "" ? <Body1 className="assignment-feedback selectable">{assi.feedback}</Body1> : null}
+                        {assi.feedback !== "" ?
+                            <Body1 className="assignment-feedback selectable">{assi.feedback}</Body1> : null}
                     </Padding>
                 </SizedBox>
                 <SmallMarkChart assignment={assi}/>
@@ -98,19 +99,33 @@ function AssignmentListItem(props) {
     </SizedBox>
 }
 
-export default function AssignmentTab(props) {
-    let assignments = props.assignments.slice().reverse()
-    let listItems = assignments.map((assignment, i) => {
-        return <Fragment key={assignment.name}>
-            <AssignmentListItem assignment={assignment} weights={props.weights}/>
-            {i === assignments.length - 1 ? null : <Divider/>}
-        </Fragment>
-    })
-    return <LinearLayout vertical item={"center"} style={{
-        transform: `translateX(${props.tabOffset}px)`,
-        position: "absolute", width: "100%"
-    }}>
-        {assignments.length>0?listItems:
-            <Headline5 style={{marginTop:(window.innerHeight/2-200)+"px"}}>{getString("assignments_unavailable")}</Headline5>}
-    </LinearLayout>
+class AssignmentList extends Component {
+    shouldComponentUpdate(nextProps, nextState) {
+        return false
+    }
+
+    render() {
+        let assignments = this.props.assignments.slice().reverse()
+        return assignments.map((assignment, i) => {
+            return <Fragment key={assignment.name}>
+                <AssignmentListItem assignment={assignment} weights={this.props.weights}/>
+                {i === assignments.length - 1 ? null : <Divider/>}
+            </Fragment>
+        })
+    }
+}
+
+export default class AssignmentTab extends Component {
+    render() {
+        let assignments = this.props.assignments
+        return <LinearLayout vertical item={"center"} style={{
+            transform: `translateX(${this.props.tabOffset}px)`,
+            position: "absolute", width: "100%"
+        }}>
+            {assignments.length > 0 ?
+                <AssignmentList assignments={assignments} weights={this.props.weights}/> :
+                <Headline5
+                    style={{marginTop: (window.innerHeight / 2 - 200) + "px"}}>{getString("assignments_unavailable")}</Headline5>}
+        </LinearLayout>
+    }
 }

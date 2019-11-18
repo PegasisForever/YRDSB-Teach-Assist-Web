@@ -35,7 +35,7 @@ function SidePanel(props) {
             return <Card style={{transform: `translate(${offset}px)`, opacity: opacity}} className="side-panel">
                 <LinearLayout className="full-width" horizontal align={"start"} item={"center"}>
                     <Padding all={16}>
-                        <img src={getPublicURL()+"launcher192.png"} width="50px" alt={"logo"}/>
+                        <img src={getPublicURL() + "launcher192.png"} width="50px" alt={"logo"}/>
                     </Padding>
                     <Headline5 className="title">YRDSB Teach Assist</Headline5>
                 </LinearLayout>
@@ -152,12 +152,16 @@ class MainPanel extends Component {
                               onChangeTab={this.props.onChangeTab}
                               onExit={this.props.onExit}
                               padding={padding}/>
-                    <AssignmentTab assignments={this.props.course.assignments}
-                                   weights={this.props.course.weight_table}
-                                   tabOffset={tabOffset}
-                                   onExit={this.props.onExit}/>
-                    <StatisticsTab course={this.props.course}
-                                   tabOffset={tabOffset + window.innerWidth - 300}/>
+                    <AssignmentTab
+                        key={this.props.course.name ? this.props.course.name : this.props.course.code}
+                        assignments={this.props.course.assignments}
+                        weights={this.props.course.weight_table}
+                        tabOffset={tabOffset}
+                        onExit={this.props.onExit}/>
+                    <StatisticsTab
+                        key={(this.props.course.name ? this.props.course.name : this.props.course.code)+"s"}
+                        course={this.props.course}
+                        tabOffset={tabOffset + window.innerWidth - 300}/>
 
 
                 </div>
@@ -181,10 +185,10 @@ function TitleBar(props) {
                     <Body1>{getPeriodRoom(course)}</Body1>
                 </div>
                 <SizedBox width={128}/>
-                {(course.start_time && course.end_time)?<div>
+                {(course.start_time && course.end_time) ? <div>
                     <Body1>{getString("course_about_starttime:") + course.start_time}</Body1>
                     <Body1>{getString("course_about_endtime:") + course.end_time}</Body1>
-                </div>:null}
+                </div> : null}
             </LinearLayout>
         </Padding>
         <TabBar

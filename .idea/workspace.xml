@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="be4c7382-c738-4232-a45b-55ed2fea1497" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/summarypage/summaryCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/summarypage/summaryCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/summarypage/summaryPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/summarypage/summaryPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/detailpage/AssignmentTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/detailpage/AssignmentTab.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/detailpage/StatisticsTab.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/detailpage/StatisticsTab.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/detailpage/detailPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/detailpage/detailPage.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -205,14 +204,7 @@
       <workItem from="1573754306407" duration="28000" />
       <workItem from="1573789474060" duration="3488000" />
       <workItem from="1573858273223" duration="69000" />
-      <workItem from="1574059357936" duration="2882000" />
-    </task>
-    <task id="LOCAL-00002" summary="+ icons&#10;+ LinearLayout">
-      <created>1572015868521</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1572015868521</updated>
+      <workItem from="1574059357936" duration="4653000" />
     </task>
     <task id="LOCAL-00003" summary="+ loginPage,not functioning">
       <created>1572116603044</created>
@@ -550,7 +542,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573792852725</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="+ use css transform to animate cards instead of using dom-to-img">
+      <created>1574062298305</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1574062298306</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -570,7 +569,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="~ add fade to side panel exit animation" />
     <MESSAGE value="~ fix animation" />
     <MESSAGE value="+ more perfect animation" />
     <MESSAGE value="+ reset tab index on change between courses" />
@@ -595,6 +593,7 @@
     <MESSAGE value="+ sitemap" />
     <MESSAGE value="+ assets based on public url" />
     <MESSAGE value="+ use new api&#10;+ fix summary chart not display when there's only one assignment&#10;+ tips in detail page when marks unavailable" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ use new api&#10;+ fix summary chart not display when there's only one assignment&#10;+ tips in detail page when marks unavailable" />
+    <MESSAGE value="+ use css transform to animate cards instead of using dom-to-img" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ use css transform to animate cards instead of using dom-to-img" />
   </component>
 </project>
