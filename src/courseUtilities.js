@@ -3,8 +3,10 @@ import getString from "./strings"
 export function getDisplayName(course) {
     if (course.name !== null) {
         return course.name
-    } else {
+    } else if (course.code !== null) {
         return course.code
+    } else {
+        return getString("unnamed_course")
     }
 }
 
@@ -22,37 +24,43 @@ export function getPeriodRoom(course) {
 export function getCourseOverallList(course) {
     let overallList = []
 
-    let i = 0
-    let K = 0
-    let Kn = 0
-    let T = 0
-    let Tn = 0
-    let C = 0
-    let Cn = 0
-    let A = 0
-    let An = 0
-    let O = 0
-    let On = 0
+    let i = 0.0
+    let K = 0.0
+    let Kn = 0.0
+    let T = 0.0
+    let Tn = 0.0
+    let C = 0.0
+    let Cn = 0.0
+    let A = 0.0
+    let An = 0.0
+    let O = 0.0
+    let On = 0.0
+    let F = 0.0
+    let Fn = 0.0
     course.assignments.forEach((assi) => {
         if (assi.KU && assi.KU.available && assi.KU.finished) {
-            K += assi.KU.get * assi.KU.weight
-            Kn += assi.KU.total * assi.KU.weight
+            K += assi.KU.get / assi.KU.total * assi.KU.weight
+            Kn += assi.KU.weight
         }
         if (assi.T && assi.T.available && assi.T.finished) {
-            T += assi.T.get * assi.T.weight
-            Tn += assi.T.total * assi.T.weight
+            T += assi.T.get / assi.T.total * assi.T.weight
+            Tn += assi.T.weight
         }
         if (assi.C && assi.C.available && assi.C.finished) {
-            C += assi.C.get * assi.C.weight
-            Cn += assi.C.total * assi.C.weight
+            C += assi.C.get / assi.C.total * assi.C.weight
+            Cn += assi.C.weight
         }
         if (assi.A && assi.A.available && assi.A.finished) {
-            A += assi.A.get * assi.A.weight
-            An += assi.A.total * assi.A.weight
+            A += assi.A.get / assi.A.total * assi.A.weight
+            An += assi.A.weight
         }
         if (assi.O && assi.O.available && assi.O.finished) {
-            O += assi.O.get * assi.O.weight
-            On += assi.O.total * assi.O.weight
+            O += assi.O.get / assi.O.total * assi.O.weight
+            On += assi.O.weight
+        }
+        if (assi.F && assi.F.available && assi.F.finished) {
+            O += assi.F.get / assi.F.total * assi.F.weight
+            On += assi.F.weight
         }
 
         let Ka = K / Kn
@@ -60,6 +68,7 @@ export function getCourseOverallList(course) {
         let Ca = C / Cn
         let Aa = A / An
         let Oa = O / On
+        let Fa = F / Fn
         let avg = 0.0
         let avgn = 0.0
         if (Ka >= 0.0) {
@@ -82,6 +91,10 @@ export function getCourseOverallList(course) {
             avg += Oa * course.weight_table.O.W
             avgn += course.weight_table.O.W
         }
+        if (Fa >= 0.0) {
+            avg += Fa * course.weight_table.F.W
+            avgn += course.weight_table.F.W
+        }
 
         if (avgn > 0.0) {
             overallList.push([i, avg / avgn * 100])
@@ -101,7 +114,8 @@ export function isNoWeight(assi) {
         isWeightZeroOrNull(assi.T) &&
         isWeightZeroOrNull(assi.C) &&
         isWeightZeroOrNull(assi.A) &&
-        isWeightZeroOrNull(assi.O)
+        isWeightZeroOrNull(assi.O) &&
+        isWeightZeroOrNull(assi.F)
 }
 
 export function getAverage(assi, weights) {
@@ -123,6 +137,14 @@ export function getAverage(assi, weights) {
     if (assi.A && assi.A.finished) {
         get += assi.A.get / assi.A.total * weights.A.CW
         total += weights.A.CW
+    }
+    if (assi.O && assi.O.finished) {
+        get += assi.O.get / assi.O.total * weights.O.CW
+        total += weights.O.CW
+    }
+    if (assi.F && assi.F.finished) {
+        get += assi.F.get / assi.F.total * weights.F.CW
+        total += weights.F.CW
     }
 
     return (total > 0) ? (get / total * 100) : null

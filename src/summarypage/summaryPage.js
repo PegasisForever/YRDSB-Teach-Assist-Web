@@ -65,7 +65,6 @@ export default class SummaryPage extends Component {
     componentDidMount() {
         sessionStorage.setItem("state", "summary")
         document.title = getString("title")
-        // window.history.pushState(null,null, "summary");
     }
 
     logout() {
