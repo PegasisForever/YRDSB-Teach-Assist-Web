@@ -6,7 +6,7 @@ This is an unofficial YRDSB Teach Assist website for checking marks, address: [t
 
 Made by a grade 11 student in MCI.
 
-Uses [React][https://reactjs.org/].
+Uses [React](https://reactjs.org/).
 
 ---
 
