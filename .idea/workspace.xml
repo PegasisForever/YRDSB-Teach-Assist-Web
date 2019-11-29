@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be4c7382-c738-4232-a45b-55ed2fea1497" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/privacy-policy.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/courseUtilities.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/courseUtilities.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/strings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/strings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/summarypage/summaryCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/summarypage/summaryCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/summarypage/summaryPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/summarypage/summaryPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,14 +210,8 @@
       <workItem from="1574544562226" duration="864000" />
       <workItem from="1574818769002" duration="275000" />
       <workItem from="1575064494451" duration="26000" />
-      <workItem from="1575064533947" duration="415000" />
-    </task>
-    <task id="LOCAL-00005" summary="~ fixed circular progress bar memory leak&#10;~ allow browser to save passwords">
-      <created>1572216229398</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1572216229398</updated>
+      <workItem from="1575064533947" duration="684000" />
+      <workItem from="1575065921309" duration="1075000" />
     </task>
     <task id="LOCAL-00006" summary="+ redirect to ~.web.app if on ~.firebaseapp.com">
       <created>1572216992812</created>
@@ -559,7 +549,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574064188426</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="+ privacy-policy&#10;+ update to new public api&#10;+ new way to calculate course overall and average">
+      <created>1575065016385</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1575065016386</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -579,7 +576,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="+ reset tab index on change between courses" />
     <MESSAGE value="+ finished assignment tab" />
     <MESSAGE value="+ detail page floating back button" />
     <MESSAGE value="+ scroll bar now overlays" />
@@ -604,16 +600,37 @@
     <MESSAGE value="+ use css transform to animate cards instead of using dom-to-img" />
     <MESSAGE value="+ huge performance improvement" />
     <MESSAGE value="~ change animation speed to 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="~ change animation speed to 1" />
+    <MESSAGE value="+ privacy-policy&#10;+ update to new public api&#10;+ new way to calculate course overall and average" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ privacy-policy&#10;+ update to new public api&#10;+ new way to calculate course overall and average" />
   </component>
   <component name="WindowStateProjectService">
     <state x="645" y="243" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1575064503764">
       <screen x="0" y="32" width="1920" height="1048" />
     </state>
     <state x="645" y="243" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.32.1920.1048/2175.0.2400.1350@0.32.1920.1048" timestamp="1575064503764" />
-    <state x="427" y="57" width="1056" height="962" key="CommitChangelistDialog2" timestamp="1575064957618">
+    <state x="427" y="57" width="1056" height="962" key="CommitChangelistDialog2" timestamp="1575065016223">
       <screen x="0" y="32" width="1920" height="1048" />
     </state>
-    <state x="427" y="57" width="1056" height="962" key="CommitChangelistDialog2/0.32.1920.1048/2175.0.2400.1350@0.32.1920.1048" timestamp="1575064957618" />
+    <state x="427" y="57" width="1056" height="962" key="CommitChangelistDialog2/0.32.1920.1048/2175.0.2400.1350@0.32.1920.1048" timestamp="1575065016223" />
+    <state width="1860" height="288" key="GridCell.Tab.0.bottom" timestamp="1575065218297">
+      <screen x="0" y="32" width="1920" height="1048" />
+    </state>
+    <state width="1860" height="288" key="GridCell.Tab.0.bottom/0.32.1920.1048/2175.0.2400.1350@0.32.1920.1048" timestamp="1575065218297" />
+    <state width="1860" height="288" key="GridCell.Tab.0.center" timestamp="1575065218297">
+      <screen x="0" y="32" width="1920" height="1048" />
+    </state>
+    <state width="1860" height="288" key="GridCell.Tab.0.center/0.32.1920.1048/2175.0.2400.1350@0.32.1920.1048" timestamp="1575065218297" />
+    <state width="1860" height="288" key="GridCell.Tab.0.left" timestamp="1575065218297">
+      <screen x="0" y="32" width="1920" height="1048" />
+    </state>
+    <state width="1860" height="288" key="GridCell.Tab.0.left/0.32.1920.1048/2175.0.2400.1350@0.32.1920.1048" timestamp="1575065218297" />
+    <state width="1860" height="288" key="GridCell.Tab.0.right" timestamp="1575065218297">
+      <screen x="0" y="32" width="1920" height="1048" />
+    </state>
+    <state width="1860" height="288" key="GridCell.Tab.0.right/0.32.1920.1048/2175.0.2400.1350@0.32.1920.1048" timestamp="1575065218297" />
+    <state x="460" y="204" key="Vcs.Push.Dialog.v2" timestamp="1575065192949">
+      <screen x="0" y="32" width="1920" height="1048" />
+    </state>
+    <state x="460" y="204" key="Vcs.Push.Dialog.v2/0.32.1920.1048/2175.0.2400.1350@0.32.1920.1048" timestamp="1575065192949" />
   </component>
 </project>
