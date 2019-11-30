@@ -10,7 +10,7 @@ Uses [React](https://reactjs.org/).
 
 ---
 
-It uses public API provides by [Fetch TA Data](https://github.com/PegasisForever/Fetch-TA-Data). Here is the [API documentation]().
+It uses public API provides by [Fetch TA Data](https://github.com/PegasisForever/Fetch-TA-Data). Here is the [API documentation](https://api.pegasis.site/docs/ta/).
 
 `My YRDSB Teach Assist Web` <-----> `Fetch TA Data` <-----> [Official TA Website](https://ta.yrdsb.ca/yrdsb/index.php)
 
@@ -27,6 +27,8 @@ Debug mode: `npm start`
 Build for release: `npm build`
 
 ## Support Me
+
+I spent hundreds of hours on this project, consider buy me a cup of coffee?
 
 Donate: [patreon](https://www.patreon.com/yrdsbta)
 
