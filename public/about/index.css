@@ -11,7 +11,7 @@ p {
 }
 
 a{
-    color: #4183C4;;
+    color: #4183C4;
 }
 
 .selectable {
@@ -350,4 +350,18 @@ h1 {
 
 .visit-desktop{
     margin-top: 16px;
+}
+
+footer{
+    background-color: black;
+    color: #ccc;
+    padding: 16px;
+}
+
+.pegasis-copyright{
+    color: white;
+}
+
+footer a{
+    color: #4991da;
 }

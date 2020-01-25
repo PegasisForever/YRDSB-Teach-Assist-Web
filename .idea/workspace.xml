@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be4c7382-c738-4232-a45b-55ed2fea1497" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/support/index.html" afterDir="false" />
+    <list default="true" id="be4c7382-c738-4232-a45b-55ed2fea1497" name="Default Changelist" comment="+ add visit desktop link">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/about/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/about/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/about/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/about/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +40,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/about" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -52,24 +53,28 @@
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/about" />
+      <recent name="$PROJECT_DIR$/build" />
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/support" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/components" />
       <recent name="$PROJECT_DIR$/src/loginpage" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/build" />
-      <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/src" />
-    </key>
   </component>
-  <component name="RunManager" selected="npm.deploy">
+  <component name="RunManager" selected="JavaScript Debug.index.html (1)">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.html (1)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/ta.yrdsb.pegasis.site/public/about/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/ta.yrdsb.pegasis.site/public/support/index.html" useBuiltInWebServerPort="true">
@@ -141,16 +146,18 @@
     </configuration>
     <list>
       <item itemvalue="JavaScript Debug.Debug Application" />
+      <item itemvalue="JavaScript Debug.index.html" />
+      <item itemvalue="JavaScript Debug.index.html (1)" />
       <item itemvalue="npm.build-electron" />
       <item itemvalue="npm.serve" />
       <item itemvalue="npm.deploy" />
       <item itemvalue="npm.build" />
       <item itemvalue="npm.start" />
       <item itemvalue="npm.electron" />
-      <item itemvalue="JavaScript Debug.index.html" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.index.html (1)" />
         <item itemvalue="JavaScript Debug.index.html" />
       </list>
     </recent_temporary>
@@ -234,55 +241,7 @@
       <workItem from="1575151772209" duration="614000" />
       <workItem from="1575925543972" duration="245000" />
       <workItem from="1576958055869" duration="5390000" />
-    </task>
-    <task id="LOCAL-00010" summary="+ multi-language support&#10;+ linear progress indicator">
-      <created>1572742658430</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1572742658430</updated>
-    </task>
-    <task id="LOCAL-00011" summary="+ Summary card working">
-      <created>1572750950197</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1572750950197</updated>
-    </task>
-    <task id="LOCAL-00012" summary="+ Summary page working">
-      <created>1572753276296</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1572753276296</updated>
-    </task>
-    <task id="LOCAL-00013" summary="+ switch page (no animation)">
-      <created>1572753716276</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1572753716276</updated>
-    </task>
-    <task id="LOCAL-00014" summary="~ fixed summary chart display when data is incomplete">
-      <created>1572755038241</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1572755038241</updated>
-    </task>
-    <task id="LOCAL-00015" summary="+ save login state cross refresh&#10;+ logout button">
-      <created>1572757169153</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1572757169153</updated>
-    </task>
-    <task id="LOCAL-00016" summary="+ remember me button&#10;+ loading page appears if user is saved">
-      <created>1572759846698</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1572759846698</updated>
+      <workItem from="1579967526624" duration="19059000" />
     </task>
     <task id="LOCAL-00017" summary="~ changed one translation">
       <created>1572759976324</created>
@@ -578,7 +537,56 @@
       <option name="project" value="LOCAL" />
       <updated>1576958493666</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="+ about page, intro done">
+      <created>1579980511532</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1579980511533</updated>
+    </task>
+    <task id="LOCAL-00060" summary="+ add notification section">
+      <created>1579982815806</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1579982815806</updated>
+    </task>
+    <task id="LOCAL-00061" summary="+ added view any marks section">
+      <created>1579984494271</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1579984494271</updated>
+    </task>
+    <task id="LOCAL-00062" summary="+ 3 more sections">
+      <created>1579988143848</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1579988143848</updated>
+    </task>
+    <task id="LOCAL-00063" summary="+ add calendar section">
+      <created>1579989748725</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1579989748725</updated>
+    </task>
+    <task id="LOCAL-00064" summary="+ add screenshot and download section">
+      <created>1579991399637</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1579991399637</updated>
+    </task>
+    <task id="LOCAL-00065" summary="+ add visit desktop link">
+      <created>1579991815872</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1579991815872</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -598,13 +606,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="+ statistics tab almost finished&#10;~ solved some key warning problem&#10;~ fixed can't go to new page when old page is doing transition" />
-    <MESSAGE value="~ fixed animation" />
-    <MESSAGE value="~ change animation speed to 1x" />
-    <MESSAGE value="+ tip to open in desktop&#10;+ firefox &amp; edge scroll fix" />
-    <MESSAGE value="+ chrome better scroll" />
-    <MESSAGE value="+ better scroll bar" />
-    <MESSAGE value="+ better better scroll bar" />
     <MESSAGE value="~ better chinese translation" />
     <MESSAGE value="~ change resource path to relative&#10;+ electron&#10;- firebase performence sdk" />
     <MESSAGE value="+ login page for mobile" />
@@ -623,16 +624,24 @@
     <MESSAGE value="+ update README.md" />
     <MESSAGE value="+ update README.md&#10;+ improved linear progress indicator readability" />
     <MESSAGE value="+ better privacy policy font" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ better privacy policy font" />
+    <MESSAGE value="+ about page, intro done" />
+    <MESSAGE value="+ add notification section" />
+    <MESSAGE value="+ added view any marks section" />
+    <MESSAGE value="+ 3 more sections" />
+    <MESSAGE value="+ add calendar section" />
+    <MESSAGE value="+ add screenshot and download section" />
+    <MESSAGE value="+ add visit desktop link" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ add visit desktop link" />
   </component>
   <component name="WindowStateProjectService">
     <state x="645" y="243" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1575064503764">
       <screen x="0" y="32" width="1920" height="1048" />
     </state>
     <state x="645" y="243" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.32.1920.1048/2175.0.2400.1350@0.32.1920.1048" timestamp="1575064503764" />
-    <state x="427" y="57" width="1056" height="962" key="CommitChangelistDialog2" timestamp="1576964246380">
-      <screen x="0" y="32" width="1920" height="1048" />
+    <state x="427" y="26" width="1056" height="962" key="CommitChangelistDialog2" timestamp="1579991815750">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state x="427" y="26" key="CommitChangelistDialog2/0.0.1920.1080/1921.0.2400.1350@0.0.1920.1080" timestamp="1579991815750" />
     <state x="427" y="57" key="CommitChangelistDialog2/0.32.1920.1048/2096.0.2400.1350@0.32.1920.1048" timestamp="1576964246380" />
     <state x="427" y="57" width="1056" height="962" key="CommitChangelistDialog2/0.32.1920.1048/2175.0.2400.1350@0.32.1920.1048" timestamp="1575085372732" />
     <state x="2709" y="32" width="1056" height="962" key="CommitChangelistDialog2/0.32.1920.1048/2175.0.2400.1350@2175.0.2400.1350" timestamp="1575070020903" />
@@ -640,62 +649,90 @@
       <screen x="0" y="32" width="1920" height="1048" />
     </state>
     <state x="690" y="236" width="530" height="605" key="FileChooserDialogImpl/0.32.1920.1048/2175.0.2400.1350@0.32.1920.1048" timestamp="1575079386624" />
-    <state width="1860" height="288" key="GridCell.Tab.0.bottom" timestamp="1576964230010">
-      <screen x="0" y="32" width="1920" height="1048" />
+    <state width="1860" height="415" key="GridCell.Tab.0.bottom" timestamp="1579967576372">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state width="1860" height="415" key="GridCell.Tab.0.bottom/0.0.1920.1080/1921.0.2400.1350@0.0.1920.1080" timestamp="1579967576372" />
     <state width="1860" height="288" key="GridCell.Tab.0.bottom/0.32.1920.1048/2096.0.2400.1350@0.32.1920.1048" timestamp="1576964230010" />
     <state width="1860" height="288" key="GridCell.Tab.0.bottom/0.32.1920.1048/2175.0.2400.1350@0.32.1920.1048" timestamp="1575152385564" />
-    <state width="1860" height="288" key="GridCell.Tab.0.center" timestamp="1576964230010">
-      <screen x="0" y="32" width="1920" height="1048" />
+    <state width="1860" height="415" key="GridCell.Tab.0.center" timestamp="1579967576371">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state width="1860" height="415" key="GridCell.Tab.0.center/0.0.1920.1080/1921.0.2400.1350@0.0.1920.1080" timestamp="1579967576371" />
     <state width="1860" height="288" key="GridCell.Tab.0.center/0.32.1920.1048/2096.0.2400.1350@0.32.1920.1048" timestamp="1576964230010" />
     <state width="1860" height="288" key="GridCell.Tab.0.center/0.32.1920.1048/2175.0.2400.1350@0.32.1920.1048" timestamp="1575152385564" />
-    <state width="1860" height="288" key="GridCell.Tab.0.left" timestamp="1576964230009">
-      <screen x="0" y="32" width="1920" height="1048" />
+    <state width="1860" height="415" key="GridCell.Tab.0.left" timestamp="1579967576369">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state width="1860" height="415" key="GridCell.Tab.0.left/0.0.1920.1080/1921.0.2400.1350@0.0.1920.1080" timestamp="1579967576369" />
     <state width="1860" height="288" key="GridCell.Tab.0.left/0.32.1920.1048/2096.0.2400.1350@0.32.1920.1048" timestamp="1576964230009" />
     <state width="1860" height="288" key="GridCell.Tab.0.left/0.32.1920.1048/2175.0.2400.1350@0.32.1920.1048" timestamp="1575152385564" />
-    <state width="1860" height="288" key="GridCell.Tab.0.right" timestamp="1576964230010">
-      <screen x="0" y="32" width="1920" height="1048" />
+    <state width="1860" height="415" key="GridCell.Tab.0.right" timestamp="1579967576372">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state width="1860" height="415" key="GridCell.Tab.0.right/0.0.1920.1080/1921.0.2400.1350@0.0.1920.1080" timestamp="1579967576372" />
     <state width="1860" height="288" key="GridCell.Tab.0.right/0.32.1920.1048/2096.0.2400.1350@0.32.1920.1048" timestamp="1576964230010" />
     <state width="1860" height="288" key="GridCell.Tab.0.right/0.32.1920.1048/2175.0.2400.1350@0.32.1920.1048" timestamp="1575152385564" />
-    <state width="1860" height="414" key="GridCell.Tab.1.bottom" timestamp="1576963239072">
-      <screen x="0" y="32" width="1920" height="1048" />
+    <state width="1860" height="415" key="GridCell.Tab.1.bottom" timestamp="1579967576375">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state width="1860" height="415" key="GridCell.Tab.1.bottom/0.0.1920.1080/1921.0.2400.1350@0.0.1920.1080" timestamp="1579967576375" />
     <state width="1860" height="414" key="GridCell.Tab.1.bottom/0.32.1920.1048/2096.0.2400.1350@0.32.1920.1048" timestamp="1576963239072" />
-    <state width="1860" height="414" key="GridCell.Tab.1.center" timestamp="1576963239072">
-      <screen x="0" y="32" width="1920" height="1048" />
+    <state width="1860" height="415" key="GridCell.Tab.1.center" timestamp="1579967576374">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state width="1860" height="415" key="GridCell.Tab.1.center/0.0.1920.1080/1921.0.2400.1350@0.0.1920.1080" timestamp="1579967576374" />
     <state width="1860" height="414" key="GridCell.Tab.1.center/0.32.1920.1048/2096.0.2400.1350@0.32.1920.1048" timestamp="1576963239072" />
-    <state width="1860" height="414" key="GridCell.Tab.1.left" timestamp="1576963239072">
-      <screen x="0" y="32" width="1920" height="1048" />
+    <state width="1860" height="415" key="GridCell.Tab.1.left" timestamp="1579967576373">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state width="1860" height="415" key="GridCell.Tab.1.left/0.0.1920.1080/1921.0.2400.1350@0.0.1920.1080" timestamp="1579967576373" />
     <state width="1860" height="414" key="GridCell.Tab.1.left/0.32.1920.1048/2096.0.2400.1350@0.32.1920.1048" timestamp="1576963239072" />
-    <state width="1860" height="414" key="GridCell.Tab.1.right" timestamp="1576963239072">
-      <screen x="0" y="32" width="1920" height="1048" />
+    <state width="1860" height="415" key="GridCell.Tab.1.right" timestamp="1579967576375">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state width="1860" height="415" key="GridCell.Tab.1.right/0.0.1920.1080/1921.0.2400.1350@0.0.1920.1080" timestamp="1579967576375" />
     <state width="1860" height="414" key="GridCell.Tab.1.right/0.32.1920.1048/2096.0.2400.1350@0.32.1920.1048" timestamp="1576963239072" />
-    <state width="1860" height="414" key="GridCell.Tab.2.bottom" timestamp="1576963239073">
-      <screen x="0" y="32" width="1920" height="1048" />
+    <state width="1860" height="415" key="GridCell.Tab.2.bottom" timestamp="1579967576376">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state width="1860" height="415" key="GridCell.Tab.2.bottom/0.0.1920.1080/1921.0.2400.1350@0.0.1920.1080" timestamp="1579967576376" />
     <state width="1860" height="414" key="GridCell.Tab.2.bottom/0.32.1920.1048/2096.0.2400.1350@0.32.1920.1048" timestamp="1576963239073" />
-    <state width="1860" height="414" key="GridCell.Tab.2.center" timestamp="1576963239072">
-      <screen x="0" y="32" width="1920" height="1048" />
+    <state width="1860" height="415" key="GridCell.Tab.2.center" timestamp="1579967576376">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state width="1860" height="415" key="GridCell.Tab.2.center/0.0.1920.1080/1921.0.2400.1350@0.0.1920.1080" timestamp="1579967576376" />
     <state width="1860" height="414" key="GridCell.Tab.2.center/0.32.1920.1048/2096.0.2400.1350@0.32.1920.1048" timestamp="1576963239072" />
-    <state width="1860" height="414" key="GridCell.Tab.2.left" timestamp="1576963239072">
-      <screen x="0" y="32" width="1920" height="1048" />
+    <state width="1860" height="415" key="GridCell.Tab.2.left" timestamp="1579967576376">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state width="1860" height="415" key="GridCell.Tab.2.left/0.0.1920.1080/1921.0.2400.1350@0.0.1920.1080" timestamp="1579967576376" />
     <state width="1860" height="414" key="GridCell.Tab.2.left/0.32.1920.1048/2096.0.2400.1350@0.32.1920.1048" timestamp="1576963239072" />
-    <state width="1860" height="414" key="GridCell.Tab.2.right" timestamp="1576963239073">
-      <screen x="0" y="32" width="1920" height="1048" />
+    <state width="1860" height="415" key="GridCell.Tab.2.right" timestamp="1579967576376">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
+    <state width="1860" height="415" key="GridCell.Tab.2.right/0.0.1920.1080/1921.0.2400.1350@0.0.1920.1080" timestamp="1579967576376" />
     <state width="1860" height="414" key="GridCell.Tab.2.right/0.32.1920.1048/2096.0.2400.1350@0.32.1920.1048" timestamp="1576963239073" />
+    <state x="330" y="64" key="SettingsEditor" timestamp="1579967490935">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="330" y="64" key="SettingsEditor/0.0.1920.1080/1921.0.2400.1350@0.0.1920.1080" timestamp="1579967490935" />
     <state x="460" y="204" key="Vcs.Push.Dialog.v2" timestamp="1575085433442">
       <screen x="0" y="32" width="1920" height="1048" />
     </state>
     <state x="460" y="204" key="Vcs.Push.Dialog.v2/0.32.1920.1048/2175.0.2400.1350@0.32.1920.1048" timestamp="1575085433442" />
     <state x="2750" y="222" key="Vcs.Push.Dialog.v2/0.32.1920.1048/2175.0.2400.1350@2175.0.2400.1350" timestamp="1575070036958" />
+    <state x="541" y="166" width="837" height="708" key="find.popup" timestamp="1579967314706">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="541" y="166" width="837" height="708" key="find.popup/0.0.1920.1080/1921.0.2400.1350@0.0.1920.1080" timestamp="1579967314706" />
+    <state x="540" y="231" key="run.anything.popup" timestamp="1579977482906">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="540" y="231" key="run.anything.popup/0.0.1920.1080/1921.0.2400.1350@0.0.1920.1080" timestamp="1579977482906" />
+    <state x="539" y="45" width="840" height="1034" key="search.everywhere.popup" timestamp="1579967261124">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="539" y="45" width="840" height="1034" key="search.everywhere.popup/0.0.1920.1080/1921.0.2400.1350@0.0.1920.1080" timestamp="1579967261124" />
   </component>
 </project>
