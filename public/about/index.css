@@ -31,7 +31,12 @@ body {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+    -ms-overflow-style: none;
     user-select: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 .intro {
