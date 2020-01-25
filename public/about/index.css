@@ -231,25 +231,86 @@ h1 {
     font-size: 15px;
 }
 
-.button-bar{
+.button-bar {
     height: 42px;
 }
 
-.fake-button-positive{
+.fake-button-positive {
     float: right;
     color: white;
     padding: 10px 16px;
     border-radius: 2px;
     font-weight: bold;
     background-color: #2196F3;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
-.fake-button-neutral{
+.fake-button-neutral {
     float: right;
-    color:  #2196F3;
+    color: #2196F3;
     padding: 10px 16px;
     border-radius: 2px;
     font-weight: bold;
     margin-right: 8px;
+}
+
+.date-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.cale-weekday {
+    font-size: 14px;
+    color: #757575;
+    margin-bottom: 4px;
+}
+
+.cale-day {
+    background-color: #F5F5F5;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    border-radius: 24px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.today {
+    background-color: #2196f3;
+    color: white;
+}
+
+.event {
+    width: 46px;
+    height: 46px;
+    line-height: 46px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #2196f3;
+}
+
+.event-detail-row{
+    padding: 0 4px;
+    height: 24px;
+}
+
+.event-icon{
+    float: left;
+    width: 24px;
+}
+
+.event-name{
+    float: left;
+    line-height: 24px;
+    font-size: 18px;
+    margin-left: 8px;
+}
+
+.event-time{
+    float: right;
+    line-height: 24px;
+    font-size: 18px;
 }
