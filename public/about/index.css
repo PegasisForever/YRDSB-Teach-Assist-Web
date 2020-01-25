@@ -10,6 +10,10 @@ p {
     margin: 0;
 }
 
+a{
+    color: #4183C4;;
+}
+
 .selectable {
     -webkit-user-select: text;
     -moz-user-select: text;
@@ -342,4 +346,8 @@ h1 {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+}
+
+.visit-desktop{
+    margin-top: 16px;
 }
