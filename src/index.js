@@ -5,6 +5,7 @@ import LoginPage from "./loginpage/loginPage"
 import LoadingPage from "./summarypage/loadingPage"
 import SummaryPage from "./summarypage/summaryPage"
 import DetailPage from "./detailpage/detailPage"
+import {isMobile} from "./tools"
 
 let states = {
     login: LoginPage,
@@ -21,6 +22,15 @@ let baseUrl = "https://api.pegasis.site/public/yrdsb_ta"
 class Root extends Component {
     constructor(props) {
         super(props)
+
+        if (window.innerWidth<=1050) {
+            let url = new URL(window.location.href)
+            if (!url.searchParams.get("no-red")) {
+                window.location.replace("https://ta-yrdsb.web.app/about")
+                return
+            }
+        }
+
         this.setPage = this.setPage.bind(this)
         this.showDialog = this.showDialog.bind(this)
         this.delDialog = this.delDialog.bind(this)

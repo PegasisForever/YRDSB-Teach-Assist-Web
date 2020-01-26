@@ -14,5 +14,5 @@ net.post=function (url,data,callback) {
 export default net
 
 export function isMobile() {
-    return window.innerWidth<=1050
+    return false
 }
