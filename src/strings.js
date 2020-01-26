@@ -1,6 +1,6 @@
 let strings = {
     "en": {
-        "login_your_account": "Login Your Account:",
+        "login_your_account": "Log in Your Account:",
         "student_number": "Student Number",
         "password": "Password",
         "login": "Login",
