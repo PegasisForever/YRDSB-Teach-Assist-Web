@@ -5,7 +5,6 @@ import LoginPage from "./loginpage/loginPage"
 import LoadingPage from "./summarypage/loadingPage"
 import SummaryPage from "./summarypage/summaryPage"
 import DetailPage from "./detailpage/detailPage"
-import {isMobile} from "./tools"
 
 let states = {
     login: LoginPage,

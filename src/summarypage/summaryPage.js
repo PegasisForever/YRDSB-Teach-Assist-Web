@@ -168,7 +168,6 @@ export default class SummaryPage extends Component {
                             <SizedBox height={8}/>
                             <LPI width={400} value={avg}/>
                         </Fragment> : null}
-                        <SizedBox height={32}/>
                         <LinearLayout className="course-card-list" horizontal wrap align={"center"}>
                             {courseList.map((course, i) => {
                                 if (this.cardRefs.length !== i) {
