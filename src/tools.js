@@ -16,3 +16,7 @@ export default net
 export function isMobile() {
     return false
 }
+
+export function safeDiv(a,b) {
+    return a > 0.0 ? (a / b) : 0.0
+}

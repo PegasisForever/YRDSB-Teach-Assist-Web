@@ -1,4 +1,5 @@
 import getString from "./strings"
+import {safeDiv} from "./tools"
 
 export function getDisplayName(course) {
     if (course.name !== null) {
@@ -21,7 +22,81 @@ export function getPeriodRoom(course) {
     return strs.join(" - ")
 }
 
+const categories = ["KU", "T", "C", "A", "O", "F"]
+
+function smallMarkGroupHasFinished(smallMarkGroup) {
+    return smallMarkGroup.find(smallMark => smallMark.finished === true) != null
+}
+
+function smallMarkGroupHasWeight(smallMarkGroup) {
+    return smallMarkGroup.find(smallMark => smallMark.weight > 0) != null
+}
+
+function smallMarkGetPercentage(smallMark) {
+    return safeDiv(smallMark.get, smallMark.total)
+}
+
+function smallMarkGroupGetPercentage(smallMarkGroup) {
+    let get = 0.0
+    let total = 0.0
+    smallMarkGroup.forEach(smallMark => {
+        get += smallMarkGetPercentage(smallMark) * smallMark.weight
+        total += smallMark.weight
+    })
+    return safeDiv(get, total)
+}
+
+function smallMarkGroupGetAllWeight(smallMarkGroup) {
+    let sum = 0.0
+    smallMarkGroup.forEach(smallMark => {
+        sum += smallMark.finished ? smallMark.weight : 0
+    })
+    return sum
+}
+
 export function getCourseOverallList(course) {
+    let overallList = []
+
+    let i = 0
+    let weightTable=course.weight_table
+    let gets = categories.reduce((map, category) => {
+        map[category] = 0.0
+        return map
+    }, {})
+    let totals = categories.reduce((map, category) => {
+        map[category] = 0.0
+        return map
+    }, {})
+    course.assignments.forEach((assi) => {
+        categories.forEach((category) => {
+            if (!assi[category]) return
+            let smallMarkGroup = assi[category]
+            if (smallMarkGroupHasFinished(smallMarkGroup) && smallMarkGroupHasWeight(smallMarkGroup)) {
+                let groupWeight = smallMarkGroupGetAllWeight(smallMarkGroup)
+                gets[category] += smallMarkGroupGetPercentage(smallMarkGroup) * groupWeight
+                totals[category] += groupWeight
+            }
+        })
+
+        let avg = 0.0
+        let avgn = 0.0
+        categories.forEach((category) => {
+            let smallAvg=gets[category]/totals[category]
+            if (isFinite(smallAvg)){
+                avg+=smallAvg*weightTable[category].CW
+                avgn+=weightTable[category].CW
+            }
+        })
+        if (avgn > 0.0) {
+            overallList.push([i, avg / avgn * 100])
+        }
+        i++
+    })
+
+    return overallList
+}
+
+export function oldGetCourseOverallList(course) {
     let overallList = []
 
     let i = 0.0

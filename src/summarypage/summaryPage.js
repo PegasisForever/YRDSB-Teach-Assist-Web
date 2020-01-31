@@ -23,7 +23,7 @@ function AnimateCard(props) {
             x: [(window.innerWidth - 300) / 2 + 300 - props.width / 2],
             y: [window.innerHeight / 2 - props.height / 2],
             widthScale: [(window.innerWidth - 300) / (props.width)],
-            heightScale: [(window.innerHeight) / (props.height+2)],
+            heightScale: [(window.innerHeight) / (props.height + 2)],
             opacity: [-0.5],
             timing: {duration: 500 * getAnimationScale(), ease: easeExpInOut}
         }}>
@@ -82,8 +82,6 @@ export default class SummaryPage extends Component {
                 })
             }
             }/>)
-
-
     }
 
     openDetailPage(index) {
@@ -160,7 +158,7 @@ export default class SummaryPage extends Component {
                                 <SizedBox width={16}/>
                             </LinearLayout>
                         </LinearLayout>
-                        {!Number.isNaN(avg) ? <Fragment>
+                        {Number.isFinite(avg) ? <Fragment>
                             <SizedBox height={8}/>
                             <Headline5>{getString("average")}</Headline5>
                             <SizedBox height={8}/>
@@ -177,8 +175,8 @@ export default class SummaryPage extends Component {
                                 this.cardRefs.push(ref)
                                 return i === this.state.selectedCourseIndex ?
                                     <SizedBox key={course.code}
-                                              width={this.state.animationWidth+32}
-                                              height={this.state.animationHeight+32}/> :
+                                              width={this.state.animationWidth + 32}
+                                              height={this.state.animationHeight + 32}/> :
                                     <SummaryCard
                                         key={course.code}
                                         r={ref}
