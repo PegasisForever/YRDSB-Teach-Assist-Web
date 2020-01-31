@@ -22,13 +22,14 @@ export function getPeriodRoom(course) {
     return strs.join(" - ")
 }
 
-const categories = ["KU", "T", "C", "A", "O", "F"]
+export const categories = ["KU", "T", "C", "A", "O", "F"]
 
 function smallMarkGroupHasFinished(smallMarkGroup) {
     return smallMarkGroup.find(smallMark => smallMark.finished === true) != null
 }
 
 function smallMarkGroupHasWeight(smallMarkGroup) {
+    if(!smallMarkGroup) return false
     return smallMarkGroup.find(smallMark => smallMark.weight > 0) != null
 }
 
@@ -180,17 +181,13 @@ export function oldGetCourseOverallList(course) {
     return overallList
 }
 
-function isWeightZeroOrNull(smallmark) {
-    return smallmark ? smallmark === 0 : true
-}
-
 export function isNoWeight(assi) {
-    return isWeightZeroOrNull(assi.KU) &&
-        isWeightZeroOrNull(assi.T) &&
-        isWeightZeroOrNull(assi.C) &&
-        isWeightZeroOrNull(assi.A) &&
-        isWeightZeroOrNull(assi.O) &&
-        isWeightZeroOrNull(assi.F)
+    return smallMarkGroupHasWeight(assi.KU) &&
+        smallMarkGroupHasWeight(assi.T) &&
+        smallMarkGroupHasWeight(assi.C) &&
+        smallMarkGroupHasWeight(assi.A) &&
+        smallMarkGroupHasWeight(assi.O) &&
+        smallMarkGroupHasWeight(assi.F)
 }
 
 export function getAverage(assi, weights) {

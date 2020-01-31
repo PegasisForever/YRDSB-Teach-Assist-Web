@@ -3,11 +3,10 @@ import LinearLayout from "../components/linearLayout"
 import {SizedBox} from "../components/sizedBox"
 import {Body1, Headline5} from "@material/react-typography"
 import {Padding} from "../components/padding"
-import {getAverage, isNoWeight} from "../courseUtilities"
+import {getAverage, isNoWeight, categories} from "../courseUtilities"
 import getString from "../strings"
 import Divider from "./Divider"
 
-let smallmarkCategories = ["KU", "T", "C", "A", "O", "F"]
 let smallmarkColors = {
     "KU": "#ffeb3b",
     "T": "#8bc34a",
@@ -59,10 +58,19 @@ function SmallMarkChart(props) {
     let assi = props.assignment
     let height = 180
     let smallmarkBars = []
-    smallmarkCategories.forEach((category, i) => {
+    categories.forEach((category, i) => {
         if (i < 4 || assi[category]) {
-            smallmarkBars.push(<SmallmarkBar key={category} x={smallmarkBars.length * 50} height={height}
-                                             category={category} smallmark={assi[category]}/>)
+            if (assi[category]) {
+                assi[category].forEach(smallMark => {
+                    smallmarkBars.push(<SmallmarkBar key={category} x={smallmarkBars.length * 50} height={height}
+                                                     category={category}
+                                                     smallmark={smallMark}/>)
+                })
+            } else {
+                smallmarkBars.push(<SmallmarkBar key={category} x={smallmarkBars.length * 50} height={height}
+                                                 category={category}
+                                                 smallmark={null}/>)
+            }
         }
     })
     return <Padding t={16} b={16}>
@@ -82,17 +90,15 @@ function AssignmentListItem(props) {
     return <SizedBox width={750}>
         <Padding l={32} r={32}>
             <LinearLayout horizontal align={"space-between"}>
-                <SizedBox width={436}>
-                    <Padding t={32} b={32}>
-                        <Headline5 className="selectable">{assi.name}</Headline5>
-                        {avg ? <Body1
-                            className="assignment-desc selectable">{getString("avg:") + Math.floor(avg * 10) / 10 + "%"}</Body1> : null}
-                        {isNoWeight(assi) ?
-                            <Body1 className="assignment-desc selectable">{getString("no_weight")}</Body1> : null}
-                        {assi.feedback !== "" ?
-                            <Body1 className="assignment-feedback selectable">{assi.feedback}</Body1> : null}
-                    </Padding>
-                </SizedBox>
+                <Padding t={32} b={32} r={16}>
+                    <Headline5 className="selectable">{assi.name}</Headline5>
+                    {avg ? <Body1
+                        className="assignment-desc selectable">{getString("avg:") + Math.floor(avg * 10) / 10 + "%"}</Body1> : null}
+                    {isNoWeight(assi) ?
+                        <Body1 className="assignment-desc selectable">{getString("no_weight")}</Body1> : null}
+                    {assi.feedback !== "" ?
+                        <Body1 className="assignment-feedback selectable">{assi.feedback}</Body1> : null}
+                </Padding>
                 <SmallMarkChart assignment={assi}/>
             </LinearLayout>
         </Padding>
