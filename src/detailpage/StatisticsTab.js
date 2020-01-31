@@ -6,7 +6,7 @@ import getString from "../strings"
 import LPI from "../components/linearProgressIndicator"
 import Divider from "./Divider"
 import {ResponsiveLine} from "@nivo/line"
-import {getCourseOverallList} from "../courseUtilities"
+import {getCourseOverallList, smallMarkGroupGetPercentage, smallMarkGroupHasFinished} from "../courseUtilities"
 
 const shortNameMap = {
     "KU": "knowledge_understanding",
@@ -22,8 +22,6 @@ const colorMap = {
     "A": "#ef6c00",
 }
 
-const pieDataItems = ["KU", "T", "C", "A", "F"]
-
 function getChartData(course, category) {
     if (category === "overall") {
         return {
@@ -38,8 +36,8 @@ function getChartData(course, category) {
             data: [{
                 id: category,
                 data: course.assignments.map((assi, i) => (
-                    (assi[category] && assi[category].finished) ?
-                        {"x": i, "y": Math.floor(assi[category].get / assi[category].total * 10) * 10} : undefined))
+                    (assi[category] && smallMarkGroupHasFinished(assi[category])) ?
+                        {"x": i, "y": Math.floor(smallMarkGroupGetPercentage(assi[category]) * 10) * 10} : undefined))
                     .filter((point) => point)
             }],
             color: colorMap[category]

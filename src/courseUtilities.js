@@ -24,7 +24,7 @@ export function getPeriodRoom(course) {
 
 export const categories = ["KU", "T", "C", "A", "O", "F"]
 
-function smallMarkGroupHasFinished(smallMarkGroup) {
+export function smallMarkGroupHasFinished(smallMarkGroup) {
     return smallMarkGroup.find(smallMark => smallMark.finished === true) != null
 }
 
@@ -37,7 +37,7 @@ function smallMarkGetPercentage(smallMark) {
     return safeDiv(smallMark.get, smallMark.total)
 }
 
-function smallMarkGroupGetPercentage(smallMarkGroup) {
+export function smallMarkGroupGetPercentage(smallMarkGroup) {
     let get = 0.0
     let total = 0.0
     smallMarkGroup.forEach(smallMark => {
