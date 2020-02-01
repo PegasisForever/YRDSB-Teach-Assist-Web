@@ -42,6 +42,10 @@ function getOverallChart(course, width, height) {
     let points = getCourseOverallList(course).map(overall => {
         return [overall[0] * space, width - overall[1] * width / 105]
     })
+    if(points.length===0){
+        return <SizedBox width={width} height={height}/>
+    }
+
     if (points[0][0] !== 0) { //if index of first point isn't zero
         points.unshift([0, points[0][1]])
     }
@@ -53,7 +57,7 @@ function getOverallChart(course, width, height) {
         : `${acc} ${bezier(point, i, a)}`
         , '')
 
-    return (<div style={{width: width + "px", height: height + "px"}}>
+    return (<SizedBox width={width} height={height}>
         <svg viewBox={`0 0 ${width} ${height}`} version="1.1" xmlns="http://www.w3.org/2000/svg">
             <defs>
                 <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -65,7 +69,7 @@ function getOverallChart(course, width, height) {
                   stroke="none"/>
             <path d={d} fill="none" stroke="#038FCE" strokeWidth={2}/>
         </svg>
-    </div>)
+    </SizedBox>)
 }
 
 export default function SummaryCard(props) {

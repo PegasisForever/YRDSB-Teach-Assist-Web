@@ -28,7 +28,7 @@ export function smallMarkGroupHasFinished(smallMarkGroup) {
     return smallMarkGroup.find(smallMark => smallMark.finished === true) != null
 }
 
-function smallMarkGroupHasWeight(smallMarkGroup) {
+export function smallMarkGroupHasWeight(smallMarkGroup) {
     if(!smallMarkGroup) return false
     return smallMarkGroup.find(smallMark => smallMark.weight > 0) != null
 }

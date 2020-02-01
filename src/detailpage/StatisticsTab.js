@@ -6,7 +6,12 @@ import getString from "../strings"
 import LPI from "../components/linearProgressIndicator"
 import Divider from "./Divider"
 import {ResponsiveLine} from "@nivo/line"
-import {getCourseOverallList, smallMarkGroupGetPercentage, smallMarkGroupHasFinished} from "../courseUtilities"
+import {
+    getCourseOverallList,
+    smallMarkGroupGetPercentage,
+    smallMarkGroupHasFinished,
+    smallMarkGroupHasWeight
+} from "../courseUtilities"
 
 const shortNameMap = {
     "KU": "knowledge_understanding",
@@ -36,7 +41,7 @@ function getChartData(course, category) {
             data: [{
                 id: category,
                 data: course.assignments.map((assi, i) => (
-                    (assi[category] && smallMarkGroupHasFinished(assi[category])) ?
+                    (assi[category] && smallMarkGroupHasFinished(assi[category]) && smallMarkGroupHasWeight(assi[category])) ?
                         {"x": i, "y": Math.floor(smallMarkGroupGetPercentage(assi[category]) * 10) * 10} : undefined))
                     .filter((point) => point)
             }],
