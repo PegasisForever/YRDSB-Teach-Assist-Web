@@ -17,7 +17,7 @@ export default class LoadingPage extends Component {
     }
 
     render() {
-        net.post(baseUrl+"/getmark",
+        net.post(baseUrl+"/getmark_v2",
             JSON.parse(sessionStorage.getItem("account") ? sessionStorage.getItem("account") : localStorage.getItem("account")),
             (statusCode, response) => {
                 if (statusCode === 200) {

@@ -168,7 +168,7 @@ class LoginForm extends Component {
         this.setState({
             isLoading: true,
         })
-        net.post(baseUrl + "/getmark",
+        net.post(baseUrl + "/getmark_v2",
             {
                 number: this.state.number,
                 password: this.state.password
