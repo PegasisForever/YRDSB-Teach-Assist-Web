@@ -88,14 +88,36 @@ export default class SummaryPage extends Component {
             }/>)
     }
 
-    openMoodle(){
-        window.open("https://moodle2.yrdsb.ca/login/index.php");
+    openMoodle() {
+        window.open("https://moodle2.yrdsb.ca/login/index.php")
     }
 
-    openAppDialog(){
+    openAppDialog() {
         showDialog(<CustomDialog>
-            <DialogContent>
-                <p>YRDSB Teach Assist</p>
+            <DialogContent style={{paddingBottom: "0"}}>
+                <LinearLayout vertical align={"center"} item={"center"}>
+                    <img src={getPublicURL() + "launcher192.png"} width="100px" alt={"logo"}/>
+                    <p style={{paddingTop: "0"}}>
+                        {getString("for_android_ios")}
+                    </p>
+                    <span>
+                        {getString("app_desc").split("\n").reduce((r, a) => r.concat(a, <br/>), [])}
+                    </span>
+                    <LinearLayout horizontal align={"center"} item={"center"} style={{marginTop:"8px"}}>
+                        <a href="https://play.google.com/store/apps/details?id=site.pegasis.yrdsb.ta&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
+                           target="_blank">
+                            <img alt="Get it on Google Play"
+                                 src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                                 width="200px"/>
+                        </a>
+                        <a href="https://apps.apple.com/us/app/yrdsb-teach-assist/id1483082868?ls=1"
+                           target="_blank">
+                            <img alt="Download on the App Store"
+                                 src={getPublicURL() + "about/app_store_badge.svg"}
+                                 width="178px"/>
+                        </a>
+                    </LinearLayout>
+                </LinearLayout>
             </DialogContent>
             <DialogFooter>
                 <DialogButton action="ok">{getString("ok")}</DialogButton>
@@ -103,7 +125,7 @@ export default class SummaryPage extends Component {
         </CustomDialog>)
     }
 
-    openAboutDialog(){
+    openAboutDialog() {
         showDialog(<CustomDialog>
             <DialogContent>
                 <p>YRDSB Teach Assist</p>

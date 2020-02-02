@@ -87,6 +87,11 @@ let strings = {
         "privacy_policy":"Privacy Policy",
         "support":"Support",
         "app":"APP",
+        "for_android_ios":"For Android & iOS",
+        "app_desc":"✅ Receive notifications when you get new marks.\n" +
+            "✅ Add, remove & edit assessments.\n" +
+            "✅ View marks offline, or after the teacher hides it.\n" +
+            "✅ Dark mode support."
     },
     "zh": {
         "login_your_account": "登录帐号：",
@@ -176,6 +181,12 @@ let strings = {
         "privacy_policy":"隐私政策",
         "support":"用户支持",
         "app":"App",
+        "for_android_ios":"为Android和iOS用户设计",
+        "app_desc":"✅ 通知推送\n" +
+            "✅ 添加或编辑您的作业评分\n" +
+            "✅ 离线查看成绩\n" +
+            "✅ 老师隐藏成绩后依然可见\n" +
+            "✅ 夜间模式"
     }
 }
 
