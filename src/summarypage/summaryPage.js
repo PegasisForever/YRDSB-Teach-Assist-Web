@@ -2,7 +2,7 @@ import React, {Component, Fragment} from "react"
 import SummaryCard from "./summaryCard"
 import "./summary-page.scss"
 import LinearLayout from "../components/linearLayout"
-import {Headline1, Headline5} from "@material/react-typography"
+import {Body1, Body2, Headline1, Headline5} from "@material/react-typography"
 import {Padding} from "../components/padding"
 import {SizedBox} from "../components/sizedBox"
 import Button from '@material/react-button'
@@ -97,7 +97,7 @@ export default class SummaryPage extends Component {
             <DialogContent style={{paddingBottom: "0"}}>
                 <LinearLayout vertical align={"center"} item={"center"}>
                     <img src={getPublicURL() + "launcher192.png"} width="100px" alt={"logo"}/>
-                    <p style={{paddingTop: "0"}}>
+                    <p style={{marginTop: "0"}}>
                         {getString("for_android_ios")}
                     </p>
                     <span>
@@ -127,8 +127,17 @@ export default class SummaryPage extends Component {
 
     openAboutDialog() {
         showDialog(<CustomDialog>
-            <DialogContent>
-                <p>YRDSB Teach Assist</p>
+            <DialogContent style={{paddingBottom: "0"}}>
+                <LinearLayout vertical align={"center"} item={"center"}>
+                    <img src={getPublicURL() + "launcher192.png"} width="100px" alt={"logo"}/>
+                    <Headline5 style={{paddingTop: "0"}}>
+                        YRDSB Teach Assist Web
+                    </Headline5>
+                    <Body1>By <a href={"https://me.pegasis.site/"} target="_blank">Pegasis</a></Body1>
+                    <SizedBox height={16}/>
+                    <Body1><a href={"https://github.com/PegasisForever/YRDSB-Teach-Assist-Web"} target="_blank">Repository on Github</a></Body1>
+                    <Body1><a href={"https://api.pegasis.site/docs/ta_public_api/"} target="_blank">TA Public API</a></Body1>
+                </LinearLayout>
             </DialogContent>
             <DialogFooter>
                 <DialogButton action="ok">{getString("ok")}</DialogButton>
