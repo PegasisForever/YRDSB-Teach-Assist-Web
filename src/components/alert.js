@@ -3,6 +3,16 @@ import Dialog, {DialogButton, DialogContent, DialogFooter} from "@material/react
 import getString from "../strings"
 import {delDialog} from "../index"
 
+export function CustomDialog(props) {
+    return (
+        <Dialog
+            onClose={() => delDialog()}
+            open>
+            {props.children}
+        </Dialog>
+    )
+}
+
 export function Alert(props) {
     return (
         <Dialog

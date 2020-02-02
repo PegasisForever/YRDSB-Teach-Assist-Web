@@ -13,7 +13,8 @@ import {easeExpInOut, easeQuadInOut} from "d3-ease"
 import Animate from "react-move/Animate"
 import DetailPage from "../detailpage/detailPage"
 import {getAnimationScale, getPublicURL, setPage, showDialog} from "../index"
-import {ConfirmDialog} from "../components/alert"
+import {ConfirmDialog, CustomDialog} from "../components/alert"
+import {DialogButton, DialogContent, DialogFooter} from "@material/react-dialog"
 
 function AnimateCard(props) {
     return props.course ? <Animate
@@ -59,6 +60,9 @@ export default class SummaryPage extends Component {
         }
         this.cardRefs = []
         this.logout = this.logout.bind(this)
+        this.openMoodle = this.openMoodle.bind(this)
+        this.openAppDialog = this.openAppDialog.bind(this)
+        this.openAboutDialog = this.openAboutDialog.bind(this)
         this.openDetailPage = this.openDetailPage.bind(this)
     }
 
@@ -82,6 +86,32 @@ export default class SummaryPage extends Component {
                 })
             }
             }/>)
+    }
+
+    openMoodle(){
+        window.open("https://moodle2.yrdsb.ca/login/index.php");
+    }
+
+    openAppDialog(){
+        showDialog(<CustomDialog>
+            <DialogContent>
+                <p>YRDSB Teach Assist</p>
+            </DialogContent>
+            <DialogFooter>
+                <DialogButton action="ok">{getString("ok")}</DialogButton>
+            </DialogFooter>
+        </CustomDialog>)
+    }
+
+    openAboutDialog(){
+        showDialog(<CustomDialog>
+            <DialogContent>
+                <p>YRDSB Teach Assist</p>
+            </DialogContent>
+            <DialogFooter>
+                <DialogButton action="ok">{getString("ok")}</DialogButton>
+            </DialogFooter>
+        </CustomDialog>)
     }
 
     openDetailPage(index) {
@@ -152,7 +182,16 @@ export default class SummaryPage extends Component {
                                 <Headline5 className="title">YRDSB Teach Assist</Headline5>
                             </LinearLayout>
                             <LinearLayout horizontal align={"end"} item={"center"}>
-                                <Button className="logout-btn" outlined onClick={this.logout}>
+                                <Button className="nav-btn" outlined onClick={this.openAboutDialog}>
+                                    {getString("about")}
+                                </Button>
+                                <Button className="nav-btn" outlined onClick={this.openAppDialog}>
+                                    {getString("app")}
+                                </Button>
+                                <Button className="nav-btn" outlined onClick={this.openMoodle}>
+                                    {getString("moodle")}
+                                </Button>
+                                <Button className="nav-btn" outlined onClick={this.logout}>
                                     {getString("logout")}
                                 </Button>
                                 <SizedBox width={16}/>

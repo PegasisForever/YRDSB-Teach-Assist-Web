@@ -12,7 +12,7 @@
   font-weight: 400;
 }
 
-.logout-btn {
+.nav-btn {
   border-width: 0;
   text-transform: capitalize;
   .mdc-button__label{
@@ -20,7 +20,7 @@
   }
 }
 
-.logout-btn.mdc-button::before, .logout-btn.mdc-button::after {
+.nav-btn.mdc-button::before, .nav-btn.mdc-button::after {
   background-color: var(--mdc-theme-primary, #555);
 }
 

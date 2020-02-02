@@ -86,6 +86,7 @@ let strings = {
         "unnamed_course":"Unnamed Course",
         "privacy_policy":"Privacy Policy",
         "support":"Support",
+        "app":"APP",
     },
     "zh": {
         "login_your_account": "登录帐号：",
@@ -174,6 +175,7 @@ let strings = {
         "unnamed_course":"未命名课程",
         "privacy_policy":"隐私政策",
         "support":"用户支持",
+        "app":"App",
     }
 }
 
