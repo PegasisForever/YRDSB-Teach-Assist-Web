@@ -1,4 +1,5 @@
 import React from "react"
+import {isEdge} from "../tools"
 
 export default function LPI(props) {
     let height = props.height ? props.height : 20
@@ -19,7 +20,7 @@ export default function LPI(props) {
                           x2={height / 2 + (width - height) * value / 100} y2={height / 2}
                           strokeWidth={height}
                           strokeLinecap="round"/> : null}
-                <text x="50%" y="55%" style={{fill: "black"}}>{text}</text>
+                <text x="50%" y={isEdge() ? "70%" : "55%"} style={{fill: "black"}}>{text}</text>
             </svg>
         </div>
     )
