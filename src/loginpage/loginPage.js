@@ -270,6 +270,13 @@ export default class LoginPage extends Component {
                             <Divider/>
                             <LoginForm gotoSummary={this.gotoSummary}/>
                         </LinearLayout>}
+                        <footer className={"login-footer"}>
+                            <Body2 className={"footer-text"}>
+                                <a href="/privacy-policy">{getString("privacy_policy")}</a>
+                                &nbsp;|&nbsp;
+                                <a href="/support">{getString("support")}</a>
+                            </Body2>
+                        </footer>
                 </LinearLayout>)
             }}
         </Animate>)

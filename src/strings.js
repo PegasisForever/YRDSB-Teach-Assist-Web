@@ -84,6 +84,8 @@ let strings = {
         "login_title":"Login | YRDSB Teach Assist",
         "loading_title":"Loading | YRDSB Teach Assist",
         "unnamed_course":"Unnamed Course",
+        "privacy_policy":"Privacy Policy",
+        "support":"Support",
     },
     "zh": {
         "login_your_account": "登录帐号：",
@@ -170,6 +172,8 @@ let strings = {
         "login_title":"登录 | YRDSB Teach Assist",
         "loading_title":"正在加载 | YRDSB Teach Assist",
         "unnamed_course":"未命名课程",
+        "privacy_policy":"隐私政策",
+        "support":"用户支持",
     }
 }
 
