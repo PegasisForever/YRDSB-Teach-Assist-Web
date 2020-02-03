@@ -41,6 +41,7 @@ function SidePanel(props) {
                 </LinearLayout>
                 {props.courseList.map((course, i) => {
                     return <CardPrimaryContent className={course.code === selectedCode ? "selected" : ""}
+                                               style={{flexShrink: "0"}}
                                                key={course.code}
                                                onClick={() => {
                                                    props.onClick(i)
@@ -159,7 +160,7 @@ class MainPanel extends Component {
                         tabOffset={tabOffset}
                         onExit={this.props.onExit}/>
                     <StatisticsTab
-                        key={(this.props.course.name ? this.props.course.name : this.props.course.code)+"s"}
+                        key={(this.props.course.name ? this.props.course.name : this.props.course.code) + "s"}
                         course={this.props.course}
                         tabOffset={tabOffset + window.innerWidth - 300}/>
                 </div>

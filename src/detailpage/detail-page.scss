@@ -11,6 +11,9 @@
   left: 0;
   width: 300px;
 
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+
   .mdc-typography--headline5 {
     font-size: 1.3rem;
   }
@@ -22,6 +25,10 @@
   .selected {
     background: #eee;
   }
+}
+
+.side-panel::-webkit-scrollbar {
+  display: none;
 }
 
 .main-panel-root {
