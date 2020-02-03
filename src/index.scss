@@ -73,9 +73,15 @@ body {
 }
 
 .root-div {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+}
+
+.root-div::-webkit-scrollbar {
+  display: none;
 }
 
 svg {

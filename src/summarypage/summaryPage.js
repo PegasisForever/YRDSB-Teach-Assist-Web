@@ -35,7 +35,7 @@ function AnimateCard(props) {
                 onClick={() => {
                 }}
                 style={{
-                    position: "absolute",
+                    position: "fixed",
                     zIndex: "500",
                     transform: `scale(${widthScale},${heightScale})`,
                     left: x + "px", top: y + "px", opacity: opacity
