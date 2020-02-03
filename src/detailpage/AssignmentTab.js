@@ -91,7 +91,7 @@ function AssignmentListItem(props) {
         <Padding l={32} r={32}>
             <LinearLayout horizontal align={"space-between"}>
                 <Padding t={32} b={32} r={16}>
-                    <Headline5 className="selectable">{assi.name}</Headline5>
+                    <Headline5 className="selectable" style={{marginBottom: "8px"}}>{assi.name}</Headline5>
                     {avg ? <Body1
                         className="assignment-desc selectable">{getString("avg:") + Math.floor(avg * 10) / 10 + "%"}</Body1> : null}
                     {isNoWeight(assi) ?
