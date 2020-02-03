@@ -162,8 +162,6 @@ class MainPanel extends Component {
                         key={(this.props.course.name ? this.props.course.name : this.props.course.code)+"s"}
                         course={this.props.course}
                         tabOffset={tabOffset + window.innerWidth - 300}/>
-
-
                 </div>
             }}
         </Animate>

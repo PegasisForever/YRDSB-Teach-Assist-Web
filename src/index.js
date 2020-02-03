@@ -15,14 +15,16 @@ let states = {
 let showDialog
 let delDialog
 let setPage
+let currentPageScroll = 0
 let baseUrl = "https://api.pegasis.site/public/yrdsb_ta"
+
 //http://localhost:5005
 
 class Root extends Component {
     constructor(props) {
         super(props)
 
-        if (window.innerWidth<=1050) {
+        if (window.innerWidth <= 1050) {
             let url = new URL(window.location.href)
             if (!url.searchParams.get("no-red")) {
                 window.location.replace("https://ta-yrdsb.web.app/about")
@@ -33,6 +35,7 @@ class Root extends Component {
         this.setPage = this.setPage.bind(this)
         this.showDialog = this.showDialog.bind(this)
         this.delDialog = this.delDialog.bind(this)
+        this.onScroll = this.onScroll.bind(this)
         setPage = this.setPage
         showDialog = this.showDialog
         delDialog = this.delDialog
@@ -62,6 +65,7 @@ class Root extends Component {
             key2: 2,
             dialog: null
         }
+        this.page2Ref = React.createRef()
     }
 
     showDialog(dialog) {
@@ -74,6 +78,10 @@ class Root extends Component {
         this.setState({
             dialog: null
         })
+    }
+
+    onScroll(event) {
+        currentPageScroll = event.currentTarget.scrollTop
     }
 
     setPage(page, callback, transitionTime) {
@@ -99,7 +107,11 @@ class Root extends Component {
     render() {
         return <Fragment>
             <div key={this.state.key1} className="root-div full-page">{this.state.page1}</div>
-            <div key={this.state.key2} className="root-div full-page">{this.state.page2}</div>
+            <div key={this.state.key2}
+                 className="root-div full-page"
+                 onScroll={this.onScroll}>
+                {this.state.page2}
+            </div>
             {this.state.dialog}
         </Fragment>
     }
@@ -116,6 +128,10 @@ export function getAnimationScale() {
 
 export function getPublicURL() {
     return "/"
+}
+
+export function getCurrentPageScroll() {
+    return currentPageScroll
 }
 
 export {showDialog, delDialog, setPage, baseUrl}

@@ -2,7 +2,7 @@ import React, {Component, Fragment} from "react"
 import SummaryCard from "./summaryCard"
 import "./summary-page.scss"
 import LinearLayout from "../components/linearLayout"
-import {Body1, Body2, Headline1, Headline5} from "@material/react-typography"
+import {Body1, Headline1, Headline5} from "@material/react-typography"
 import {Padding} from "../components/padding"
 import {SizedBox} from "../components/sizedBox"
 import Button from '@material/react-button'
@@ -12,7 +12,13 @@ import LoginPage from "../loginpage/loginPage"
 import {easeExpInOut, easeQuadInOut} from "d3-ease"
 import Animate from "react-move/Animate"
 import DetailPage from "../detailpage/detailPage"
-import {getAnimationScale, getPublicURL, setPage, showDialog} from "../index"
+import {
+    getAnimationScale,
+    getCurrentPageScroll,
+    getPublicURL,
+    setPage,
+    showDialog
+} from "../index"
 import {ConfirmDialog, CustomDialog} from "../components/alert"
 import {DialogButton, DialogContent, DialogFooter} from "@material/react-dialog"
 
@@ -146,6 +152,8 @@ export default class SummaryPage extends Component {
     }
 
     openDetailPage(index) {
+        sessionStorage.setItem("summary-scroll-distance", getCurrentPageScroll())
+
         let self = this
         let node = this.cardRefs[index].current
         let w = node.offsetWidth
