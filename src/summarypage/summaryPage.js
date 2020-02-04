@@ -15,7 +15,7 @@ import DetailPage from "../detailpage/detailPage"
 import {
     getAnimationScale,
     getCurrentPageScroll,
-    getPublicURL, setCurrentPageScroll,
+    getPublicURL,
     setPage,
     showDialog
 } from "../index"
@@ -170,17 +170,13 @@ export default class SummaryPage extends Component {
             animationHeight: h
         })
 
-        setPage(React.createElement(
-            DetailPage,
-            {
-                selectedCourse: index,
-                startX: rect.left,
-                startY: rect.top,
-                startWidth: w,
-                startHeight: h,
-            }
-        ), () => {
-        }, 400)
+        setPage(<DetailPage
+            selectedCourse={index}
+            startX={rect.left}
+            startY={rect.top}
+            startWidth={w}
+            startHeight={h}
+        />)
     }
 
     render() {

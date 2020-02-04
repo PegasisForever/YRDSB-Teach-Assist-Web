@@ -99,22 +99,30 @@ class MainPanel extends Component {
             show={true}
             start={{
                 tabOffset: -this.props.tabIndex * (window.innerWidth - 300),
-                x: this.props.startX, y: this.props.startY,
-                width: this.props.startWidth, height: this.props.startHeight,
+                x: this.props.startWidth / 2 + this.props.startX - this.props.startWidth * ((window.innerWidth - 300) / this.props.startWidth) / 2,
+                y: this.props.startHeight / 2 + this.props.startY - this.props.startHeight * (window.innerHeight / this.props.startHeight) / 2,
+                widthScale: this.props.startWidth / (window.innerWidth - 300),
+                heightScale: this.props.startHeight / window.innerHeight,
                 padding: this.props.fadeTransition ? 32 : 0, opacity: 0
             }}
             enter={{
                 x: [300], y: [0],
-                width: [window.innerWidth - 300], height: [window.innerHeight],
+                widthScale: [1],
+                heightScale: [1],
                 padding: [32], opacity: [this.props.opacity],
-                timing: {duration: 500 * getAnimationScale(), ease: easeExpInOut}
+                timing: {duration: 500 * getAnimationScale(), ease: easeExpInOut},
+                events: {
+                    end: () => {
+                        this.forceUpdate()
+                    },
+                }
             }}
             update={{
                 tabOffset: [-this.props.tabIndex * (window.innerWidth - 300)],
                 opacity: [this.props.opacity],
                 timing: {duration: 500 * getAnimationScale(), ease: easeCubicInOut}
             }}>
-            {({x, y, width, height, opacity, padding, tabOffset}) => {
+            {({x, y, widthScale, heightScale, opacity, padding, tabOffset}) => {
                 let style
                 if (opacity !== 1) {
                     if (padding === 32) {
@@ -125,8 +133,7 @@ class MainPanel extends Component {
                         style = {
                             left: x + "px", top: y + "px",
                             opacity: opacity,
-                            width: width + "px",
-                            height: height + "px"
+                            transform: `scale(${widthScale},${heightScale})`
                         }
                     }
                 }
@@ -151,18 +158,19 @@ class MainPanel extends Component {
                     <TitleBar course={this.props.course}
                               tabIndex={this.props.tabIndex}
                               onChangeTab={this.props.onChangeTab}
-                              onExit={this.props.onExit}
-                              padding={padding}/>
-                    <AssignmentTab
-                        key={this.props.course.name ? this.props.course.name : this.props.course.code}
-                        assignments={this.props.course.assignments}
-                        weights={this.props.course.weight_table}
-                        tabOffset={tabOffset}
-                        onExit={this.props.onExit}/>
-                    <StatisticsTab
+                              onExit={this.props.onExit}/>
+                    {tabOffset > -(window.innerWidth - 300) ?
+                        <AssignmentTab
+                            key={this.props.course.name ? this.props.course.name : this.props.course.code}
+                            assignments={this.props.course.assignments}
+                            weights={this.props.course.weight_table}
+                            tabOffset={tabOffset}
+                            onExit={this.props.onExit}/> : null}
+                    {tabOffset < 0 ? <StatisticsTab
                         key={(this.props.course.name ? this.props.course.name : this.props.course.code) + "s"}
                         course={this.props.course}
-                        tabOffset={tabOffset + window.innerWidth - 300}/>
+                        tabOffset={tabOffset + window.innerWidth - 300}/> : null}
+
                 </div>
             }}
         </Animate>
@@ -175,7 +183,7 @@ function TitleBar(props) {
         <IconButton className="back-button" onClick={props.onExit}>
             <MaterialIcon icon="arrow_back"/>
         </IconButton>
-        <Padding className="selectable" all={props.padding} l={props.padding * 2.375}>
+        <Padding className="selectable" all={32} l={76}>
             <Headline4 style={{whiteSpace: "nowrap"}}>{course.name ? course.name : course.code}</Headline4>
             <SizedBox height={8}/>
             <LinearLayout horizontal>
