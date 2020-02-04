@@ -15,7 +15,7 @@ import DetailPage from "../detailpage/detailPage"
 import {
     getAnimationScale,
     getCurrentPageScroll,
-    getPublicURL,
+    getPublicURL, setCurrentPageScroll,
     setPage,
     showDialog
 } from "../index"
@@ -109,7 +109,7 @@ export default class SummaryPage extends Component {
                     <span>
                         {getString("app_desc").split("\n").reduce((r, a) => r.concat(a, <br/>), [])}
                     </span>
-                    <LinearLayout horizontal align={"center"} item={"center"} style={{marginTop:"8px"}}>
+                    <LinearLayout horizontal align={"center"} item={"center"} style={{marginTop: "8px"}}>
                         <a href="https://play.google.com/store/apps/details?id=site.pegasis.yrdsb.ta&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
                            target="_blank">
                             <img alt="Get it on Google Play"
@@ -141,8 +141,10 @@ export default class SummaryPage extends Component {
                     </Headline5>
                     <Body1>By <a href={"https://me.pegasis.site/"} target="_blank">Pegasis</a></Body1>
                     <SizedBox height={16}/>
-                    <Body1><a href={"https://github.com/PegasisForever/YRDSB-Teach-Assist-Web"} target="_blank">Repository on Github</a></Body1>
-                    <Body1><a href={"https://api.pegasis.site/docs/ta_public_api/"} target="_blank">TA Public API</a></Body1>
+                    <Body1><a href={"https://github.com/PegasisForever/YRDSB-Teach-Assist-Web"} target="_blank">Repository
+                        on Github</a></Body1>
+                    <Body1><a href={"https://api.pegasis.site/docs/ta_public_api/"} target="_blank">TA Public
+                        API</a></Body1>
                 </LinearLayout>
             </DialogContent>
             <DialogFooter>

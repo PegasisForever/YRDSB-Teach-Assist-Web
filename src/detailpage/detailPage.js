@@ -13,7 +13,7 @@ import Tab from "@material/react-tab"
 import {easeCubicInOut, easeExpInOut} from "d3-ease"
 import Animate from "react-move/Animate"
 import IconButton from '@material/react-icon-button'
-import {getAnimationScale, getPublicURL, setPage} from "../index"
+import {getAnimationScale, getPublicURL, setCurrentPageScroll, setPage} from "../index"
 import SummaryPage from "../summarypage/summaryPage"
 import AssignmentTab from "./AssignmentTab"
 import {StatisticsTab} from "./StatisticsTab"
@@ -260,9 +260,17 @@ export default class DetailPage extends Component {
             mainPanelOpacity: 0
         })
         setPage(<SummaryPage/>, () => {
-            sessionStorage.removeItem("selected-course")
-            sessionStorage.removeItem("tab-index")
-        })
+                sessionStorage.removeItem("selected-course")
+                sessionStorage.removeItem("tab-index")
+            },
+            undefined,
+            () => {
+                //restore summary page scroll
+                let scrollDistance = sessionStorage.getItem("summary-scroll-distance")
+                if (scrollDistance) {
+                    setCurrentPageScroll(scrollDistance)
+                }
+            })
     }
 
     render() {
