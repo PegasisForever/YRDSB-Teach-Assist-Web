@@ -13,6 +13,7 @@
 
   overflow-y: scroll;
   -ms-overflow-style: none;
+  scrollbar-width: none;
 
   .mdc-typography--headline5 {
     font-size: 1.3rem;
@@ -40,6 +41,7 @@
   overflow-y: scroll;
   overflow-x: hidden;
   -ms-overflow-style: scrollbar;
+  scrollbar-width: unset;
 
   background: #fafafa;
 }
