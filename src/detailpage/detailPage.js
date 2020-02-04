@@ -71,7 +71,8 @@ class MainPanel extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            showSecondBackBtn: false
+            showSecondBackBtn: false,
+            enterAnimationDone: false
         }
         this.scrollListener = this.scrollListener.bind(this)
     }
@@ -103,18 +104,18 @@ class MainPanel extends Component {
                 y: this.props.startHeight / 2 + this.props.startY - this.props.startHeight * (window.innerHeight / this.props.startHeight) / 2,
                 widthScale: this.props.startWidth / (window.innerWidth - 300),
                 heightScale: this.props.startHeight / window.innerHeight,
-                padding: this.props.fadeTransition ? 32 : 0, opacity: 0
+                opacity: 0
             }}
             enter={{
                 x: [300], y: [0],
                 widthScale: [1],
                 heightScale: [1],
-                padding: [32], opacity: [this.props.opacity],
+                opacity: [this.props.opacity],
                 timing: {duration: 500 * getAnimationScale(), ease: easeExpInOut},
                 events: {
-                    end: () => {
-                        this.forceUpdate()
-                    },
+                    end: () => this.setState({
+                        enterAnimationDone: true
+                    })
                 }
             }}
             update={{
@@ -122,23 +123,15 @@ class MainPanel extends Component {
                 opacity: [this.props.opacity],
                 timing: {duration: 500 * getAnimationScale(), ease: easeCubicInOut}
             }}>
-            {({x, y, widthScale, heightScale, opacity, padding, tabOffset}) => {
-                let style
-                if (opacity !== 1) {
-                    if (padding === 32) {
-                        style = {
-                            opacity: opacity,
-                        }
-                    } else {
-                        style = {
-                            left: x + "px", top: y + "px",
-                            opacity: opacity,
-                            transform: `scale(${widthScale},${heightScale})`
-                        }
-                    }
-                }
+            {({x, y, widthScale, heightScale, opacity, tabOffset}) => {
                 return <div className="main-panel-root"
-                            style={style} onScroll={this.scrollListener}>
+                            style={{
+                                left: x + "px",
+                                top: y + "px",
+                                opacity: opacity,
+                                transform: `scale(${widthScale},${heightScale})`
+                            }}
+                            onScroll={this.scrollListener}>
                     <Animate
                         show={true}
                         start={{
@@ -158,7 +151,8 @@ class MainPanel extends Component {
                     <TitleBar course={this.props.course}
                               tabIndex={this.props.tabIndex}
                               onChangeTab={this.props.onChangeTab}
-                              onExit={this.props.onExit}/>
+                              onExit={this.props.onExit}
+                              showRealBackBtn={this.state.enterAnimationDone}/>
                     {tabOffset > -(window.innerWidth - 300) ?
                         <AssignmentTab
                             key={this.props.course.name ? this.props.course.name : this.props.course.code}
@@ -180,9 +174,14 @@ class MainPanel extends Component {
 function TitleBar(props) {
     let course = props.course
     return <LinearLayout className="title-bar" vertical>
-        <IconButton className="back-button" onClick={props.onExit}>
-            <MaterialIcon icon="arrow_back"/>
-        </IconButton>
+        {props.showRealBackBtn ?
+            <IconButton className="back-button" onClick={props.onExit}>
+                <MaterialIcon icon="arrow_back"/>
+            </IconButton> :
+            <Padding className="back-button" all={12}>
+                <MaterialIcon icon="arrow_back"/>
+            </Padding>}
+
         <Padding className="selectable" all={32} l={76}>
             <Headline4 style={{whiteSpace: "nowrap"}}>{course.name ? course.name : course.code}</Headline4>
             <SizedBox height={8}/>
@@ -293,7 +292,6 @@ export default class DetailPage extends Component {
             <MainPanel course={courses[this.state.selectedCourse]}
                        tabIndex={this.state.tabIndex}
                        opacity={this.state.mainPanelOpacity}
-                       fadeTransition={typeof this.props.startX === "undefined"}
                        startX={this.props.startX}
                        startY={this.props.startY}
                        startWidth={this.props.startWidth}
