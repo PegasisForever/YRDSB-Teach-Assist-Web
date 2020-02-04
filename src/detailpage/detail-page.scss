@@ -39,6 +39,7 @@
   height: 100vh;
   overflow-y: scroll;
   overflow-x: hidden;
+  -ms-overflow-style: scrollbar;
 
   background: #fafafa;
 }
@@ -59,7 +60,7 @@
   }
 }
 
-.float-back-button{
+.float-back-button {
   z-index: 550;
   position: fixed;
   left: 316px;
@@ -68,11 +69,11 @@
   color: #333;
 }
 
-.assignment-desc{
+.assignment-desc {
   color: #666;
 }
 
-.assignment-feedback{
+.assignment-feedback {
   color: #222;
 }
 
@@ -82,11 +83,11 @@ svg {
     fill: #333;
   }
 
-  text.percent{
+  text.percent {
     font-size: 16px;
   }
 
-  text.get{
+  text.get {
     font-size: 12px;
   }
 
