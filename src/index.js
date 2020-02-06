@@ -51,13 +51,13 @@ class Root extends Component {
             )
         } else {
             if (sessionStorage.getItem("state") === "login") {
-                page = <LoginPage/>
+                page = <LoginPage noEnter={true}/>
             } else if (sessionStorage.getItem("state")) {
                 page = <LoadingPage nextPage={states[sessionStorage.getItem("state")]}/>
             } else if (localStorage.getItem("account")) {
                 page = <LoadingPage nextPage={SummaryPage}/>
             } else {
-                page = <LoginPage/>
+                page = <LoginPage noEnter={true}/>
             }
         }
 

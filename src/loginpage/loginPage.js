@@ -247,7 +247,7 @@ export default class LoginPage extends Component {
     render() {
         return (<Animate
             show={true}
-            start={{opacity: 0}}
+            start={{opacity: this.props.noEnter?1:0}}
             enter={{
                 opacity: [this.state.opacity],
                 timing: {duration: 500 * getAnimationScale(), ease: easeQuadInOut}
