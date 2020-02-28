@@ -42,7 +42,7 @@ function getOverallChart(course, width, height) {
     let points = getCourseOverallList(course).map(overall => {
         return [overall[0] * space, width - overall[1] * width / 105]
     })
-    if(points.length===0){
+    if (points.length === 0) {
         return <SizedBox width={width} height={height}/>
     }
 
@@ -75,11 +75,11 @@ function getOverallChart(course, width, height) {
 export default function SummaryCard(props) {
     let course = props.course
     return (<Padding all={props.noPadding ? 0 : 16} className={props.className} style={props.style}>
-            <SizedBox width={492}>
-                <Card>
-                    <CardPrimaryContent onClick={props.onClick}>
-                        <Padding all={24} re={props.r} className={"white-bg"}>
-                            <LinearLayout horizontal item={"center"}>
+            <div style={{width: "492px", height: props.height ? props.height : "100%"}}>
+                <Card style={{height: "100%"}}>
+                    <CardPrimaryContent onClick={props.onClick} style={{height: "100%"}}>
+                        <Padding all={24} re={props.r} className={"white-bg"} style={{height: "100%"}}>
+                            <LinearLayout horizontal item={"center"} style={{height: "100%"}}>
                                 <LinearLayout vertical>
                                     <Headline5 style={{width: "300px"}}>{getDisplayName(course)}</Headline5>
                                     <SizedBox height={8}/>
@@ -87,7 +87,7 @@ export default function SummaryCard(props) {
                                     <SizedBox height={24}/>
                                     <LPI width={course.overall_mark ? 300 : 444}
                                          value={course.overall_mark}
-                                         text={course.overall_mark ? (Math.floor(course.overall_mark*10)/10 + "%") : getString("marks_unavailable")}/>
+                                         text={course.overall_mark ? (Math.floor(course.overall_mark * 10) / 10 + "%") : getString("marks_unavailable")}/>
                                 </LinearLayout>
                                 {course.overall_mark ? <Fragment>
                                     <SizedBox width={24}/>
@@ -97,7 +97,7 @@ export default function SummaryCard(props) {
                         </Padding>
                     </CardPrimaryContent>
                 </Card>
-            </SizedBox>
+            </div>
         </Padding>
     )
 }

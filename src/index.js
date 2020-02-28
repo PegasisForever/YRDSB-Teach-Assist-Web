@@ -25,13 +25,13 @@ class Root extends Component {
     constructor(props) {
         super(props)
 
-        // if (window.innerWidth <= 1050) {
-        //     let url = new URL(window.location.href)
-        //     if (!url.searchParams.get("no-red")) {
-        //         window.location.replace("https://ta-yrdsb.web.app/about")
-        //         return
-        //     }
-        // }
+        if (window.innerWidth <= 1050) {
+            let url = new URL(window.location.href)
+            if (!url.searchParams.get("no-red")) {
+                window.location.replace("https://ta-yrdsb.web.app/about")
+                return
+            }
+        }
 
         this.setPage = this.setPage.bind(this)
         this.showDialog = this.showDialog.bind(this)
@@ -45,7 +45,7 @@ class Root extends Component {
 
         let page
         const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV === "development"
-        if (false && sessionStorage.getItem("state")) {
+        if (isDevelopment && sessionStorage.getItem("state")) {
             page = React.createElement(
                 states[sessionStorage.getItem("state")]
             )

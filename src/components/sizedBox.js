@@ -8,6 +8,6 @@ export class SizedBox extends Component {
     }
 
     render() {
-        return (<div ref={this.props.r} className={this.props.className} style={{width: this.width, height: this.height}}>{this.props.children}</div>)
+        return (<div ref={this.props.r} className={this.props.className} style={{...{width: this.width, height: this.height},...this.style}}>{this.props.children}</div>)
     }
 }

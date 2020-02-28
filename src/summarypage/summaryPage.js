@@ -37,6 +37,7 @@ function AnimateCard(props) {
         {({x, y, widthScale, heightScale, opacity}) => {
             return (<SummaryCard
                 noPadding
+                height={props.height}
                 course={props.course}
                 onClick={() => {
                 }}
