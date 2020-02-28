@@ -25,7 +25,7 @@ function TATitle() {
             <Fragment>
                 <img src={getPublicURL() + "launcher192.png"} width="130px" alt="logo"/>
                 <SizedBox height={16}/>
-                <Headline5>YRDSB Teach Assist</Headline5>
+                <Headline5>{getString("title")}</Headline5>
             </Fragment>}
     </LinearLayout>)
 }

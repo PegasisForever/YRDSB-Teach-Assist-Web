@@ -216,7 +216,7 @@ export default class SummaryPage extends Component {
                                 <Padding all={16}>
                                     <img src={getPublicURL() + "launcher192.png"} width="50px" alt={"logo"}/>
                                 </Padding>
-                                <Headline5 className="title">YRDSB Teach Assist</Headline5>
+                                <Headline5 className="title">{getString("title_no_yrdsb")}</Headline5>
                             </LinearLayout>
                             <LinearLayout horizontal align={"end"} item={"center"}>
                                 <Button className="nav-btn" outlined onClick={this.openAboutDialog}>
