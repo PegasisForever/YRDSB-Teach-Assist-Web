@@ -30,7 +30,7 @@ function AnimateCard(props) {
             x: [(window.innerWidth - 300) / 2 + 300 - props.width / 2],
             y: [window.innerHeight / 2 - props.height / 2],
             widthScale: [(window.innerWidth - 300) / (props.width)],
-            heightScale: [(window.innerHeight) / (props.height + 2)],
+            heightScale: [(window.innerWidth - 300) / (props.width)],
             opacity: [-0.5],
             timing: {duration: 500 * getAnimationScale(), ease: easeExpInOut}
         }}>

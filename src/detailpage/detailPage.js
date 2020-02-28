@@ -103,7 +103,7 @@ class MainPanel extends Component {
                 x: this.props.startWidth / 2 + this.props.startX - this.props.startWidth * ((window.innerWidth - 300) / this.props.startWidth) / 2,
                 y: this.props.startHeight / 2 + this.props.startY - this.props.startHeight * (window.innerHeight / this.props.startHeight) / 2,
                 widthScale: this.props.startWidth / (window.innerWidth - 300),
-                heightScale: this.props.startHeight / window.innerHeight,
+                heightScale: this.props.startWidth / (window.innerWidth - 300),
                 opacity: 0
             }}
             enter={{

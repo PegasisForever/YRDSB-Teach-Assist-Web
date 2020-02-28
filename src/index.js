@@ -134,7 +134,7 @@ ReactDOM.render(
 )
 
 export function getAnimationScale() {
-    return 10
+    return 1
 }
 
 export function getPublicURL() {
