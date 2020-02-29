@@ -185,7 +185,7 @@ export default class SummaryPage extends Component {
         let total = 0
         let availableCourseCount = 0
         courseList.forEach(course => {
-            if (course.overall_mark) {
+            if (course.overall_mark && course.overall_mark > 0) {
                 total += course.overall_mark
                 availableCourseCount++
             }
