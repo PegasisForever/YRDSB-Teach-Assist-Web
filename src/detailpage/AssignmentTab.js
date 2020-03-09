@@ -44,7 +44,7 @@ function SmallmarkBar(props) {
                 <text className="get" x={x + 25} y={height - vPadding - barHeight - 8}>
                     {Math.floor(smallmark.get * 10) / 10}/{Math.floor(smallmark.total * 10) / 10}</text>
                 <text className="percent" x={x + 25} y={height - vPadding - barHeight - 22}>
-                    {Math.floor(percent * 10) * 10}</text>
+                    {Math.floor(percent * 1000) / 10}</text>
                 <text className="weight" x={x + 25} y={height - 6}>
                     {getString("w:") + smallmark.weight}</text>
             </Fragment> :
