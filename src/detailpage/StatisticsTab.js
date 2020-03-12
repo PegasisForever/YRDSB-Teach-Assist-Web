@@ -66,7 +66,7 @@ class Chart extends Component {
                 <SizedBox height={32}/>
                 <Headline5 className="selectable">{getString(shortNameMap[category])}</Headline5>
             </Fragment> : null}
-            <SizedBox width={600} height={300}>
+            <div style={{maxWidth: "600px", width: "calc(100vw - 350px)", height: "300px"}}>
                 <ResponsiveLine
                     data={chartData.data}
                     margin={{top: 20, right: 32, bottom: 32, left: 32}}
@@ -96,7 +96,7 @@ class Chart extends Component {
                     legends={[]}
                     animate={false}
                 />
-            </SizedBox>
+            </div>
         </LinearLayout>
     }
 }
