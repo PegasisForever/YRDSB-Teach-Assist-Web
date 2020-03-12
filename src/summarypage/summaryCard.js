@@ -87,7 +87,7 @@ export default function SummaryCard(props) {
                                     <SizedBox height={24}/>
                                     <LPI width={course.overall_mark ? 300 : 444}
                                          value={course.overall_mark}
-                                         text={course.overall_mark ? (Math.floor(course.overall_mark * 10) / 10 + "%") : getString("marks_unavailable")}/>
+                                         text={course.overall_mark ? (Math.round(course.overall_mark * 10) / 10 + "%") : getString("marks_unavailable")}/>
                                 </LinearLayout>
                                 {course.overall_mark ? <Fragment>
                                     <SizedBox width={24}/>

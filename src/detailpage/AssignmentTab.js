@@ -42,9 +42,9 @@ function SmallmarkBar(props) {
 
         {smallmark ? <Fragment>
                 <text className="get" x={x + 25} y={height - vPadding - barHeight - 8}>
-                    {Math.floor(smallmark.get * 10) / 10}/{Math.floor(smallmark.total * 10) / 10}</text>
+                    {Math.round(smallmark.get * 10) / 10}/{Math.round(smallmark.total * 10) / 10}</text>
                 <text className="percent" x={x + 25} y={height - vPadding - barHeight - 22}>
-                    {Math.floor(percent * 1000) / 10}</text>
+                    {Math.round(percent * 1000) / 10}</text>
                 <text className="weight" x={x + 25} y={height - 6}>
                     {getString("w:") + smallmark.weight}</text>
             </Fragment> :
@@ -93,7 +93,7 @@ function AssignmentListItem(props) {
                 <Padding t={32} b={32} r={16}>
                     <Headline5 className="selectable" style={{marginBottom: "8px"}}>{assi.name}</Headline5>
                     {avg ? <Body1
-                        className="assignment-desc selectable">{getString("avg:") + Math.floor(avg * 10) / 10 + "%"}</Body1> : null}
+                        className="assignment-desc selectable">{getString("avg:") + Math.round(avg * 10) / 10 + "%"}</Body1> : null}
                     {isNoWeight(assi) ?
                         <Body1 className="assignment-desc selectable">{getString("no_weight")}</Body1> : null}
                     {assi.feedback !== "" ?

@@ -32,7 +32,7 @@ function getChartData(course, category) {
         return {
             data: [{
                 id: category,
-                data: getCourseOverallList(course).map((item) => ({"x": item[0], "y": Math.floor(item[1] * 10) / 10}))
+                data: getCourseOverallList(course).map((item) => ({"x": item[0], "y": Math.round(item[1] * 10) / 10}))
             }],
             color: "#03a9f4"
         }
@@ -42,7 +42,7 @@ function getChartData(course, category) {
                 id: category,
                 data: course.assignments.map((assi, i) => (
                     (assi[category] && smallMarkGroupHasFinished(assi[category]) && smallMarkGroupHasWeight(assi[category])) ?
-                        {"x": i, "y": Math.floor(smallMarkGroupGetPercentage(assi[category]) * 10) * 10} : undefined))
+                        {"x": i, "y": Math.round(smallMarkGroupGetPercentage(assi[category]) * 10) * 10} : undefined))
                     .filter((point) => point)
             }],
             color: colorMap[category]
