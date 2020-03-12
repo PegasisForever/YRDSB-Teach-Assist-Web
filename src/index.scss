@@ -92,17 +92,6 @@ svg {
   }
 }
 
-@media only screen and (max-width: 1050px) {
-  .desktop-only {
-    display: none;
-  }
-}
-
-@media only screen and (min-width: 1051px) {
-  .mobile-only {
-    display: none;
-  }
-}
 
 .selectable {
   -webkit-user-select: text;

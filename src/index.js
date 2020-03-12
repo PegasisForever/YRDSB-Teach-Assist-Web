@@ -25,7 +25,8 @@ class Root extends Component {
     constructor(props) {
         super(props)
 
-        if (window.innerWidth <= 1050) {
+        const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV === "development"
+        if (window.innerWidth <= 800 && !isDevelopment) {
             let url = new URL(window.location.href)
             if (!url.searchParams.get("no-red")) {
                 window.location.replace("https://ta-yrdsb.web.app/about")
@@ -44,7 +45,6 @@ class Root extends Component {
         setCurrentPageScroll = this.setScroll
 
         let page
-        const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV === "development"
         if (isDevelopment && sessionStorage.getItem("state")) {
             page = React.createElement(
                 states[sessionStorage.getItem("state")]
@@ -103,8 +103,8 @@ class Root extends Component {
                 page2: page,
                 key2: prevState.key2 + 1
             }
-        },()=>{
-            if(immiCallback) immiCallback()
+        }, () => {
+            if (immiCallback) immiCallback()
         })
         this.lastSetPageTimeoutID = setTimeout(() => {
             if (callback) callback()
@@ -118,7 +118,7 @@ class Root extends Component {
         return <Fragment>
             <div key={this.state.key1} className="root-div full-page">{this.state.page1}</div>
             <div key={this.state.key2}
-                 ref={(ref)=> this.page2Div = ref}
+                 ref={(ref) => this.page2Div = ref}
                  className="root-div full-page"
                  onScroll={this.onScroll}>
                 {this.state.page2}
