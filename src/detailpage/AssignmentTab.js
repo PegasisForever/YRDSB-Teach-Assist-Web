@@ -87,7 +87,7 @@ function SmallMarkChart(props) {
 function AssignmentListItem(props) {
     let assi = props.assignment
     let avg = getAverage(assi, props.weights)
-    return <SizedBox width={750}>
+    return <div style={{maxWidth: "750px", width: "calc(100vw - 300px)"}}>
         <Padding l={32} r={32}>
             <LinearLayout horizontal align={"space-between"}>
                 <Padding t={32} b={32} r={16}>
@@ -102,7 +102,7 @@ function AssignmentListItem(props) {
                 <SmallMarkChart assignment={assi}/>
             </LinearLayout>
         </Padding>
-    </SizedBox>
+    </div>
 }
 
 class AssignmentList extends Component {
