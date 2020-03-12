@@ -183,7 +183,7 @@ function TitleBar(props) {
             </Padding>}
 
         <Padding className="selectable" all={32} l={76}>
-            <Headline4 style={{whiteSpace: "nowrap"}}>{course.name ? course.name : course.code}</Headline4>
+            <Headline4>{course.name ? course.name : course.code}</Headline4>
             <SizedBox height={8}/>
             <LinearLayout horizontal>
                 <div>
