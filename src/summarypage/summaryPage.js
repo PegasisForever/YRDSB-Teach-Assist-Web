@@ -112,13 +112,13 @@ export default class SummaryPage extends Component {
                     </span>
                     <LinearLayout horizontal align={"center"} item={"center"} style={{marginTop: "8px"}}>
                         <a href="https://play.google.com/store/apps/details?id=site.pegasis.yrdsb.ta&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
-                           target="_blank">
+                           target="_blank" rel="noopener noreferrer">
                             <img alt="Get it on Google Play"
                                  src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
                                  width="200px"/>
                         </a>
                         <a href="https://apps.apple.com/us/app/yrdsb-teach-assist/id1483082868?ls=1"
-                           target="_blank">
+                           target="_blank" rel="noopener noreferrer">
                             <img alt="Download on the App Store"
                                  src={getPublicURL() + "about/app_store_badge.svg"}
                                  width="178px"/>
@@ -140,11 +140,11 @@ export default class SummaryPage extends Component {
                     <Headline5 style={{paddingTop: "0"}}>
                         YRDSB Teach Assist Web
                     </Headline5>
-                    <Body1>By <a href={"https://me.pegasis.site/"} target="_blank">Pegasis</a></Body1>
+                    <Body1>By <a href={"https://me.pegasis.site/"} target="_blank" rel="noopener noreferrer">Pegasis</a></Body1>
                     <SizedBox height={16}/>
-                    <Body1><a href={"https://github.com/PegasisForever/YRDSB-Teach-Assist-Web"} target="_blank">Repository
+                    <Body1><a href={"https://github.com/PegasisForever/YRDSB-Teach-Assist-Web"} target="_blank" rel="noopener noreferrer">Repository
                         on Github</a></Body1>
-                    <Body1><a href={"https://api.pegasis.site/docs/ta_public_api/"} target="_blank">TA Public
+                    <Body1><a href={"https://api.pegasis.site/docs/ta_public_api/"} target="_blank" rel="noopener noreferrer">TA Public
                         API</a></Body1>
                 </LinearLayout>
             </DialogContent>
