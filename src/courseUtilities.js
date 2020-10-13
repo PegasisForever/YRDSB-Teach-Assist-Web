@@ -19,6 +19,9 @@ export function getPeriodRoom(course) {
     if (course.room !== null) {
         strs.push(getString("room_number").replace("%s", course.room))
     }
+    if (course.code !== null && course.code !== "") {
+        strs.push(course.code)
+    }
     return strs.join(" - ")
 }
 
@@ -29,7 +32,7 @@ export function smallMarkGroupHasFinished(smallMarkGroup) {
 }
 
 export function smallMarkGroupHasWeight(smallMarkGroup) {
-    if(!smallMarkGroup) return false
+    if (!smallMarkGroup) return false
     return smallMarkGroup.find(smallMark => smallMark.weight > 0) != null
 }
 
@@ -59,7 +62,7 @@ export function getCourseOverallList(course) {
     let overallList = []
 
     let i = 0
-    let weightTable=course.weight_table
+    let weightTable = course.weight_table
     let gets = categories.reduce((map, category) => {
         map[category] = 0.0
         return map
@@ -82,10 +85,10 @@ export function getCourseOverallList(course) {
         let avg = 0.0
         let avgn = 0.0
         categories.forEach((category) => {
-            let smallAvg=gets[category]/totals[category]
-            if (isFinite(smallAvg)){
-                avg+=smallAvg*weightTable[category].CW
-                avgn+=weightTable[category].CW
+            let smallAvg = gets[category] / totals[category]
+            if (isFinite(smallAvg)) {
+                avg += smallAvg * weightTable[category].CW
+                avgn += weightTable[category].CW
             }
         })
         if (avgn > 0.0) {
