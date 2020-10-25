@@ -19,7 +19,7 @@ export function Alert(props) {
             onClose={() => delDialog()}
             open>
             <DialogContent>
-                <p>{props.content}</p>
+                {props.content ? (<p>{props.content}</p>) : props.html}
             </DialogContent>
             <DialogFooter>
                 <DialogButton action="ok">{getString("ok")}</DialogButton>

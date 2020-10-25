@@ -79,20 +79,21 @@ let strings = {
         "logout": "Logout",
         "remember_me": "Remember Me",
         "refresh": "Refresh",
-        "are_you_sure_to_logout":"Are you sure to logout?",
-        "title":"YRDSB Teach Assist Pro",
-        "title_no_yrdsb":"Teach Assist Pro",
-        "login_title":"Login | YRDSB Teach Assist Pro",
-        "loading_title":"Loading | YRDSB Teach Assist Pro",
-        "unnamed_course":"Unnamed Course",
-        "privacy_policy":"Privacy Policy",
-        "support":"Support",
-        "app":"APP",
-        "for_android_ios":"For Android & iOS",
-        "app_desc":"✅ Receive notifications when you get new marks.\n" +
+        "are_you_sure_to_logout": "Are you sure to logout?",
+        "title": "YRDSB Teach Assist Pro",
+        "title_no_yrdsb": "Teach Assist Pro",
+        "login_title": "Login | YRDSB Teach Assist Pro",
+        "loading_title": "Loading | YRDSB Teach Assist Pro",
+        "unnamed_course": "Unnamed Course",
+        "privacy_policy": "Privacy Policy",
+        "support": "Support",
+        "app": "APP",
+        "for_android_ios": "For Android & iOS",
+        "app_desc": "✅ Receive notifications when you get new marks.\n" +
             "✅ Add, remove & edit assessments.\n" +
             "✅ View marks offline, or after the teacher hides it.\n" +
-            "✅ Dark mode support."
+            "✅ Dark mode support.",
+        "website_maintaining": "Website maintaining, please use ",
     },
     "zh": {
         "login_your_account": "登录帐号：",
@@ -174,22 +175,23 @@ let strings = {
         "logout": "登出",
         "remember_me": "记住密码",
         "refresh": "刷新",
-        "are_you_sure_to_logout":"确定要登出吗？",
-        "title":"YRDSB Teach Assist Pro",
-        "title_no_yrdsb":"Teach Assist Pro",
-        "login_title":"登录 | YRDSB Teach Assist Pro",
-        "loading_title":"正在加载 | YRDSB Teach Assist Pro",
-        "unnamed_course":"未命名课程",
-        "privacy_policy":"隐私政策",
-        "support":"用户支持",
-        "app":"App",
-        "for_android_ios":"为Android和iOS用户设计",
-        "app_desc":"✅ 通知推送\n" +
+        "are_you_sure_to_logout": "确定要登出吗？",
+        "title": "YRDSB Teach Assist Pro",
+        "title_no_yrdsb": "Teach Assist Pro",
+        "login_title": "登录 | YRDSB Teach Assist Pro",
+        "loading_title": "正在加载 | YRDSB Teach Assist Pro",
+        "unnamed_course": "未命名课程",
+        "privacy_policy": "隐私政策",
+        "support": "用户支持",
+        "app": "App",
+        "for_android_ios": "为Android和iOS用户设计",
+        "app_desc": "✅ 通知推送\n" +
             "✅ 添加或编辑您的作业评分\n" +
             "✅ 离线查看成绩\n" +
             "✅ 老师隐藏成绩后依然可见\n" +
-            "✅ 夜间模式"
-    }
+            "✅ 夜间模式",
+        "website_maintaining": "网站正在维护，请使用",
+    },
 }
 
 let language = (new URL(window.location)).searchParams.get("lang") || navigator.language.split("-")[0]

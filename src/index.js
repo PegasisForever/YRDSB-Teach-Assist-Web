@@ -1,15 +1,17 @@
-import React, {Component, Fragment} from 'react'
+import React, {Component, Fragment} from "react"
 import ReactDOM from "react-dom"
 import "./index.scss"
 import LoginPage from "./loginpage/loginPage"
 import LoadingPage from "./summarypage/loadingPage"
 import SummaryPage from "./summarypage/summaryPage"
 import DetailPage from "./detailpage/detailPage"
+import {Alert} from "./components/alert"
+import getString from "./strings"
 
 let states = {
     login: LoginPage,
     summary: SummaryPage,
-    detail: DetailPage
+    detail: DetailPage,
 }
 
 let showDialog
@@ -18,6 +20,7 @@ let setPage
 let setCurrentPageScroll
 let currentPageScroll = 0
 let baseUrl = "https://api.pegasis.site/public/yrdsb_ta"
+let maintaining = true
 
 //http://localhost:5005
 
@@ -47,7 +50,7 @@ class Root extends Component {
         let page
         if (isDevelopment && sessionStorage.getItem("state")) {
             page = React.createElement(
-                states[sessionStorage.getItem("state")]
+                states[sessionStorage.getItem("state")],
             )
         } else {
             if (sessionStorage.getItem("state") === "login") {
@@ -66,19 +69,26 @@ class Root extends Component {
             key1: 1,
             page2: page,
             key2: 2,
-            dialog: null
+            dialog: null,
+        }
+
+        if (maintaining) {
+            setTimeout(() => {
+                showDialog(<Alert html={<p>{getString("website_maintaining")}<a
+                    href="https://ta.yrdsb.ca/yrdsb/">https://ta.yrdsb.ca/yrdsb/</a></p>}/>)
+            }, 1000)
         }
     }
 
     showDialog(dialog) {
         this.setState({
-            dialog: dialog
+            dialog: dialog,
         })
     }
 
     delDialog() {
         this.setState({
-            dialog: null
+            dialog: null,
         })
     }
 
@@ -101,7 +111,7 @@ class Root extends Component {
                 page1: prevState.page2,
                 key1: prevState.key2,
                 page2: page,
-                key2: prevState.key2 + 1
+                key2: prevState.key2 + 1,
             }
         }, () => {
             if (immiCallback) immiCallback()
@@ -109,7 +119,7 @@ class Root extends Component {
         this.lastSetPageTimeoutID = setTimeout(() => {
             if (callback) callback()
             this.setState({
-                page1: null
+                page1: null,
             })
         }, (transitionTime ? transitionTime : 500) * getAnimationScale())
     }
@@ -130,7 +140,7 @@ class Root extends Component {
 
 ReactDOM.render(
     <Root/>,
-    document.getElementById("root")
+    document.getElementById("root"),
 )
 
 export function getAnimationScale() {
