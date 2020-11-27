@@ -20,7 +20,7 @@ let setPage
 let setCurrentPageScroll
 let currentPageScroll = 0
 let baseUrl = "https://api.pegasis.site/public/yrdsb_ta"
-let maintaining = true
+let maintaining = false
 
 //http://localhost:5005
 
